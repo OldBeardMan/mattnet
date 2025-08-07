@@ -4,14 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matt Krupa</title>
-  <link rel="stylesheet" href="styles.css">
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-..."
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(3px);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .logo {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .links a {
+      display: block;
+      margin: 12px 0;
+      padding: 16px;
+      background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .links a i {
+      margin-right: 12px;
+      color: #63b3ed;
+      font-size: 20px;
+    }
+
+    .links a:hover {
+      background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(49, 130, 206, 0.3);
+      border-color: rgba(99, 179, 237, 0.3);
+    }
+
+    .links a:hover i {
+      color: #ffffff;
+    }
+
+    .links a:active {
+      transform: translateY(0);
+    }
+
+    /* Spotify specific styling */
+    .links a[href*="spotify"]:hover {
+      background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+      box-shadow: 0 8px 20px rgba(29, 185, 84, 0.3);
+    }
+
+    /* YouTube specific styling */
+    .links a[href*="youtube"]:hover {
+      background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    }
+
+    /* Apple Music specific styling */
+    .links a[href*="apple"]:hover {
+      background: linear-gradient(135deg, #fa233b 0%, #ff6b6b 100%);
+      box-shadow: 0 8px 20px rgba(250, 35, 59, 0.3);
+    }
+
+    /* Bandcamp specific styling */
+    .links a[href*="bandcamp"]:hover {
+      background: linear-gradient(135deg, #629aa0 0%, #408e96 100%);
+      box-shadow: 0 8px 20px rgba(98, 154, 160, 0.3);
+    }
+
+    /* Facebook specific styling */
+    .links a[href*="facebook"]:hover {
+      background: linear-gradient(135deg, #1877f2 0%, #42a5f5 100%);
+      box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 30px 15px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      .links a {
+        font-size: 16px;
+        padding: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="overlay">
