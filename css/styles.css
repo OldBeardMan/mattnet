@@ -1,0 +1,1224 @@
+/*------------------------------------------*/
+/* STYLE UŻYWANE W RÓŻNYCH SEKCJACH STRONY */
+/*------------------------------------------*/
+
+/* Ustawienie box-sizing na border-box dla wszystkich elementów, co ułatwia zarządzanie rozmiarami */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Gładkie przewijanie strony dla użytkowników, którzy nie preferują redukcji ruchu */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Podstawowe stylizacje dla całego ciała dokumentu, włączając czcionkę, kolor tła, itp. */
+body {
+  margin: 0;
+  font-family: "Nunito", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #000000;
+  letter-spacing: 0.0625em;
+}
+
+/* Ustawia padding przy przewijaniu, aby treść nie była zasłaniana przez pasek nawigacyjny */
+html {
+  scroll-padding-top: calc(4.5rem - 1px);
+}
+
+/* Styl dla linii poziomej (hr), ustawiający przeźroczystość, kolory i marginesy */
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  border: 0;
+  border-top: 1px solid;
+  opacity: 0.25;
+}
+
+/* Stylizacje dla nagłówków, definiujące marginesy, grubość czcionki i wysokość linii */
+h3, h2, h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Zmienne rozmiary czcionek dla h1 w zależności od szerokości ekranu */
+h1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Zmienne rozmiary czcionek dla h2 */
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Zmienne rozmiary czcionek dla h3 */
+h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Stylizacje dla paragrafów, definiujące marginesy */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Stylizacje dla list, definiujące wcięcia i marginesy */
+ul {
+  padding-left: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Styl dla linków, ustawia kolor oraz wyłącza podkreślenie */
+a {
+  color: #64a19d;
+  text-decoration: none;
+}
+/* Styl dla linków przy najechaniu, zmienia kolor */
+a:hover {
+  color: #b1b1b1;
+}
+
+/* Styl dla obrazków, ustawia ich wyrównanie pionowe */
+img {
+  vertical-align: middle;
+}
+
+/* Styl dla etykiet (label), ustawia sposób wyświetlania na blokowy */
+label {
+  display: inline-block;
+}
+
+/* Styl dla przycisków, usuwa zaokrąglenie ramek */
+button {
+  border-radius: 0;
+}
+
+/* Usuwa obramowanie dla przycisków, które nie są aktywnie zaznaczone */
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+/* Styl dla pól formularzy, ustawia marginesy, dziedziczenie czcionki i wielkości */
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Dla przycisków i selektorów, wyłącza zmianę wielkości liter */
+button,
+select {
+  text-transform: none;
+}
+
+/* Styl dla przycisków aktywnych, zmienia kursor na wskaźnik */
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+/* Dla obszarów tekstowych (textarea), pozwala na pionową zmianę rozmiaru */
+textarea {
+  resize: vertical;
+}
+
+/* Ustawienia kontenera, definiuje marginesy, paddingi i maksymalne szerokości w zależności od rozdzielczości ekranu */
+.container {
+  width: 100%;
+  padding-right: calc(1.5rem * 0.5); /* responsywny odstęp */
+  padding-left: calc(1.5rem * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Styl dla kontenera dla różnych breakpointów, ustala maksymalne szerokości */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Styl dla wierszy (row), definiuje wyświetlanie jako flex, wrap oraz marginesy */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-right: calc(-0.5 * 1.5rem);
+  margin-left: calc(-0.5 * 1.5rem);
+}
+/* Styl dla elementów wewnątrz wiersza, definiuje szerokość, padding */
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(1.5rem * 0.5);
+  padding-left: calc(1.5rem * 0.5);
+  margin-top: 0;
+}
+
+/* Styl dla kolumn w odpowiedzi na szerokość ekranu, definiuje flex i szerokość */
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-lg-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+}
+
+/* Styl dla przycisków, definiuje padding, czcionkę, kolor, tło, obramowanie, zaokrąglenie i efekty przy interakcji */
+.btn {
+  --bs-btn-color: #212529;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-border-color: transparent;
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-btn-color);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none; /*żeby nie można było zaznaczyć tekstu w przycisku*/
+  border: 1px solid var(--bs-btn-border-color);
+  border-radius: 0.375rem;
+  background-color: var(--bs-btn-bg);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none; /* Wyłącza animacje dla użytkowników preferujących zredukowany ruch */
+  }
+}
+.btn:hover {
+  color: var(--bs-btn-hover-color);
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
+}
+.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
+  color: var(--bs-btn-active-color);
+  background-color: var(--bs-btn-active-bg);
+  border-color: var(--bs-btn-active-border-color);
+}
+
+/*styl dla głównego przycisku, inne style znajdują się w sekcjach*/
+.btn-main {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #7464a1;
+  --bs-btn-border-color: #7464a1;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #635589;
+  --bs-btn-hover-border-color: #5d5081;
+  --bs-btn-focus-shadow-rgb: 137, 123, 175;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #5d5081;
+  --bs-btn-active-border-color: #574b79;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #7464a1;
+  --bs-btn-disabled-border-color: #7464a1;
+}
+
+.btn-abo {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #1a0f38;
+  --bs-btn-border-color: #08001f;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #24115a;
+  --bs-btn-hover-border-color: #5d5081;
+  --bs-btn-focus-shadow-rgb: 137, 123, 175;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #5d5081;
+  --bs-btn-active-border-color: #574b79;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #7464a1;
+  --bs-btn-disabled-border-color: #7464a1;
+}
+
+/* Styl dla ustawienia wyświetlania elementów jako flex */
+.d-flex {
+  display: flex !important;
+}
+
+/* Wyśrodkowanie zawartości elementu w poziomie */
+.justify-content-center {
+  justify-content: center !important;
+}
+
+/* Wyrównanie zawartości elementu do środka w pionie */
+.align-items-center {
+  align-items: center !important;
+}
+
+/* Ustawienie marginesów poziomych */
+.mx-2 {
+  margin-right: 0.5rem !important;
+  margin-left: 0.5rem !important;
+}
+
+/* Automatyczne marginesy poziome, wyśrodkowuje element */
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* Usuwa marginesy pionowe */
+.my-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Ustawienie marginesów pionowych */
+.my-4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Usuwa górny margines */
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+/* Ustawia górny margines na 0.5 rem */
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+/* Ustawia dolny margines na 0.5 rem */
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Ustawia dolny margines na 1.5 rem */
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Ustawia dolny margines na 3 rem */
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+/* Automatyczny margines po lewej stronie, służący do wyrównywania elementu do prawej strony kontenera */
+.ms-auto {
+  margin-left: auto !important;
+}
+
+/* Ustawia poziome paddingi na 1.5 rem */
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+/* Centruje tekst */
+.text-center {
+  text-align: center !important;
+}
+
+/* Zamienia tekst na wielkie litery */
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+/* Ustawia kolor tekstu na biały */
+.text-white {
+  color: rgba(255, 255, 255) !important;
+}
+
+/* Ustawia kolor tekstu na szary */
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* Ustawia kolor tekstu na półprzezroczysty biały */
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Ustawia kolor tła na kolor drugorzędny (secondary) */
+.bg-secondary {
+  background-color: rgba(116, 100, 161) !important;
+}
+
+/* Ustawia kolor tła na czarny */
+.bg-black {
+  background-color: rgba(0, 0, 0) !important;
+}
+
+/* Ustawia większe poziome paddingi na dużych ekranach */
+@media (min-width: 992px) {
+  .px-lg-5 {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+}
+
+
+/*-----------------------------*/
+/* SEKCJA Z PASKIEM NAWIGACYJNYM */
+/*-----------------------------*/
+
+/* Ukrywanie zawartości niepokazywanej (domyślnie nie rozwiniętej) */
+.collapse:not(.show) {
+  display: none;
+}
+
+/* Animacja zwijania, ustawia wysokość na 0 i ukrywa zawartość podczas zwijania */
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+/* Styl dla linków w nawigacji, definiuje blokowe wyświetlanie, padding, czcionkę i kolor */
+.nav-link {
+  display: block;
+  padding: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+/* Zmienia kolor linków w nawigacji po najechaniu lub fokusie */
+.nav-link:hover, .nav-link:focus {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Styl dla paska nawigacyjnego, ustawia pozycję, wyświetlanie, wyrównanie i padding */
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+/* Kontener wewnątrz navbara dziedziczy ustawienia flexa z navbar */
+.navbar > .container {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styl dla nawigacji w navbarze, ustawia wyświetlanie jako flex, kierunek jako kolumnę i usuwa list-style */
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar-logo {
+  height: 30px; /* wysokość obrazka */
+  width: auto; /* automatyczne dostosowanie szerokości */
+  display: inline-block; /* dla lepszego umiejscowienia w linku */
+  vertical-align: middle; /* wyrównanie logo względem tekstu */
+}
+
+
+/* Styl dla zawartości rozwijanej w navbarze, ustawia podstawę i rozwój flexa oraz wyrównanie */
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+/* Styl dla przycisku rozwijania navbaru, definiuje padding, rozmiar czcionki, kolor i styl obramowania */
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.55);
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.375rem;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+/* Usuwa podkreślenie dla przycisku rozwijania navbaru po najechaniu i fokusie */
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem;
+}
+
+/* Styl dla dużego navbara na szerokich ekranach, zmienia ustawienia flexa i rozmieszczenie elementów */
+@media (min-width: 992px) {
+  .navbar-expand-lg {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;  /* zmiana kierunku na rzędowy */
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem; /* Możesz dostosować wartość marginesu */
+}
+.language-selector img {
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s; /* Dodanie animacji */
+}
+.language-selector img:hover {
+  transform: scale(1.1); /* Powiększenie ikony po najechaniu */
+  opacity: 0.8; /* Zmniejszenie przezroczystości po najechaniu */
+}
+.language-selector img.selected {
+  border: 2px solid #007bff; /* Dodanie obramowania dla aktywnej ikony */
+  border-radius: 50%;
+}
+
+/* Pozycjonowanie na górze strony dla elementu */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+/* Styl dla głównego paska nawigacyjnego */
+#mainNav {
+  min-height: 3.5rem;
+  background-color: #000000; /* czarne tło */
+}
+/* Styl dla przycisku rozwijania menu w pasku nawigacyjnym */
+#mainNav .navbar-toggler {
+  font-size: 80%;
+  padding: 0.75rem;
+  color: #64a19d; /* kolor tekstu i obramowania */
+  border: 1px solid #64a19d;
+}
+/* Usuwa obramowanie z przycisku rozwijania przy fokusie */
+#mainNav .navbar-toggler:focus {
+  outline: none;
+}
+/* Styl dla marki (logo) w pasku nawigacyjnym */
+#mainNav .navbar-brand {
+  color: hsl(0, 0%, 100%); /* biały kolor tekstu */
+  font-weight: 700;
+  padding: 0.9rem 0;
+}
+/* Styl dla elementów nawigacyjnych przy najechaniu */
+#mainNav .navbar-nav .nav-item:hover {
+  color: rgba(0, 0, 0, 0.8);
+  outline: none;
+  background-color: transparent;
+}
+/* Styl dla aktywnego lub fokusowanego elementu nawigacyjnego */
+#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+/* Styl dla paska nawigacyjnego na dużych ekranach */
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    background-color: transparent; /* przezroczyste tło */
+    transition: background-color 0.3s ease-in-out; /* animacja zmiany koloru tła */
+  }
+  /* Zmienia styl marki (logo) przy zmniejszeniu paska */
+  #mainNav .navbar-brand {
+    padding: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.5); /* półprzezroczysty biały */
+  }
+  /* Styl dla linków w pasku nawigacyjnym */
+  #mainNav .nav-link {
+    transition: none;
+    padding: 2rem 1.5rem;
+    color: rgba(255, 255, 255, 0.5); /* półprzezroczysty biały */
+  }
+  /* Styl dla linków w pasku nawigacyjnym przy najechaniu */
+  #mainNav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.75); /* jaśniejszy półprzezroczysty biały */
+  }
+  /* Styl dla aktywnego linku w pasku nawigacyjnym */
+  #mainNav .nav-link:active {
+    color: #000000; /* czarny */
+  }
+  /* Styl dla paska nawigacyjnego po zmniejszeniu */
+  #mainNav.navbar-shrink {
+    background-color: #000000; /* tło zmienia się na czarne */
+  }
+  /* Styl dla marki w zmniejszonym pasku nawigacyjnym */
+  #mainNav.navbar-shrink .navbar-brand {
+    color: #ffffff; /* biały */
+  }
+  /* Styl dla linków w zmniejszonym pasku nawigacyjnym */
+  #mainNav.navbar-shrink .nav-link {
+    color: #ffffff; /* biały */
+    padding: 1.5rem 1.5rem 1.25rem;
+    border-bottom: 0.25rem solid transparent;
+  }
+  /* Styl dla linków w zmniejszonym pasku nawigacyjnym przy najechaniu */
+  #mainNav.navbar-shrink .nav-link:hover {
+    color: #64a19d; /* zmienia kolor tekstu na określony odcień turkusowego */
+  }
+
+  /* Styl dla aktywnego linku w zmniejszonym pasku nawigacyjnym przy akcji */
+  #mainNav.navbar-shrink .nav-link:active {
+    color: #467370; /* zmienia kolor tekstu na ciemniejszy odcień turkusowego */
+  }
+
+  /* Styl dla aktywnego linku w zmniejszonym pasku nawigacyjnym */
+  #mainNav.navbar-shrink .nav-link.active {
+    color: #64a19d; /* zmienia kolor tekstu na określony odcień turkusowego */
+    outline: none; /* usuwa obramowanie przy fokusie */
+    border-bottom: 0.25rem solid #64a19d; /* dodaje turkusową linię podkreślającą na dole */
+  }
+
+}
+
+/*-----------------------------*/
+/* SEKCJA Z NAGŁÓWKIEM */
+/*-----------------------------*/
+
+/* Styl dla przycisków w sekcji nagłówka */
+.btn {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important; /* cień dla przycisku */
+  padding: 1.25rem 2rem; /* padding przycisku */
+  font-family: "Varela Round", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* rodzina czcionek */
+  font-size: 80%; /* rozmiar czcionki */
+  text-transform: uppercase; /* wielkie litery */
+  letter-spacing: 0.15rem; /* odstęp między literami */
+  border: 0; /* brak obramowania */
+  width: 100%; /* szerokość na całą dostępną przestrzeń */
+  margin-top: 1rem; /* margines górny */
+}
+
+/* ustawiam różne obrazy na tło w zależności od podstrony */
+.cats {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-cats.jpg");
+}
+
+.iceland {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-iceland.jpg");
+}
+
+.norway {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-norway.jpg");
+}
+
+.covers1 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-covers1.jpg");
+}
+
+.covers2 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-covers2.jpg");
+}
+
+.autumn {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-autumn.jpg");
+}
+
+.winter {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-winter.jpg");
+}
+
+.carmelis {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-carmelis.jpg");
+}
+
+.bc {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-bc.jpg");
+}
+
+.front {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-masthead.jpg");
+}
+
+.who {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-who.jpg");
+}
+
+/* Style dla tła różnych sekcji, położenie, rozmiar i efekt paralaksy */
+.iceland, .norway, .covers1, .autumn, .winter, .carmelis, .bc, .front, .covers2, .cats, .who {
+  position: relative; /* pozycjonowanie względem */
+  width: 100%; /* szerokość na całą dostępną przestrzeń */
+  height: auto; /* wysokość automatyczna */
+  min-height: 35rem; /* minimalna wysokość */
+  padding: 15rem 0; /* padding pionowy */
+  background-position: center; /* centrowanie tła */
+  background-repeat: no-repeat; /* brak powtarzania tła */
+  background-attachment: scroll; /* przewijanie tła razem ze stroną */
+  background-size: cover; /* rozciągnięcie tła na całą dostępną przestrzeń */
+}
+
+/* Style dla przycisków na stronach innych projektów, aby pasowały kolorystycznie*/
+
+.btn-bc {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #a18964;
+  --bs-btn-border-color: #a19364;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #897f55;
+  --bs-btn-hover-border-color: #817650;
+  --bs-btn-focus-shadow-rgb: 137, 123, 175;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #817450;
+  --bs-btn-active-border-color: #796b4b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #a19664;
+  --bs-btn-disabled-border-color: #a18c64;
+}
+
+.btn-carmelis {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #a16492;
+  --bs-btn-border-color: #a164a1;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #895585;
+  --bs-btn-hover-border-color: #81507d;
+  --bs-btn-focus-shadow-rgb: 137, 123, 175;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #815081;
+  --bs-btn-active-border-color: #754b79;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #a164a1;
+  --bs-btn-disabled-border-color: #a164a1;
+}
+
+/* Ustawienie wysokości elementu na 100% */
+.h-100 {
+  height: 100% !important;
+}
+
+/* Styl dla nagłówków w sekcji masthead, zastosowanie gradientów dla tekstu */
+.masthead h1, .masthead .h1, .masthead h2, .masthead .h2 {
+  font-family: "Varela Round", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* rodzina czcionek */
+}
+
+.masthead h1, .masthead .h1 {
+  font-size: 2.5rem; /* rozmiar czcionki */
+  line-height: 2.5rem; /* wysokość linii */
+  letter-spacing: 0.8rem; /* odstęp między literami */
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)); /* gradient dla tekstu */
+  -webkit-text-fill-color: transparent; /* przezroczysty kolor tekstu */
+  background-clip: text;
+}
+
+.masthead h2, .masthead .h2 {
+  max-width: 20rem; /* maksymalna szerokość */
+  font-size: 1rem; /* rozmiar czcionki */
+}
+
+/* Style dla nagłówków w większych rozdzielczościach, dostosowanie rozmiarów */
+@media (min-width: 768px) {
+  .masthead h1, .masthead .h1 {
+    font-size: 4rem; /* większy rozmiar czcionki */
+    line-height: 4rem; /* większa wysokość linii */
+  }
+}
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh; /* wysokość na całą wysokość widoku */
+    padding: 0; /* brak paddingu */
+  }
+  .masthead h1, .masthead .h1 {
+    font-size: 6.5rem; /* jeszcze większy rozmiar czcionki */
+    line-height: 6.5rem; /* jeszcze większa wysokość linii */
+  }
+  .masthead h2, .masthead .h2 {
+    max-width: 30rem; /* większa maksymalna szerokość */
+    font-size: 1.25rem; /* większy rozmiar czcionki */
+  }
+}
+
+/*-----------------------------*/
+/* SEKCJA Z ROZWINIĘCIEM */
+/*-----------------------------*/
+
+/* Ogólny styl dla sekcji 'O mnie/O nas', ustawia duży padding górny, gradient tła i centruje tekst */
+.about-section {
+  padding-top: 10rem; /* duża przestrzeń od górnej krawędzi */
+  background: linear-gradient(to bottom, #000000 0%, #000000 60%, #7464a1 100%); /* gradient tła z czerni do fioletu */
+  text-align: center !important; /* centrowanie tekstu, nadpisuje inne style */
+}
+
+/* Specyficzny styl dla czarnej wersji sekcji 'O mnie/O nas', ustawia tło na czarne */
+.about-section-black {
+  padding-top: 10rem; /* tak samo duża przestrzeń od górnej krawędzi jak w standardowej sekcji */
+  background: black; /* tło ustawione na czarne */
+  text-align: center !important; /* centrowanie tekstu */
+}
+
+/* Styl dla paragrafów w sekcji 'O mnie/O nas', ustawia duży margines dolny */
+.about-section p {
+  margin-bottom: 5rem; /* duży margines dolny dla paragrafów, tworząc przestrzeń pomiędzy tekstami */
+}
+
+/*-----------------------------*/
+/* SEKCJA Z ALBUMAMI */
+/*-----------------------------*/
+
+/*Zrobienie kolumn z obrazkami albumów*/
+@media (min-width: 768px) {
+  .col-album {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .col-album {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+
+/* Styl dla obrazków, które mają być responsywne */
+.img-fluid {
+  max-width: 100%; /* maksymalna szerokość to 100% kontenera, dzięki czemu obrazek skaluje się do szerokości elementu nadrzędnego */
+  height: auto; /* wysokość automatyczna zachowująca proporcje */
+}
+
+/* Styl dla kontenera galerii zdjęć */
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centruje elementy w pionie */
+  gap: 20px; /* Odstęp między elementami */
+}
+
+/* Ogólne style dla sekcji z projektami, definiuje padding */
+.projects-section {
+  padding: 10rem 0; /* duży padding pionowy */
+}
+
+/* Styl dla linków w sekcji albumów, dziedziczy kolor z elementu nadrzędnego */
+.album-link {
+  color: inherit; /* dziedziczy kolor tekstu z elementu nadrzędnego, zachowując jednolitość */
+}
+
+/* Styl dla obrazków albumów, definiuje animację transformacji */
+.album-link .album-img {
+  transition: transform 0.3s ease-in-out; /* animacja transformacji, która trwa 0.3 sekundy */
+}
+
+/* Styl dla obrazków albumów przy najechaniu kursorem, powiększa obrazek */
+.album-link:hover .album-img {
+  transform: scale(1.05); /* skaluje obrazek do 105% jego normalnego rozmiaru */
+}
+
+/* Styl dla obrazków albumów, definiuje margines dolny */
+.album-img {
+  margin-bottom: 20px; /* ustala margines dolny na 20 pikseli */
+}
+
+/*-----------------------------*/
+/*SEKCJA Z INNYMI PROJEKTAMI*/
+/*-----------------------------*/
+
+.carousel {
+  position: relative;
+}
+
+.carousel-img {
+  max-width: 40%;  /* Maksymalna szerokość obrazu to 100% szerokości swojego kontenera */
+  height: auto;     /* Wysokość auto, aby zachować proporcje */
+  border-radius: 70%; /* Zachowujemy okrągły kształt */
+
+}
+
+.carousel-item .carousel-img {
+  transition: transform 0.3s ease-in-out; /* Dodaj efekt przejścia */
+}
+
+.carousel-item:hover .carousel-img {
+  transform: scale(0.95); /* Pmniejsz obrazek po najechaniu kursorem */
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel-inner::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* Centrowanie treści w elementach karuzeli */
+.carousel-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styl dla tekstów w karuzeli, aby były wyśrodkowane pod obrazem */
+.carousel-item h3 {
+  margin-top: 15px; /* Dodaj odstęp między obrazem a tekstem */
+}
+
+.carousel-item {
+  position: relative; /* Pozycjonuje element względem swojego normalnego położenia */
+  display: none; /* Element domyślnie jest ukryty */
+  float: left; /* Elementy są umieszczane po lewej stronie */
+  width: 100%; /* Szerokość elementu ustawiona na 100% rodzica */
+  margin-right: -100%; /* Ujemny margines prawy, by przesunąć elementy */
+  transition: transform 0.6s ease-in-out; /* Animacja transformacji trwa 0.6s, płynne przyspieszenie i zwolnienie */
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block; /* Aktywne elementy są widoczne */
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+  transform: translateX(100%); /* Przesunięcie elementu o 100% jego szerokości w prawo */
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+  transform: translateX(-100%); /* Przesunięcie elementu o 100% jego szerokości w lewo */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute; /* Pozycjonuje kontrolki absolutnie względem najbliższego pozycjonowanego przodka */
+  top: 0; /* Górna krawędź kontrolki wyrównana do górnej krawędzi kontenera */
+  bottom: 0; /* Dolna krawędź kontrolki wyrównana do dolnej krawędzi kontenera */
+  z-index: 1; /* Kontrolki są umieszczone nad innymi elementami */
+  display: flex; /* Ustawia model wyświetlania na flex, umożliwiający centrowanie dzieci */
+  align-items: center; /* Centruje elementy pionowo w kontenerze */
+  justify-content: center; /* Centruje elementy poziomo w kontenerze */
+  width: 15%; /* Szerokość kontrolki to 15% szerokości kontenera */
+  padding: 0; /* Bez wewnętrznego marginesu */
+  color: #fff; /* Biały kolor tekstu */
+  text-align: center; /* Tekst wyśrodkowany */
+  background: none; /* Bez tła */
+  border: 0; /* Bez ramki */
+  opacity: 0.5; /* Półprzezroczystość kontrolki */
+  transition: opacity 0.15s ease; /* Animacja przeźroczystości trwa 0.15s */
+}
+
+.carousel-control-prev {
+  left: 0; /* Kontrolka poprzednia wyrównana do lewej */
+}
+
+.carousel-control-next {
+  right: 0; /* Kontrolka następna wyrównana do prawej */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block; /* Elementy wyświetlane jako bloki liniowe */
+  width: 2rem; /* Szerokość ikon wynosi 2 rem */
+  height: 2rem; /* Wysokość ikon wynosi 2 rem */
+  background-repeat: no-repeat; /* Tło nie powtarza się */
+  background-position: 50%; /* Pozycjonowanie tła w centrum */
+  background-size: 100% 100%; /* Rozmiar tła dopasowany do kontenera */
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e"); 
+  /* Grafika ikony kontrolki poprzedniej */
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
+  /* Grafika ikony kontrolki następnej */
+}
+
+
+/*-----------------------------*/
+/*SEKCJA Z FORMULARZEM*/
+/*-----------------------------*/
+
+/* Style dla przycisków typu primary na zmiennych dla ułatwienia i przejżystości */
+.btn-form {
+  --bs-btn-color: #fff;  /* kolor tekstu */
+  --bs-btn-bg: #64a19d;  /* kolor tła */
+  --bs-btn-border-color: #64a19d;  /* kolor obramowania */
+  --bs-btn-hover-color: #fff;  /* kolor tekstu po najechaniu */
+  --bs-btn-hover-bg: #558985;  /* kolor tła po najechaniu */
+  --bs-btn-hover-border-color: #50817e;  /* kolor obramowania po najechaniu */
+  --bs-btn-focus-shadow-rgb: 123, 175, 172;  /* kolor cienia przy fokusie */
+  --bs-btn-active-color: #fff;  /* kolor tekstu w stanie aktywnym */
+  --bs-btn-active-bg: #50817e;  /* kolor tła w stanie aktywnym */
+  --bs-btn-active-border-color: #4b7976;  /* kolor obramowania w stanie aktywnym */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);  /* cień w stanie aktywnym */
+  --bs-btn-disabled-color: #fff;  /* kolor tekstu w stanie wyłączonym */
+  --bs-btn-disabled-bg: #64a19d;  /* kolor tła w stanie wyłączonym */
+  --bs-btn-disabled-border-color: #64a19d;  /* kolor obramowania w stanie wyłączonym */
+}
+
+.signup-section {
+  padding: 10rem 0; /* Dostosowuje górną i dolną wypełnienie sekcji do 10 rem */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../images/bg-signup.jpg"); /* Gradient na tle oraz obraz tła */
+  background-position: center; /* Centruje obraz tła */
+  background-repeat: no-repeat; /* Zapobiega powtarzaniu się tła */
+  background-attachment: scroll; /* Tło przewija się wraz z treścią */
+  background-size: cover; /* Tło pokrywa całą dostępną przestrzeń */
+  color: #fff; /* Ustawia kolor tekstu na biały */
+}
+.signup-section .form-signup input {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important; /* Dodaje cień do elementów input */
+  padding: 1.25rem 2rem; /* Dostosowuje wewnętrzne wypełnienie elementów input */
+  height: auto; /* Wysokość input ustawiona na auto */
+  font-family: "Varela Round", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Definiuje rodzinę czcionek dla input */
+  font-size: 80%; /* Ustawia rozmiar czcionki na 80% wartości dziedziczonej */
+  text-transform: uppercase; /* Tekst w input zostaje przekształcony na wielkie litery */
+  letter-spacing: 0.15rem; /* Dostosowuje odstępy między literami */
+  border: 0; /* Usuwa obramowanie */
+}
+
+/* Stylizacja błędów formularza */
+.form-error {
+  margin-bottom: 20px; /* Zwiększa margines dolny */
+  padding: 10px; /* Zwiększa padding wewnętrzny */
+  border-radius: 5px; /* Zaokrąglenie rogów */
+  max-width: 400px; /* Ustawia maksymalną szerokość komunikatu */
+  margin: 10px auto; /* Wyśrodkowuje komunikat */
+  background-color: #f8d7da; /* Kolor tła dla błędu */
+  color: #721c24; /* Kolor tekstu */
+  border: 1px solid #f5c6cb; /* Kolor obramowania */
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem; /* Odstęp między etykietą a polem */
+  font-weight: bold; /* Opcjonalne: pogrubienie tekstu */
+}
+
+
+.form-signup {
+  background: rgba(255, 255, 255, 0.1); /* Tło formularza jest lekko przezroczyste */
+  padding: 2rem; /* Wypełnienie formularza */
+  border-radius: 8px; /* Zaokrąglenie rogów formularza */
+}
+
+.form-control {
+  display: block; /* Elementy form-control są blokowe */
+  width: 100%; /* Szerokość na 100% kontenera */
+  padding: 0.375rem 0.75rem; /* Wewnętrzne wypełnienie */
+  font-size: 1rem; /* Rozmiar czcionki */
+  font-weight: 400; /* Grubość czcionki */
+  line-height: 1.5; /* Wysokość linii */
+  color: #212529; /* Kolor tekstu */
+  background-color: #fff; /* Kolor tła */
+  background-clip: padding-box; /* Tło tylko wewnątrz wypełnienia */
+  border: 1px solid #ced4da; /* Obramowanie */
+  border-radius: 0.375rem; /* Zaokrąglenie rogów */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Animacja zmiany koloru obramowania i cienia */
+}
+
+.form-control, .form-check-input {
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.8); /* Lekko przezroczyste tło dla kontrolek formularza */
+  border: 0; /* Brak obramowania */
+  border-radius: 0.375rem; /* Zaokrąglenie rogów */
+}
+
+.form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25); /* Efekt podświetlenia (focus glow) przy aktywacji pola */
+}
+
+.form-check-label {
+  margin-left: 0.5rem; /* Odstęp etykiety od pola wyboru */
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-control {
+    transition: none; /* Wyłącza animacje dla użytkowników, którzy preferują mniej ruchu */
+  }
+}
+.form-control[type=file] {
+  overflow: hidden; /* Ukrywa nadmiar treści */
+}
+.form-control[type=file]:not(:disabled):not([readonly]) {
+  cursor: pointer; /* Kursor wskazujący dla aktywnych pól typu file */
+}
+.form-control:focus {
+  color: #212529; /* Kolor tekstu przy fokusie */
+  background-color: #fff; /* Kolor tła przy fokusie */
+  border-color: #b2d0ce; /* Kolor obramowania przy fokusie */
+  outline: 0; /* Usuwa zewnętrzne obramowanie przy fokusie */
+  box-shadow: 0 0 0 0.25rem rgba(100, 161, 157, 0.25); /* Cień podświetlenia przy fokusie */
+}
+.form-control::placeholder {
+  color: #6c757d; /* Kolor tekstu w polu zastępczym */
+  opacity: 1; /* Nieprzezroczystość tekstu zastępczego */
+}
+.form-control:disabled {
+  background-color: #e9ecef; /* Kolor tła dla nieaktywnych pól */
+  opacity: 1; /* Nieprzezroczystość dla nieaktywnych pól */
+}
+
+textarea.form-control {
+  min-height: calc(1.5em + 0.75rem + 2px); /* Minimalna wysokość textarea */
+}
+
+.form-check {
+  display: flex; /* Kontrolki form-check są blokowe */
+  align-items: center;
+  min-height: 1.5rem; /* Minimalna wysokość */
+  padding-left: 1.5em; /* Lewe wypełnienie */
+  margin-bottom: 0.125rem; /* Margines dolny */
+}
+.form-check .form-check-input {
+  float: left; /* Checkboxy i radiobuttony są wyrównane do lewej */
+  margin-left: -1.5em; /* Lewy margines dla wyrównania */
+}
+
+.form-check-input {
+  width: 1rem; /* Szerokość */
+  height: 1rem; /* Wysokość */
+  margin-top: 0.25rem; /* Górny margines */
+  vertical-align: middle; /* Wyrównanie pionowe */
+  background-color: #fff; /* Kolor tła */
+  background-repeat: no-repeat; /* Tło nie powtarza się */
+  background-position: center; /* Tło wyśrodkowane */
+  background-size: contain; /* Rozmiar tła dopasowany do zawartości */
+  border: 1px solid rgba(0, 0, 0, 0.25); /* Obramowanie */
+}
+.form-check-input[type=checkbox] {
+  border-radius: 0.25rem; /* Zaokrąglenie rogów dla checkbox */
+}
+.form-check-input[type=radio] {
+  border-radius: 50%; /* Okrągłe rogi dla radio */
+}
+.form-check-input:active {
+  filter: brightness(90%); /* Zmniejsza jasność przy aktywacji */
+}
+.form-check-input:focus {
+  border-color: #b2d0ce; /* Kolor obramowania przy fokusie */
+  outline: 0; /* Usuwa zewnętrzne obramowanie przy fokusie */
+  box-shadow: 0 0 0 0.25rem rgba(100, 161, 157, 0.25); /* Cień podświetlenia przy fokusie */
+}
+.form-check-input:checked {
+  background-color: #64a19d; /* Kolor tła po zaznaczeniu */
+  border-color: #5a8d89; /* Kolor obramowania po zaznaczeniu */
+}
+.form-check-input:checked[type=checkbox] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e"); 
+  /* Obraz tła dla zaznaczonego checkbox */
+}
+.form-check-input:checked[type=radio] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e"); 
+  /* Obraz tła dla zaznaczonego radio */
+}
+.form-check-input[type=checkbox]:indeterminate {
+  background-color: #64a19d; /* Kolor tła dla stanu nieokreślonego */
+  border-color: #5a8d89; /* Kolor obramowania dla stanu nieokreślonego */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e"); /* Obraz tła dla stanu nieokreślonego */
+}
+
+/*-----------------------------*/
+/*SEKCJA ZE STOPKĄ I LINKAMI*/
+/*-----------------------------*/
+
+/* Stylizacje dla mniejszej czcionki */
+.small {
+  font-size: 0.875em;
+}
+
+.contact-section {
+  padding-top: 5rem; /* Dodaje górną wypełnienie sekcji kontaktowej wynoszące 5 rem */
+}
+
+.contact-section .social {
+  margin-top: 5rem; /* Ustawia margines górny dla kontenera z linkami społecznościowymi na 5 rem */
+}
+
+.contact-section .social a {
+  text-align: center; /* Centruje tekst wewnątrz linków */
+  height: 3rem; /* Ustawia wysokość linków na 3 rem */
+  width: 3rem; /* Ustawia szerokość linków na 3 rem */
+  background: rgba(255, 255, 255, 0.1); /* Ustawia przezroczyste, białe tło linków */
+  border-radius: 100%; /* Nadaje linkom okrągły kształt */
+  line-height: 3rem; /* Ustawia wysokość linii tekstu na 3 rem, aby tekst był wyśrodkowany pionowo */
+  color: rgba(255, 255, 255, 0.3); /* Ustawia kolor tekstu (ikony) na słabo widoczną biel */
+}
+
+.contact-section .social a:hover {
+  color: rgba(255, 255, 255, 0.5); /* Zmienia kolor tekstu na jaśniejszą biel podczas najechania kursorem */
+}
+
+.footer {
+  padding: 5rem 0; /* Ustawia wypełnienie górne i dolne stopki na 5 rem */
+}

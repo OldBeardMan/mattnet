@@ -1,158 +1,150 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matt Krupa</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      min-height: 100vh;
-    }
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="I make ambient, electronic, acoustic and sometimes alternative music. Playing guitar, bass and piano (and some other funny instruments).">
+        <title>Matt Krupa</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <!-- Fonts -->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <!-- Project CSS -->
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body id="page-top">
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(3px);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">
+                    <img src="images/logo.png" alt="Matt Krupa Logo" class="navbar-logo">
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#albums">Music</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    .container {
-      text-align: center;
-      max-width: 500px;
-      width: 100%;
-    }
+        <!-- Header -->
+        <header class="front masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Matt Krupa</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Ambient, electronic and acoustic music. Sometimes a singer too.</h2>
+                        <a class="btn btn-main" href="#about">Get to know him</a>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    .logo {
-      max-width: 180px;
-      margin-bottom: 20px;
-    }
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4">Hi, I'm Matt and I make music.</h2>
+                        <p class="text-white-50">
+                            I make ambient, electronic, acoustic and sometimes alternative music. Playing guitar, bass and piano (and some other funny instruments).
+                            If you wanna know more about Matt just click the button below!
+                            If you wanna listen to my music, just keep scrolling. Here on this site you can find all of it and listen to it freely.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    h1 {
-      margin-bottom: 30px;
-      font-size: 28px;
-      color: white;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-    }
+        <!-- Albums Section -->
+        <section class="projects-section bg-secondary text-white" id="albums">
+            <div class="container px-4 px-lg-5">
 
-    .links a {
-      display: block;
-      margin: 12px 0;
-      padding: 16px;
-      background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
+                <!-- Albums Title -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mt-0">All of my work</h2>
+                        <p class="text-white-50">Feel free to listen to any of it on this site</p>
+                        <hr class="light my-4">
+                    </div>
+                </div>
 
-    .links a i {
-      margin-right: 12px;
-      color: #63b3ed;
-      font-size: 20px;
-    }
+                <!-- Albums Grid -->
+                <div class="row justify-content-center">
+                    <div class="col-album text-center">
+                        <a href="pages/albums/lostkittens.html" class="album-link">
+                            <img class="img-fluid album-img" src="images/CAT1.jpg" alt="Lost Kittens">
+                            <h3>Lost Kittens</h3>
+                        </a>
+                    </div>
+                    <div class="col-album text-center">
+                        <a href="pages/albums/covers2.html" class="album-link">
+                            <img class="img-fluid album-img" src="images/Vol2.jpg" alt="Covers Vol. 2">
+                            <h3>Covers Vol.2</h3>
+                        </a>
+                    </div>
+                    <div class="col-album text-center">
+                        <a href="pages/albums/iceland.html" class="album-link">
+                            <img class="img-fluid album-img" src="images/Iceland.png" alt="Iceland">
+                            <h3>Iceland</h3>
+                        </a>
+                    </div>
+                    <div class="col-album text-center">
+                        <a href="pages/albums/norway.html" class="album-link">
+                            <img class="img-fluid album-img" src="images/Norway.png" alt="Norway">
+                            <h3>Norway</h3>
+                        </a>
+                    </div>
+                    <div class="col-album text-center">
+                        <a href="pages/albums/winter.html" class="album-link">
+                            <img class="img-fluid album-img" src="images/Winter.jpg" alt="Winter">
+                            <h3>Winter</h3>
+                        </a>
+                    </div>
+                    <div class="col-album text-center">
+                        <a href="pages/albums/covers1.html" class="album-link">
+                            <img class="img-fluid album-img" src="images/Vol1.jpg" alt="Covers Vol.1">
+                            <h3>Covers Vol.1</h3>
+                        </a>
+                    </div>
+                    <div class="col-album text-center">
+                        <a href="pages/albums/autumn.html" class="album-link">
+                            <img class="img-fluid album-img" src="images/Autumn.jpg" alt="In The Autumn Forest">
+                            <h3>In The Autumn Forest</h3>
+                        </a>
+                    </div>
+                </div>
 
-    .links a:hover {
-      background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(49, 130, 206, 0.3);
-      border-color: rgba(99, 179, 237, 0.3);
-    }
+            </div>
+        </section>
 
-    .links a:hover i {
-      color: #ffffff;
-    }
+        <!-- Social Links -->
+        <div class="contact-section bg-black">
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://www.youtube.com/channel/UCGIB3mFHUD2Fh-MthueSbXQ"><i class="fab fa-youtube"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/mattkrupamusic"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://www.instagram.com/matt.krupa.music/"><i class="fab fa-instagram"></i></a>
+                    <a class="mx-2" href="https://mattkrupa.bandcamp.com/"><i class="fab fa-bandcamp"></i></a>
+                    <a class="mx-2" href="https://open.spotify.com/artist/0hduI8doHSaCxLeb2s9t08?si=rYerSEUySua6srCSQNYbeA&nd=1&dlsi=7c1b7838f394433f"><i class="fab fa-spotify"></i></a>
+                    <a class="mx-2" href="https://music.apple.com/gb/artist/matt-krupa/932056625"><i class="fab fa-itunes"></i></a>
+                </div>
+        </div>
 
-    .links a:active {
-      transform: translateY(0);
-    }
+        <!-- Footer -->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Matt Krupa 2020-2024</div></footer>
 
-    /* Spotify specific styling */
-    .links a[href*="spotify"]:hover {
-      background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
-      box-shadow: 0 8px 20px rgba(29, 185, 84, 0.3);
-    }
-
-    /* YouTube specific styling */
-    .links a[href*="youtube"]:hover {
-      background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
-      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
-    }
-
-    /* Apple Music specific styling */
-    .links a[href*="apple"]:hover {
-      background: linear-gradient(135deg, #fa233b 0%, #ff6b6b 100%);
-      box-shadow: 0 8px 20px rgba(250, 35, 59, 0.3);
-    }
-
-    /* Bandcamp specific styling */
-    .links a[href*="bandcamp"]:hover {
-      background: linear-gradient(135deg, #629aa0 0%, #408e96 100%);
-      box-shadow: 0 8px 20px rgba(98, 154, 160, 0.3);
-    }
-
-    /* Facebook specific styling */
-    .links a[href*="facebook"]:hover {
-      background: linear-gradient(135deg, #1877f2 0%, #42a5f5 100%);
-      box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3);
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        margin: 10px;
-        padding: 30px 15px;
-      }
-      
-      h1 {
-        font-size: 24px;
-      }
-      
-      .links a {
-        font-size: 16px;
-        padding: 14px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="overlay">
-    <div class="container">
-      <img src="logo.png" alt="Logo" class="logo">
-      <h1>Where to find me</h1>
-      <div class="links">
-        <a href="https://open.spotify.com/artist/0hduI8doHSaCxLeb2s9t08?si=7CwB8nilRhCdpgniGtEp_w" target="_blank">
-          <i class="fab fa-spotify"></i> Spotify
-        </a>
-        <a href="https://mattkrupa.bandcamp.com" target="_blank">
-          <i class="fab fa-bandcamp"></i> Bandcamp
-        </a>
-        <a href="https://music.apple.com/pl/artist/matt-krupa/932056625" target="_blank">
-          <i class="fab fa-apple"></i> Apple Music
-        </a>
-        <a href="https://www.youtube.com/channel/UCGIB3mFHUD2Fh-MthueSbXQ" target="_blank">
-          <i class="fab fa-youtube"></i> YouTube
-        </a>
-        <a href="https://www.facebook.com/mattkrupamusic" target="_blank">
-          <i class="fab fa-facebook"></i> Facebook
-        </a>
-      </div>
-    </div>
-  </div>
-</body>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JS -->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
