@@ -1189,6 +1189,101 @@ textarea.form-control {
 }
 
 /*-----------------------------*/
+/*SEKCJA Z NEWSAMI/BLOGIEM*/
+/*-----------------------------*/
+
+/* Styl dla sekcji z newsami */
+.news-section {
+  padding: 10rem 0;
+}
+
+/* Styl dla kontenera z postami */
+#blog-posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Styl dla pojedynczego posta */
+.blog-post {
+  background: rgba(116, 100, 161, 0.1);
+  border-left: 4px solid #7464a1;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.blog-post:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(116, 100, 161, 0.3);
+}
+
+/* Header posta */
+.blog-post-header {
+  margin-bottom: 1rem;
+}
+
+.blog-post-title {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.blog-post-date {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Obrazek w poście */
+.blog-post-image {
+  width: 100%;
+  margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 0.375rem;
+}
+
+.blog-post-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-post:hover .blog-post-image img {
+  transform: scale(1.05);
+}
+
+/* Zawartość posta */
+.blog-post-content {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.blog-post-content p {
+  margin-bottom: 0;
+}
+
+/* Linia oddzielająca dla news section */
+hr.light {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Styl dla strony z newsami - header z tłem */
+.news-header {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-signup.jpg");
+}
+
+/* Styl dla sekcji z zawartością newsów */
+.news-content-section {
+  padding: 5rem 0;
+  min-height: 50vh;
+}
+
+/*-----------------------------*/
 /*SEKCJA ZE STOPKĄ I LINKAMI*/
 /*-----------------------------*/
 
