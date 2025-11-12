@@ -86,6 +86,7 @@ async function loadBlogPosts() {
 function createPostElement(post) {
     const article = document.createElement('article');
     article.className = 'blog-post';
+    article.style.cursor = 'pointer';
 
     // Format date
     const date = new Date(post.date);
@@ -113,5 +114,75 @@ function createPostElement(post) {
         </div>
     `;
 
+    // Add click event to open modal
+    article.addEventListener('click', () => openPostModal(post));
+
     return article;
 }
+
+// Function to open modal with post details
+function openPostModal(post) {
+    const modal = document.getElementById('post-modal');
+    const modalTitle = document.getElementById('modal-post-title');
+    const modalDate = document.getElementById('modal-post-date');
+    const modalContent = document.getElementById('modal-post-content');
+    const modalImage = document.getElementById('modal-post-image');
+
+    // Format date
+    const date = new Date(post.date);
+    const formattedDate = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    // Set modal content
+    modalTitle.textContent = post.title;
+    modalDate.textContent = formattedDate;
+    modalContent.innerHTML = `<p>${post.content}</p>`;
+
+    // Set image if exists
+    if (post.image && post.image.trim() !== '') {
+        modalImage.innerHTML = `<img src="${post.image}" alt="${post.title}">`;
+        modalImage.style.display = 'block';
+    } else {
+        modalImage.innerHTML = '';
+        modalImage.style.display = 'none';
+    }
+
+    // Show modal
+    modal.classList.add('show');
+}
+
+// Function to close modal
+function closePostModal() {
+    const modal = document.getElementById('post-modal');
+    modal.classList.remove('show');
+}
+
+// Set up modal close functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('post-modal');
+    const closeBtn = document.querySelector('.post-modal-close');
+
+    // Close when clicking X button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closePostModal);
+    }
+
+    // Close when clicking outside the modal content
+    if (modal) {
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closePostModal();
+            }
+        });
+    }
+
+    // Close when pressing Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closePostModal();
+        }
+    });
+});
