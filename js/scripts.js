@@ -150,8 +150,47 @@ function openPostModal(post) {
         modalImage.style.display = 'none';
     }
 
+    // Load Giscus comments for this specific post
+    loadGiscusComments(post);
+
     // Show modal
     modal.classList.add('show');
+}
+
+// Function to load Giscus comments dynamically
+function loadGiscusComments(post) {
+    const giscusContainer = document.querySelector('.giscus');
+
+    // Clear existing comments
+    giscusContainer.innerHTML = '';
+
+    // Remove existing Giscus script if present
+    const existingScript = document.querySelector('script[src*="giscus.app"]');
+    if (existingScript) {
+        existingScript.remove();
+    }
+
+    // Create new Giscus script with post-specific term
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'OldBeardMan/mattnet');
+    script.setAttribute('data-repo-id', 'R_kgDOQPnOgw');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOQPnOg84CzS2L');
+    script.setAttribute('data-mapping', 'specific');
+    script.setAttribute('data-term', `post-${post.id}-${post.title}`);
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'dark');
+    script.setAttribute('data-lang', 'en');
+    script.setAttribute('data-loading', 'lazy');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    // Append script to Giscus container
+    giscusContainer.appendChild(script);
 }
 
 // Function to close modal
