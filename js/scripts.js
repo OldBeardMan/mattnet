@@ -251,41 +251,10 @@ async function loadPostStats(post) {
     const commentCountElement = statsElement.querySelector('.comment-count');
     const reactionCountElement = statsElement.querySelector('.reaction-count');
 
-    try {
-        // GitHub GraphQL API endpoint
-        const response = await fetch('https://api.github.com/graphql', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                query: `
-                    query {
-                        repository(owner: "OldBeardMan", name: "mattnet") {
-                            discussion(number: 0) {
-                                comments {
-                                    totalCount
-                                }
-                                reactions {
-                                    totalCount
-                                }
-                            }
-                        }
-                    }
-                `
-            })
-        });
-
-        // For now, show 0 since we need proper discussion mapping
-        // This will be updated once discussions are properly created
-        commentCountElement.textContent = '0';
-        reactionCountElement.textContent = '0';
-
-    } catch (error) {
-        console.error('Error loading post stats:', error);
-        commentCountElement.textContent = '0';
-        reactionCountElement.textContent = '0';
-    }
+    // For now, just show 0 for both
+    // TODO: Implement proper GitHub Discussions API integration with authentication
+    commentCountElement.textContent = '0';
+    reactionCountElement.textContent = '0';
 }
 
 // Function to load latest news for homepage
