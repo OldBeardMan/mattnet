@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Latest news and updates from Matt Krupa - ambient, electronic and acoustic music artist.">
-        <title>News about the MATT person</title>
+        <meta name="description" content="All music albums by Matt Krupa - ambient, electronic and acoustic music.">
+        <title>Music - Matt Krupa</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <!-- Fonts -->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -29,54 +29,34 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/albums.html">Music</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="/news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/albums.html">Music</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/news.html">News</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Header with Background -->
-        <header class="news-header masthead">
+        <!-- Header -->
+        <header class="albums-header masthead">
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">News</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Stay updated with the latest releases and updates</h2>
+                        <h1 class="mx-auto my-0 text-uppercase">Music</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">All of my work - feel free to listen</h2>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- News Section -->
-        <section class="news-content-section bg-black text-white" id="news">
+        <!-- Albums Section -->
+        <section class="projects-section bg-secondary text-white" id="albums">
             <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div id="blog-posts-container">
-                            <!-- Blog posts will be loaded here by JavaScript -->
-                        </div>
-                    </div>
+                <!-- Albums Grid -->
+                <div class="row justify-content-center" id="albums-container">
+                    <!-- Albums will be loaded here by JavaScript -->
                 </div>
             </div>
         </section>
-
-        <!-- Modal Popup -->
-        <div id="post-modal" class="post-modal">
-            <div class="post-modal-content">
-                <span class="post-modal-close">&times;</span>
-                <div id="modal-post-image" class="modal-post-image"></div>
-                <h2 id="modal-post-title" class="modal-post-title"></h2>
-                <p id="modal-post-date" class="modal-post-date"></p>
-                <div id="modal-post-content" class="modal-post-content"></div>
-
-                <!-- Giscus Comments Section -->
-                <div class="comments-section">
-                    <h3 class="comments-title">Comments</h3>
-                    <div class="giscus"></div>
-                </div>
-            </div>
-        </div>
 
         <!-- Social Links -->
         <div class="contact-section bg-black">
@@ -95,7 +75,7 @@
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Custom JS (includes Giscus dynamic loading) -->
-        <script src="js/scripts.js"></script>
+        <!-- Custom JS -->
+        <script src="js/albums.js"></script>
     </body>
 </html>

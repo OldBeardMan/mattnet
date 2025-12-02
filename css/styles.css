@@ -1262,6 +1262,33 @@ textarea.form-control {
   margin-bottom: 0;
 }
 
+/* Statystyki posta (komentarze i reakcje) */
+.blog-post-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(116, 100, 161, 0.3);
+}
+
+.blog-post-stats .stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.blog-post-stats .stat-item i {
+  color: #7464a1;
+}
+
+.blog-post-stats .comment-count,
+.blog-post-stats .reaction-count {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* Linia oddzielająca dla news section */
 hr.light {
   border-color: rgba(255, 255, 255, 0.3);
@@ -1272,10 +1299,60 @@ hr.light {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-signup.jpg");
 }
 
+/* Styl dla strony z albumami - header z tłem */
+.albums-header {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-masthead.jpg");
+}
+
 /* Styl dla sekcji z zawartością newsów */
 .news-content-section {
   padding: 5rem 0;
   min-height: 50vh;
+}
+
+/* Styl dla sekcji z najnowszym newsem na stronie głównej */
+.latest-news-section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.latest-news-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #7464a1, transparent);
+}
+
+.latest-news-section h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* Wyróżnienie sekcji z albumami */
+.projects-section h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* Większy album na stronie głównej */
+#latest-album-container .album-link {
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#latest-album-container .album-link:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(116, 100, 161, 0.4);
+}
+
+#latest-album-container .album-img {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Styl dla modala */

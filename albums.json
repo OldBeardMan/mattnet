@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Lost Kittens",
+    "date": "2024-11-15",
+    "image": "images/CAT1.jpg",
+    "url": "albums/lostkittens"
+  },
+  {
+    "id": 2,
+    "title": "Covers Vol.2",
+    "date": "2024-09-20",
+    "image": "images/Vol2.jpg",
+    "url": "albums/covers2"
+  },
+  {
+    "id": 3,
+    "title": "Iceland",
+    "date": "2024-06-10",
+    "image": "images/Iceland.png",
+    "url": "albums/iceland"
+  },
+  {
+    "id": 4,
+    "title": "Norway",
+    "date": "2024-03-22",
+    "image": "images/Norway.png",
+    "url": "albums/norway"
+  },
+  {
+    "id": 5,
+    "title": "Winter",
+    "date": "2023-12-01",
+    "image": "images/Winter.jpg",
+    "url": "albums/winter"
+  },
+  {
+    "id": 6,
+    "title": "Covers Vol.1",
+    "date": "2023-08-15",
+    "image": "images/Vol1.jpg",
+    "url": "albums/covers1"
+  },
+  {
+    "id": 7,
+    "title": "In The Autumn Forest",
+    "date": "2023-05-10",
+    "image": "images/Autumn.jpg",
+    "url": "albums/autumn"
+  }
+]

@@ -1,7 +1,11 @@
 window.addEventListener('DOMContentLoaded', event => {
 
-    // Load and render blog posts
+    // Load and render blog posts (for news.html)
     loadBlogPosts();
+
+    // Load latest news and album for homepage
+    loadLatestNews();
+    loadLatestAlbum();
 
     // Navbar shrink function
     var navbarShrink = function () {
@@ -112,10 +116,23 @@ function createPostElement(post) {
         <div class="blog-post-content">
             <p>${post.content}</p>
         </div>
+        <div class="blog-post-stats" data-post-id="${post.id}">
+            <span class="stat-item">
+                <i class="fas fa-comment"></i>
+                <span class="comment-count">...</span>
+            </span>
+            <span class="stat-item">
+                <i class="fas fa-heart"></i>
+                <span class="reaction-count">...</span>
+            </span>
+        </div>
     `;
 
     // Add click event to open modal
     article.addEventListener('click', () => openPostModal(post));
+
+    // Load stats for this post
+    loadPostStats(post);
 
     return article;
 }
@@ -225,3 +242,100 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Function to load post statistics (comments and reactions)
+async function loadPostStats(post) {
+    const statsElement = document.querySelector(`.blog-post-stats[data-post-id="${post.id}"]`);
+    if (!statsElement) return;
+
+    const commentCountElement = statsElement.querySelector('.comment-count');
+    const reactionCountElement = statsElement.querySelector('.reaction-count');
+
+    try {
+        // GitHub GraphQL API endpoint
+        const response = await fetch('https://api.github.com/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                query: `
+                    query {
+                        repository(owner: "OldBeardMan", name: "mattnet") {
+                            discussion(number: 0) {
+                                comments {
+                                    totalCount
+                                }
+                                reactions {
+                                    totalCount
+                                }
+                            }
+                        }
+                    }
+                `
+            })
+        });
+
+        // For now, show 0 since we need proper discussion mapping
+        // This will be updated once discussions are properly created
+        commentCountElement.textContent = '0';
+        reactionCountElement.textContent = '0';
+
+    } catch (error) {
+        console.error('Error loading post stats:', error);
+        commentCountElement.textContent = '0';
+        reactionCountElement.textContent = '0';
+    }
+}
+
+// Function to load latest news for homepage
+async function loadLatestNews() {
+    const container = document.getElementById('latest-news-container');
+    if (!container) return; // Only run on homepage
+
+    try {
+        const response = await fetch('blog-posts.json');
+        const posts = await response.json();
+
+        // Sort by date and get the latest
+        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const latestPost = posts[0];
+
+        if (latestPost) {
+            const postElement = createPostElement(latestPost);
+            container.appendChild(postElement);
+        }
+
+    } catch (error) {
+        console.error('Error loading latest news:', error);
+        container.innerHTML = '<p class="text-white-50 text-center">Unable to load latest news.</p>';
+    }
+}
+
+// Function to load latest album for homepage
+async function loadLatestAlbum() {
+    const container = document.getElementById('latest-album-container');
+    if (!container) return; // Only run on homepage
+
+    try {
+        const response = await fetch('albums.json');
+        const albums = await response.json();
+
+        // Sort by date and get the latest
+        albums.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const latestAlbum = albums[0];
+
+        if (latestAlbum) {
+            container.innerHTML = `
+                <a href="${latestAlbum.url}" class="album-link">
+                    <img class="img-fluid album-img" src="${latestAlbum.image}" alt="${latestAlbum.title}">
+                    <h3>${latestAlbum.title}</h3>
+                </a>
+            `;
+        }
+
+    } catch (error) {
+        console.error('Error loading latest album:', error);
+        container.innerHTML = '<p class="text-white-50 text-center">Unable to load latest album.</p>';
+    }
+}
