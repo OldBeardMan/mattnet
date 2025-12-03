@@ -243,6 +243,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Function to load post statistics (comments and reactions) from GitHub Discussions
+async function loadPostStats(post) {
+    const statsElement = document.querySelector(`.blog-post-stats[data-post-id="${post.id}"]`);
+    if (!statsElement) return;
+
+    const commentCountElement = statsElement.querySelector('.comment-count');
+    const reactionCountElement = statsElement.querySelector('.reaction-count');
+
+    try {
+        // Use GitHub Discussions API to get comment and reaction counts
+        const discussionTerm = `post-${post.id}-${post.title}`;
+
+        // GitHub GraphQL API endpoint
+        const query = `
+            query {
+                repository(owner: "OldBeardMan", name: "mattnet") {
+                    discussions(first: 1, categoryId: "DIC_kwDOQPnOg84CzS2L") {
+                        nodes {
+                            title
+                            comments {
+                                totalCount
+                            }
+                            reactions {
+                                totalCount
+                            }
+                        }
+                    }
+                }
+            }
+        `;
+
+        // Note: This is a public API call, but it has rate limits
+        // For production, consider caching or using a backend proxy
+        const response = await fetch('https://api.github.com/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            const discussions = data.data?.repository?.discussions?.nodes || [];
+
+            // Find the discussion matching this post
+            const discussion = discussions.find(d => d.title === discussionTerm);
+
+            if (discussion) {
+                commentCountElement.textContent = discussion.comments.totalCount;
+                reactionCountElement.textContent = discussion.reactions.totalCount;
+            } else {
+                // No discussion yet
+                commentCountElement.textContent = '0';
+                reactionCountElement.textContent = '0';
+            }
+        } else {
+            // API call failed, show 0
+            commentCountElement.textContent = '0';
+            reactionCountElement.textContent = '0';
+        }
+    } catch (error) {
+        console.error('Error loading post stats:', error);
+        // On error, just show 0
+        commentCountElement.textContent = '0';
+        reactionCountElement.textContent = '0';
+    }
+}
+
 // Function to load latest news for homepage
 async function loadLatestNews() {
     const container = document.getElementById('latest-news-container');
