@@ -110,19 +110,13 @@ function createPostElement(post) {
     article.innerHTML = `
         <div class="blog-post-header">
             <h3 class="blog-post-title">${post.title}</h3>
-            <p class="blog-post-date">${formattedDate}</p>
+            <p class="blog-post-date">${formattedDate} • by ${post.author}</p>
         </div>
         ${imageHTML}
         <div class="blog-post-content">
             <p>${post.content}</p>
         </div>
         <div class="blog-post-stats" data-post-id="${post.id}">
-            <span class="stat-item">
-                <i class="fas fa-comment"></i>
-            </span>
-            <span class="stat-item">
-                <i class="fas fa-heart"></i>
-            </span>
         </div>
     `;
 
@@ -146,6 +140,7 @@ function openPostModal(post) {
     const modal = document.getElementById('post-modal');
     const modalTitle = document.getElementById('modal-post-title');
     const modalDate = document.getElementById('modal-post-date');
+    const modalAuthor = document.getElementById('modal-post-author');
     const modalContent = document.getElementById('modal-post-content');
     const modalImage = document.getElementById('modal-post-image');
 
@@ -160,6 +155,7 @@ function openPostModal(post) {
     // Set modal content
     modalTitle.textContent = post.title;
     modalDate.textContent = formattedDate;
+    modalAuthor.textContent = `by ${post.author}`;
     modalContent.innerHTML = `<p>${post.content}</p>`;
 
     // Set image if exists
