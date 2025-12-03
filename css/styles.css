@@ -814,7 +814,7 @@ textarea {
 /* Ogólny styl dla sekcji 'O mnie/O nas', ustawia duży padding górny, gradient tła i centruje tekst */
 .about-section {
   padding-top: 10rem; /* duża przestrzeń od górnej krawędzi */
-  background: linear-gradient(to bottom, #000000 0%, #000000 60%, #7464a1 100%); /* gradient tła z czerni do fioletu */
+  background: #000000; /* czareni do fioletu */
   text-align: center !important; /* centrowanie tekstu, nadpisuje inne style */
 }
 
@@ -1297,11 +1297,6 @@ hr.light {
 /* Styl dla strony z newsami - header z tłem */
 .news-header {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-signup.jpg");
-}
-
-/* Styl dla strony z albumami - header z tłem */
-.albums-header {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-masthead.jpg");
 }
 
 /* Styl dla sekcji z zawartością newsów */

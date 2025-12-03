@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="I make ambient, electronic, acoustic and sometimes alternative music. Playing guitar, bass and piano (and some other funny instruments). ">
+        <title>Who is Matt?</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <!--Czcionki-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <!--CSS Projektu-->
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body id="page-top">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">
+                    <img src="images/logo.png" alt="Matt Krupa Logo" class="navbar-logo">
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/albums.html">Music</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/news.html">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Nagłówek -->
+        <header class="who masthead"> <!--Ustawienie zdjęcia na tło w CSS z gradientem-->
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center"> <!-- Klasy odpowiedzialne za odpowiednie ustawienie napisów i marginesów-->
+                <div class="d-flex justify-content-center"> <!-- Wyśrodkowanie contentu-->
+                    <div class="text-center"> <!--Tytułowy baner-->
+                        <h1 class="mx-auto my-0 text-uppercase">Who is Matt?</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Rozwinięcie na temat matta-->
+        <section class="projects-section bg-black text-white text-left" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6"> <!-- Zmiana szerokości na 6/12 -->
+                        <p class="text-white">
+                            I am Matt helo
+                        </p>
+                    </div>
+                    <div class="col-lg-6"> <!-- Zmiana szerokości na 6/12 i galeria hihi-->
+                        <div class="photo-gallery">
+                            <img src="{% static 'images/photo1.jpg' %}" alt="Opis zdjęcia 1" class="img-fluid mb-4">
+                            <p class="text-white" data-translate="photo1">Me playing in the sky</p>
+                            
+                            <img src="{% static 'images/photo2.jpg' %}" alt="Opis zdjęcia 2" class="img-fluid mb-4">
+                            <p class="text-white" data-translate="photo2">Me playing hard-rock with Blooming Cactus on a wedding.</p>
+                            
+                            <img src="{% static 'images/photo3.jpg' %}" alt="Opis zdjęcia 3" class="img-fluid mb-4">
+                            <p class="text-white" data-translate="photo3">Me with the Beatroots (my live band) playing on KUL.</p>
+                            
+                            <img src="{% static 'images/photo4.jpg' %}" alt="Opis zdjęcia 4" class="img-fluid mb-4">
+                            <p class="text-white" data-translate="photo4">Me with the Beatroots playing on UMCS.</p>
+                        </div>                
+                    </div>
+                </div>
+                <a class="btn btn-main" href="{% url 'home' %}" data-translate="backbtn">Go back to the front page</a> <!--Odnośnik do strony głównej-->
+            </div>
+        </section>
+
+        <!--Socjale-->
+        <div class="contact-section bg-black">
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://www.youtube.com/channel/UCGIB3mFHUD2Fh-MthueSbXQ"><i class="fab fa-youtube"></i></a> <!--Klasa z ikonkami z biblioteki bootsrapa-->
+                    <a class="mx-2" href="https://www.facebook.com/mattkrupamusic"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://www.instagram.com/matt.krupa.music/"><i class="fab fa-instagram"></i></a>
+                    <a class="mx-2" href="https://mattkrupa.bandcamp.com/"><i class="fab fa-bandcamp"></i></a>
+                    <a class="mx-2" href="https://open.spotify.com/artist/0hduI8doHSaCxLeb2s9t08?si=rYerSEUySua6srCSQNYbeA&nd=1&dlsi=7c1b7838f394433f"><i class="fab fa-spotify"></i></a>
+                    <a class="mx-2" href="https://music.apple.com/gb/artist/matt-krupa/932056625"><i class="fab fa-itunes"></i></a>
+                </div>
+        </div>
+        
+        <!--Stopka-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Matt Krupa 2020-2024</div></footer>
+        <!--Javascirpt Bootstrapa-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!--Mój Javascript-->
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </body>
+</html>

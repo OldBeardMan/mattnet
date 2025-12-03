@@ -243,20 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Function to load post statistics (comments and reactions)
-async function loadPostStats(post) {
-    const statsElement = document.querySelector(`.blog-post-stats[data-post-id="${post.id}"]`);
-    if (!statsElement) return;
-
-    const commentCountElement = statsElement.querySelector('.comment-count');
-    const reactionCountElement = statsElement.querySelector('.reaction-count');
-
-    // For now, just show 0 for both
-    // TODO: Implement proper GitHub Discussions API integration with authentication
-    commentCountElement.textContent = '0';
-    reactionCountElement.textContent = '0';
-}
-
 // Function to load latest news for homepage
 async function loadLatestNews() {
     const container = document.getElementById('latest-news-container');
