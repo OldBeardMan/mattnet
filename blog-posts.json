@@ -13,6 +13,15 @@
     "date": "2025-11-28",
     "author": "Matt Krupa",
     "content": "New single 'Little Light' is out now on all streaming platforms. This is the beginning of the last chapter. Go listen NOW.",
-    "image": "../images/news-images/littlight.jpg"
+    "image": "../images/news-images/littlight.jpg",
+    "embeds": []
+  },
+  {
+    "id": 3,
+    "title": "Little Light music video",
+    "date": "2025-12-04",
+    "author": "Matt Krupa",
+    "content": "Go watch the Little Light video!",
+    "embeds": ["https://www.youtube.com/watch?v=xKB_DOIE7TU"]
   }
 ]

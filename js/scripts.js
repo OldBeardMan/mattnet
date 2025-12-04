@@ -100,22 +100,32 @@ function createPostElement(post) {
         day: 'numeric'
     });
 
+    // Check if image exists
+    const hasImage = post.image && post.image.trim() !== '';
+    const hasEmbeds = post.embeds && post.embeds.length > 0;
+
     // Create image HTML if image exists
-    const imageHTML = post.image && post.image.trim() !== ''
+    const imageHTML = hasImage
         ? `<div class="blog-post-image">
             <img src="${post.image}" alt="${post.title}">
            </div>`
         : '';
+
+    // Create embeds HTML - show in place of image if no image, otherwise after content
+    const embedsHTML = renderEmbeds(post.embeds);
+    const mediaHTML = hasImage ? imageHTML : embedsHTML;
+    const bottomEmbedsHTML = hasImage ? embedsHTML : '';
 
     article.innerHTML = `
         <div class="blog-post-header">
             <h3 class="blog-post-title">${post.title}</h3>
             <p class="blog-post-date">${formattedDate} • by ${post.author}</p>
         </div>
-        ${imageHTML}
+        ${mediaHTML}
         <div class="blog-post-content">
             <p>${post.content}</p>
         </div>
+        ${bottomEmbedsHTML}
         <div class="blog-post-stats" data-post-id="${post.id}">
         </div>
     `;
@@ -124,9 +134,13 @@ function createPostElement(post) {
     const isHomepage = !window.location.pathname.includes('news.html');
 
     // Add click event - redirect to news.html on homepage, open modal on news page
-    article.addEventListener('click', () => {
+    article.addEventListener('click', (event) => {
+        // Don't trigger if clicking on embeds
+        if (event.target.closest('.post-embeds')) {
+            return;
+        }
         if (isHomepage) {
-            window.location.href = '/news.html';
+            window.location.href = '/news';
         } else {
             openPostModal(post);
         }
@@ -152,19 +166,24 @@ function openPostModal(post) {
         day: 'numeric'
     });
 
+    // Check if image exists
+    const hasImage = post.image && post.image.trim() !== '';
+    const embedsHTML = renderEmbeds(post.embeds);
+
     // Set modal content
     modalTitle.textContent = post.title;
     modalDate.textContent = formattedDate;
     modalAuthor.textContent = `by ${post.author}`;
-    modalContent.innerHTML = `<p>${post.content}</p>`;
 
-    // Set image if exists
-    if (post.image && post.image.trim() !== '') {
+    // If no image, show embeds in place of image; otherwise show embeds after content
+    if (hasImage) {
         modalImage.innerHTML = `<img src="${post.image}" alt="${post.title}">`;
         modalImage.style.display = 'block';
+        modalContent.innerHTML = `<p>${post.content}</p>${embedsHTML}`;
     } else {
-        modalImage.innerHTML = '';
-        modalImage.style.display = 'none';
+        modalImage.innerHTML = embedsHTML;
+        modalImage.style.display = embedsHTML ? 'block' : 'none';
+        modalContent.innerHTML = `<p>${post.content}</p>`;
     }
 
     // Load Giscus comments for this specific post
@@ -265,6 +284,80 @@ async function loadLatestNews() {
         console.error('Error loading latest news:', error);
         container.innerHTML = '<p class="text-white-50 text-center">Unable to load latest news.</p>';
     }
+}
+
+// Function to parse embed URL and return embed HTML
+function parseEmbed(url) {
+    // YouTube
+    const youtubeRegex = /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const youtubeMatch = url.match(youtubeRegex);
+    if (youtubeMatch) {
+        return `<div class="embed-container embed-youtube">
+            <iframe src="https://www.youtube.com/embed/${youtubeMatch[1]}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>`;
+    }
+
+    // Spotify - track, album, playlist, artist
+    const spotifyRegex = /open\.spotify\.com\/(track|album|playlist|artist)\/([a-zA-Z0-9]+)/;
+    const spotifyMatch = url.match(spotifyRegex);
+    if (spotifyMatch) {
+        const type = spotifyMatch[1];
+        const id = spotifyMatch[2];
+        const height = type === 'track' ? '152' : '352';
+        return `<div class="embed-container embed-spotify">
+            <iframe src="https://open.spotify.com/embed/${type}/${id}"
+                    width="100%"
+                    height="${height}"
+                    frameborder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+        </div>`;
+    }
+
+    // Bandcamp - album or track
+    const bandcampRegex = /([a-zA-Z0-9-]+)\.bandcamp\.com\/(album|track)\/([a-zA-Z0-9-]+)/;
+    const bandcampMatch = url.match(bandcampRegex);
+    if (bandcampMatch) {
+        // Bandcamp requires fetching the embed ID, so we'll use their player URL format
+        // For simplicity, we'll create a link that opens in new tab with a styled button
+        return `<div class="embed-container embed-bandcamp">
+            <a href="${url}" target="_blank" rel="noopener noreferrer" class="bandcamp-link">
+                <img src="https://s4.bcbits.com/img/bclogo.png" alt="Bandcamp" class="bandcamp-logo">
+                <span>Listen on Bandcamp</span>
+            </a>
+        </div>`;
+    }
+
+    // SoundCloud
+    const soundcloudRegex = /soundcloud\.com\/([a-zA-Z0-9-_]+)\/([a-zA-Z0-9-_]+)/;
+    if (soundcloudRegex.test(url)) {
+        return `<div class="embed-container embed-soundcloud">
+            <iframe width="100%"
+                    height="166"
+                    scrolling="no"
+                    frameborder="no"
+                    allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&color=%237464a1&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+        </div>`;
+    }
+
+    // Generic link fallback
+    return `<div class="embed-container embed-link">
+        <a href="${url}" target="_blank" rel="noopener noreferrer" class="generic-link">
+            🔗 ${url}
+        </a>
+    </div>`;
+}
+
+// Function to render all embeds for a post
+function renderEmbeds(embeds) {
+    if (!embeds || embeds.length === 0) return '';
+
+    const embedsHTML = embeds.map(url => parseEmbed(url)).join('');
+    return `<div class="post-embeds">${embedsHTML}</div>`;
 }
 
 // Function to load latest album for homepage
