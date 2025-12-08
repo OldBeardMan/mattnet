@@ -139,10 +139,10 @@ function createPostElement(post) {
         if (event.target.closest('.post-embeds')) {
             return;
         }
-        if (isHomepage) {
-            window.location.href = '/news';
-        } else {
+        if (isNewsPage) {
             openPostModal(post);
+        } else {
+            window.location.href = '/news';
         }
     });
 
