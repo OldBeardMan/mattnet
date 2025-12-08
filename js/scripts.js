@@ -131,7 +131,7 @@ function createPostElement(post) {
     `;
 
     // Check if we're on the homepage or news page
-    const isHomepage = !window.location.pathname.includes('news.html');
+    const isNewsPage = window.location.pathname.includes('news.html') || window.location.pathname.includes('/news');
 
     // Add click event - redirect to news.html on homepage, open modal on news page
     article.addEventListener('click', (event) => {
