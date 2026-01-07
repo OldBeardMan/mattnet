@@ -1,4 +1,40 @@
-window.addEventListener('DOMContentLoaded', event => {
+// Load HTML components (navbar, social, footer)
+async function loadComponents() {
+    const components = [
+        { id: 'navbar-container', path: '/components/navbar.html' },
+        { id: 'social-container', path: '/components/social.html' },
+        { id: 'footer-container', path: '/components/footer.html' }
+    ];
+
+    await Promise.all(components.map(async (component) => {
+        const element = document.getElementById(component.id);
+        if (element) {
+            try {
+                const response = await fetch(component.path);
+                if (response.ok) {
+                    element.innerHTML = await response.text();
+                }
+            } catch (error) {
+                console.error(`Error loading ${component.path}:`, error);
+            }
+        }
+    }));
+
+    // Set active nav link based on current page
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('#mainNav .nav-link').forEach(link => {
+        const linkPath = link.getAttribute('data-page');
+        if (linkPath === currentPath ||
+            (linkPath === '/' && (currentPath === '/' || currentPath === '/index.html')) ||
+            (currentPath.startsWith(linkPath) && linkPath !== '/')) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('DOMContentLoaded', async event => {
+    // Load components first
+    await loadComponents();
 
     // Load and render blog posts (for news.html)
     loadBlogPosts();
