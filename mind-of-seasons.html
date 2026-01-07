@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Mind of Seasons - A cozy exploration game set inside the In the Autumn Forest album. Find lost kittens and uncover the mystery of the missing master.">
+        <meta property="og:image" content="https://mattkrupa.net/images/bg-mindofseasons.jpg">
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Mind of Seasons - Game by MKGames" />
+        <meta property="og:description" content="Explore the world inside In the Autumn Forest. Find lost kittens and uncover the mystery." />
+        <title>Mind of Seasons</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <style>
+            /* Game-specific styles */
+            .mindofseasons {
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("images/bg-mindofseasons.jpg");
+            }
+
+            .feature-card {
+                background: rgba(116, 100, 161, 0.15);
+                border: 1px solid rgba(116, 100, 161, 0.3);
+                border-radius: 12px;
+                padding: 2rem;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(116, 100, 161, 0.3);
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .feature-title {
+                color: #fff;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .feature-desc {
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.9rem;
+                margin: 0;
+            }
+
+            .screenshot-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .screenshot-item {
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease;
+            }
+
+            .screenshot-item:hover {
+                transform: scale(1.03);
+            }
+
+            .screenshot-item img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                display: block;
+            }
+
+            .screenshot-placeholder {
+                width: 100%;
+                height: 200px;
+                background: rgba(116, 100, 161, 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 0.9rem;
+            }
+
+            .download-box {
+                background: linear-gradient(135deg, rgba(116, 100, 161, 0.3) 0%, rgba(100, 161, 157, 0.3) 100%);
+                border: 2px solid rgba(116, 100, 161, 0.5);
+                border-radius: 16px;
+                padding: 3rem;
+                text-align: center;
+            }
+
+            .download-version {
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.9rem;
+                margin-top: 1rem;
+            }
+
+            .btn-download {
+                --bs-btn-color: #fff;
+                --bs-btn-bg: #64a19d;
+                --bs-btn-border-color: #64a19d;
+                --bs-btn-hover-color: #fff;
+                --bs-btn-hover-bg: #558985;
+                --bs-btn-hover-border-color: #50817e;
+                font-size: 1.1rem;
+                padding: 1rem 2.5rem;
+            }
+
+            .btn-album {
+                --bs-btn-color: #fff;
+                --bs-btn-bg: transparent;
+                --bs-btn-border-color: #7464a1;
+                --bs-btn-hover-color: #fff;
+                --bs-btn-hover-bg: #7464a1;
+                --bs-btn-hover-border-color: #7464a1;
+            }
+
+            .album-connection {
+                background: rgba(116, 100, 161, 0.1);
+                border-left: 4px solid #7464a1;
+                padding: 2rem;
+                border-radius: 0 8px 8px 0;
+                margin: 2rem 0;
+            }
+
+            .controls-table {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .controls-table td {
+                padding: 0.5rem;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .controls-table td:first-child {
+                color: #64a19d;
+                font-weight: bold;
+                text-align: right;
+                padding-right: 1rem;
+            }
+
+            .secrets-hint {
+                font-style: italic;
+                color: rgba(255, 255, 255, 0.4);
+                margin-top: 2rem;
+            }
+
+            .game-logo {
+                max-width: 300px;
+                margin-bottom: 1rem;
+            }
+
+            @media (min-width: 768px) {
+                .features-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.5rem;
+                }
+            }
+
+            @media (min-width: 992px) {
+                .features-grid {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        </style>
+    </head>
+    <body id="page-top">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/">
+                    <img src="images/logo.png" alt="Matt Krupa Logo" class="navbar-logo">
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/albums">Music</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/mind-of-seasons">Game</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="mindofseasons masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Mind of Seasons</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Explore the world inside In the Autumn Forest</h2>
+                        <a class="btn btn-download" href="#download">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a class="btn btn-album" href="/albums/autumn">
+                            <i class="fas fa-music"></i> The Album
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Story Section -->
+        <section class="about-section" id="story">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4">The Story</h2>
+                        <p class="text-white-50">
+                            <em>"How can we find the album which we are inside?"</em>
+                        </p>
+                        <p class="text-white-50">
+                            Welcome to the mysterious forest created by a lost musician. One day, he composed
+                            "Do Not Listen" and things got messy. Strange creatures started to spawn, and he
+                            disappeared without a trace.
+                        </p>
+                        <p class="text-white-50">
+                            Now, Sprytek the helper cat needs your assistance. Five kittens have scattered
+                            across the forest, and hidden collectibles may hold clues about the missing master.
+                            Can you find them all and uncover the truth?
+                        </p>
+                        <p class="text-white-50">
+                            But remember - don't listen to the creatures. They whisper things you don't want to hear...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots Section -->
+        <section class="projects-section bg-black" id="screenshots">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mb-4">Screenshots</h2>
+                        <p class="text-white-50">Explore the mysterious forest</p>
+                        <hr class="light my-4">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="screenshot-gallery">
+                            <div class="screenshot-item">
+                                <div class="screenshot-placeholder">
+                                    <span>Screenshot coming soon</span>
+                                </div>
+                            </div>
+                            <div class="screenshot-item">
+                                <div class="screenshot-placeholder">
+                                    <span>Screenshot coming soon</span>
+                                </div>
+                            </div>
+                            <div class="screenshot-item">
+                                <div class="screenshot-placeholder">
+                                    <span>Screenshot coming soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="projects-section bg-secondary" id="features">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mb-5">
+                        <h2 class="text-white">Features</h2>
+                        <hr class="light my-4">
+                    </div>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🐱</div>
+                        <h3 class="feature-title">5 Lost Kittens</h3>
+                        <p class="feature-desc">Each with their own mysterious story to tell</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎵</div>
+                        <h3 class="feature-title">10 Collectibles</h3>
+                        <p class="feature-desc">Items from the album hidden across the forest</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">☕</div>
+                        <h3 class="feature-title">Coffee System</h3>
+                        <p class="feature-desc">Brew coffee to stay awake and energized</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👾</div>
+                        <h3 class="feature-title">Mysterious Creatures</h3>
+                        <p class="feature-desc">Avoid them - they whisper dangerous things</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="projects-section bg-black" id="controls">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h2 class="text-white mb-4">Controls</h2>
+                        <p class="text-white-50 mb-4">Full keyboard support - no mouse required!</p>
+                        <table class="controls-table">
+                            <tr><td>WASD / Arrows</td><td>Move</td></tr>
+                            <tr><td>E</td><td>Open Inventory</td></tr>
+                            <tr><td>F</td><td>Interact / Talk / Collect</td></tr>
+                            <tr><td>G</td><td>Place cat in cabin</td></tr>
+                            <tr><td>C</td><td>Brew coffee</td></tr>
+                            <tr><td>V</td><td>Drink coffee</td></tr>
+                            <tr><td>ESC</td><td>Pause menu</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Album Connection Section -->
+        <section class="projects-section bg-secondary" id="album">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="album-connection">
+                            <h3 class="text-white mb-3">
+                                <i class="fas fa-compact-disc"></i> Connected to the Album
+                            </h3>
+                            <p class="text-white-50">
+                                Mind of Seasons takes place inside the world of <strong>In the Autumn Forest</strong> -
+                                Matt Krupa's first album released to the public. The collectibles you find are items
+                                from the album: the old <em>printer</em> that started it all, the mysterious
+                                <em>Do Not Listen</em> composition, the <em>Return</em> sign, and more...
+                            </p>
+                            <p class="text-white-50">
+                                Play the game while listening to the album for the full experience.
+                            </p>
+                            <a class="btn btn-main" href="/albums/autumn">
+                                <i class="fas fa-headphones"></i> Listen to In the Autumn Forest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="projects-section bg-black" id="download">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="download-box">
+                            <h2 class="text-white mb-4">Download</h2>
+                            <p class="text-white-50">Windows 10/11 - No installation required</p>
+                            <a class="btn btn-download" href="https://github.com/OldBeardMan/Mind-Of-Seasons/releases" target="_blank">
+                                <i class="fab fa-windows"></i> Download for Windows
+                            </a>
+                            <p class="download-version">
+                                Alpha 1.0.0 Pre-release 1<br>
+                                <small>This is an early alpha build - expect bugs!</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-8 text-center">
+                        <p class="secrets-hint">
+                            "Who is the master that disappeared? What did scanner actually say? Can you find him?"<br>
+                            Some answers are hidden in plain sight...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Links -->
+        <div class="contact-section bg-black">
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="https://github.com/OldBeardMan/Mind-Of-Seasons" title="GitHub"><i class="fab fa-github"></i></a>
+                <a class="mx-2" href="https://www.youtube.com/channel/UCGIB3mFHUD2Fh-MthueSbXQ"><i class="fab fa-youtube"></i></a>
+                <a class="mx-2" href="https://www.instagram.com/matt.krupa.music/"><i class="fab fa-instagram"></i></a>
+                <a class="mx-2" href="https://mattkrupa.bandcamp.com/"><i class="fab fa-bandcamp"></i></a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer bg-black small text-center text-white-50">
+            <div class="container px-4 px-lg-5">
+                Mind of Seasons by MKGames | Copyright &copy; Matt Krupa 2020-2025
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JS -->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
