@@ -130,11 +130,11 @@
 
             .btn-album {
                 --bs-btn-color: #fff;
-                --bs-btn-bg: transparent;
+                --bs-btn-bg: #7464a1;
                 --bs-btn-border-color: #7464a1;
                 --bs-btn-hover-color: #fff;
-                --bs-btn-hover-bg: #7464a1;
-                --bs-btn-hover-border-color: #7464a1;
+                --bs-btn-hover-bg: #635589;
+                --bs-btn-hover-border-color: #5d5081;
             }
 
             .album-connection {
@@ -274,9 +274,14 @@
                 padding: 0.5rem 1rem;
             }
 
+            .features-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
             @media (min-width: 768px) {
                 .features-grid {
-                    display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     gap: 1.5rem;
                 }
