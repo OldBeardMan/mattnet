@@ -1,45 +1,8 @@
 <footer class="footer">
     <div class="container">
-        <!-- Visitor Counter -->
-        <p class="mb-8">
-            You are visitor #<span class="visitor-counter" id="visitor-count">loading...</span>
-        </p>
-
-        <!-- Webring -->
-        <div class="webring">
-            [ <a href="#">&lt;&lt; Previous</a> |
-            <a href="#">Random</a> |
-            <a href="#">Next &gt;&gt;</a> ]
-            <br>~ Ambient Music Webring ~
-        </div>
-
-        <hr class="hr-short">
-
-        <!-- Best viewed in -->
-        <p class="footer-note">
-            Best viewed in <b>800x600</b> resolution with <b>Internet Explorer 6.0</b>
-        </p>
-
-        <!-- Made with Notepad -->
-        <p class="footer-note">
-            Made with <b class="text-cyan">Notepad</b> &amp; lots of <b class="text-magenta">&lt;marquee&gt;</b> tags
-        </p>
-
-        <!-- Copyright -->
+        <p class="footer-note">created with love</p>
         <p class="footer-copyright">
-            Copyright &copy; Matt Krupa 2020-2026. All rights reserved.
+            Copyright &copy; Matt Krupa 2020-2026
         </p>
     </div>
-
-    <script>
-        // Fake visitor counter
-        (function() {
-            var counter = document.getElementById('visitor-count');
-            if (counter) {
-                var base = 14832;
-                var random = Math.floor(Math.random() * 500);
-                counter.textContent = (base + random).toString().padStart(6, '0');
-            }
-        })();
-    </script>
 </footer>

@@ -1,6 +1,6 @@
 /*------------------------------------------*/
-/* Y2K STYLE - Matt Krupa's Music Homepage  */
-/* Best viewed in 800x600 with IE6           */
+/* SPRING STYLE - Matt Krupa's Music Homepage */
+/* A cozy, warm, floral vibe                  */
 /*------------------------------------------*/
 
 *,
@@ -9,22 +9,22 @@
   box-sizing: border-box;
 }
 
-/* Blink animation for Y2K feel */
-@keyframes blink {
+/* Gentle pulse animation for spring feel */
+@keyframes bloom {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  50% { opacity: 0.6; }
 }
 
-/* Rainbow HR animation */
-@keyframes rainbow {
+/* Spring pastel gradient HR animation */
+@keyframes springflow {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
 
-/* Star twinkle */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+/* Petal float */
+@keyframes petalfloat {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
 }
 
 body {
@@ -33,23 +33,23 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
-  color: #00ff00;
-  background-color: #000033;
-  /* Tiled star pattern */
+  color: #2d5a27;
+  background-color: #f0f7e6;
+  /* Subtle floral/dot pattern */
   background-image:
-    radial-gradient(1px 1px at 10px 20px, #ffffff44, transparent),
-    radial-gradient(1px 1px at 50px 80px, #ffffff33, transparent),
-    radial-gradient(1px 1px at 120px 40px, #ffffff55, transparent),
-    radial-gradient(1px 1px at 180px 120px, #ffffff22, transparent),
-    radial-gradient(1.5px 1.5px at 200px 60px, #ffffff66, transparent),
-    radial-gradient(1px 1px at 80px 150px, #ffffff44, transparent),
-    radial-gradient(1px 1px at 250px 100px, #ffffff33, transparent),
-    radial-gradient(1.5px 1.5px at 30px 110px, #ffffff55, transparent),
-    radial-gradient(1px 1px at 160px 170px, #ffffff44, transparent),
-    radial-gradient(1px 1px at 280px 30px, #ffffff22, transparent);
+    radial-gradient(2px 2px at 10px 20px, #a8d5a244, transparent),
+    radial-gradient(2px 2px at 50px 80px, #f5b8c433, transparent),
+    radial-gradient(2px 2px at 120px 40px, #c4e6a255, transparent),
+    radial-gradient(1.5px 1.5px at 180px 120px, #f7c8d822, transparent),
+    radial-gradient(2.5px 2.5px at 200px 60px, #ffb6c166, transparent),
+    radial-gradient(2px 2px at 80px 150px, #b8e6b844, transparent),
+    radial-gradient(2px 2px at 250px 100px, #f5d0a933, transparent),
+    radial-gradient(2.5px 2.5px at 30px 110px, #a8d5ba55, transparent),
+    radial-gradient(2px 2px at 160px 170px, #ffc8dd44, transparent),
+    radial-gradient(2px 2px at 280px 30px, #c8e6c822, transparent);
   background-size: 300px 200px;
   background-repeat: repeat;
-  cursor: crosshair;
+  cursor: default;
   letter-spacing: normal;
 }
 
@@ -57,23 +57,23 @@ html {
   scroll-padding-top: 0;
 }
 
-/* Rainbow HR separator */
+/* Spring pastel HR separator */
 hr {
   margin: 1rem 0;
   border: 0;
   height: 4px;
-  background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
+  background: linear-gradient(90deg, #ffb6c1, #ffd700, #98fb98, #87ceeb, #dda0dd, #ffb6c1);
   background-size: 200% 100%;
-  animation: rainbow 3s linear infinite;
+  animation: springflow 4s linear infinite;
   opacity: 1;
 }
 
 hr.light {
-  border-color: #ffff00;
+  border-color: #98fb98;
   height: 4px;
-  background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
+  background: linear-gradient(90deg, #ffb6c1, #ffd700, #98fb98, #87ceeb, #dda0dd, #ffb6c1);
   background-size: 200% 100%;
-  animation: rainbow 3s linear infinite;
+  animation: springflow 4s linear infinite;
 }
 
 h3, h2, h1 {
@@ -86,18 +86,18 @@ h3, h2, h1 {
 
 h1 {
   font-size: 2rem;
-  color: #ffff00;
-  text-shadow: 2px 2px #ff00ff;
+  color: #c2185b;
+  text-shadow: 1px 1px #f8bbd0;
 }
 
 h2 {
   font-size: 1.5rem;
-  color: #00ffff;
+  color: #388e3c;
 }
 
 h3 {
   font-size: 1.2rem;
-  color: #ff99ff;
+  color: #ad1457;
 }
 
 p {
@@ -111,16 +111,16 @@ ul {
   margin-bottom: 1rem;
 }
 
-/* Classic blue underlined links */
+/* Warm spring links */
 a {
-  color: #0000ff;
+  color: #1565c0;
   text-decoration: underline;
 }
 a:hover {
-  color: #ff00ff;
+  color: #c2185b;
 }
 a:visited {
-  color: #800080;
+  color: #7b1fa2;
 }
 
 img {
@@ -131,10 +131,10 @@ label {
   display: inline-block;
 }
 
-/* 3D outset buttons */
+/* Soft spring buttons */
 button {
-  border: 3px outset #999999;
-  background: #c0c0c0;
+  border: 3px outset #a5d6a7;
+  background: #e8f5e9;
   font-family: "Comic Sans MS", "Courier New", cursive;
 }
 
@@ -168,7 +168,7 @@ textarea {
   resize: vertical;
 }
 
-/* Main container - Y2K style with ridge border */
+/* Main container with soft green border */
 .container {
   width: 100%;
   max-width: 800px;
@@ -178,7 +178,7 @@ textarea {
   margin-left: auto;
 }
 
-/* Simple row - no flex needed for Y2K */
+/* Simple row */
 .row {
   display: block;
   margin-top: 0;
@@ -200,22 +200,21 @@ textarea {
   }
 }
 
-/* 3D buttons Y2K style */
+/* Spring buttons */
 .btn {
   display: inline-block;
   padding: 8px 16px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.5;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  border: 3px outset #9999ff;
-  background-color: #6666cc;
-  color: #ffffff;
+  border: 3px outset #81c784;
+  background-color: #4caf50;
   font-family: "Comic Sans MS", "Courier New", cursive;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
@@ -224,8 +223,8 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #8888ee;
-  color: #ffff00;
+  background-color: #66bb6a;
+  color: #ffffff;
 }
 
 .btn:active {
@@ -233,48 +232,48 @@ textarea {
 }
 
 .btn-main {
-  background-color: #6633cc;
-  border-color: #9966ff;
+  background-color: #e91e63;
+  border-color: #f48fb1;
   color: #ffffff;
 }
 
 .btn-main:hover {
-  background-color: #8855ee;
-  color: #ffff00;
+  background-color: #f06292;
+  color: #ffffff;
 }
 
 .btn-abo {
-  background-color: #333399;
-  border-color: #6666cc;
-  color: #00ffff;
+  background-color: #558b2f;
+  border-color: #8bc34a;
+  color: #ffffff;
 }
 
 .btn-abo:hover {
-  background-color: #4444aa;
-  color: #ffff00;
+  background-color: #7cb342;
+  color: #ffffff;
 }
 
 .btn-bc {
-  background-color: #996633;
-  border-color: #cc9966;
+  background-color: #8d6e63;
+  border-color: #bcaaa4;
   color: #ffffff;
 }
 
 .btn-carmelis {
-  background-color: #993366;
-  border-color: #cc6699;
+  background-color: #ad1457;
+  border-color: #ec407a;
   color: #ffffff;
 }
 
 .btn-form {
-  background-color: #339966;
-  border-color: #66cc99;
+  background-color: #2e7d32;
+  border-color: #66bb6a;
   color: #ffffff;
 }
 
 .btn-form:hover {
-  background-color: #44aa77;
-  color: #ffff00;
+  background-color: #43a047;
+  color: #ffffff;
 }
 
 /* Utility classes */
@@ -352,21 +351,21 @@ textarea {
 }
 
 .text-muted {
-  color: #999999 !important;
+  color: #8d6e63 !important;
 }
 
 .text-white-50 {
-  color: #00ff99 !important;
+  color: #2e7d32 !important;
 }
 
 .bg-secondary {
-  background-color: #000066 !important;
-  border-top: 2px ridge #6666ff;
-  border-bottom: 2px ridge #6666ff;
+  background-color: #e8f5e9 !important;
+  border-top: 2px solid #a5d6a7;
+  border-bottom: 2px solid #a5d6a7;
 }
 
 .bg-black {
-  background-color: #000033 !important;
+  background-color: #f0f7e6 !important;
 }
 
 @media (min-width: 992px) {
@@ -378,7 +377,7 @@ textarea {
 
 
 /*-----------------------------*/
-/* Y2K NAVBAR                  */
+/* SPRING NAVBAR               */
 /*-----------------------------*/
 
 .collapse:not(.show) {
@@ -393,18 +392,18 @@ textarea {
 .nav-link {
   display: inline;
   padding: 0;
-  color: #00ffff;
+  color: #2e7d32;
   text-decoration: underline;
   font-weight: bold;
   font-size: 14px;
 }
 
 .nav-link:hover, .nav-link:focus {
-  color: #ffff00;
+  color: #c2185b;
 }
 
 .nav-link.active {
-  color: #ff00ff;
+  color: #e91e63;
 }
 
 .navbar {
@@ -412,8 +411,8 @@ textarea {
   display: block;
   text-align: center;
   padding: 10px 0;
-  background-color: #000066;
-  border-bottom: 3px ridge #6666ff;
+  background-color: #c8e6c9;
+  border-bottom: 3px solid #66bb6a;
 }
 
 .navbar > .container {
@@ -473,8 +472,8 @@ textarea {
 
 #mainNav {
   min-height: auto;
-  background-color: #000066;
-  border-bottom: 3px ridge #6666ff;
+  background-color: #c8e6c9;
+  border-bottom: 3px solid #66bb6a;
   padding: 8px 0;
 }
 
@@ -483,7 +482,7 @@ textarea {
 }
 
 #mainNav .navbar-brand {
-  color: #ffff00;
+  color: #c2185b;
   font-weight: 700;
   padding: 0;
   margin-right: 10px;
@@ -506,56 +505,56 @@ textarea {
   #mainNav {
     padding-top: 8px;
     padding-bottom: 8px;
-    border-bottom: 3px ridge #6666ff;
-    background-color: #000066;
+    border-bottom: 3px solid #66bb6a;
+    background-color: #c8e6c9;
   }
   #mainNav .navbar-brand {
     padding: 0;
-    color: #ffff00;
+    color: #c2185b;
   }
   #mainNav .nav-link {
     padding: 0;
-    color: #00ffff;
+    color: #2e7d32;
   }
   #mainNav .nav-link:hover {
-    color: #ffff00;
+    color: #c2185b;
   }
   #mainNav .nav-link:active {
-    color: #ff00ff;
+    color: #e91e63;
   }
   #mainNav .nav-link.active {
-    color: #ff00ff;
+    color: #e91e63;
     border-bottom: none;
   }
   #mainNav.navbar-shrink {
-    background-color: #000066;
+    background-color: #c8e6c9;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #ffff00;
+    color: #c2185b;
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #00ffff;
+    color: #2e7d32;
     padding: 0;
     border-bottom: none;
   }
   #mainNav.navbar-shrink .nav-link:hover {
-    color: #ffff00;
+    color: #c2185b;
   }
   #mainNav.navbar-shrink .nav-link:active {
-    color: #ff00ff;
+    color: #e91e63;
   }
   #mainNav.navbar-shrink .nav-link.active {
-    color: #ff00ff;
+    color: #e91e63;
     border-bottom: none;
   }
 }
 
 
 /*-----------------------------*/
-/* Y2K HEADER / MASTHEAD       */
+/* SPRING HEADER / MASTHEAD    */
 /*-----------------------------*/
 
-/* Background images - simplified without gradients */
+/* Background images */
 .cats,
 .iceland,
 .norway,
@@ -590,7 +589,7 @@ textarea {
 .front { background-image: url("../images/bg-masthead.jpg"); }
 .who { background-image: url("../images/bg-cats.jpg"); }
 
-/* Masthead - small Y2K header */
+/* Masthead - spring header */
 .masthead h1, .masthead .h1, .masthead h2, .masthead .h2 {
   font-family: "Comic Sans MS", "Courier New", cursive;
 }
@@ -599,17 +598,17 @@ textarea {
   font-size: 2rem;
   line-height: 2rem;
   letter-spacing: 0.2rem;
-  color: #ffff00;
-  text-shadow: 2px 2px #ff00ff, -1px -1px #00ffff;
+  color: #ffffff;
+  text-shadow: 2px 2px #c2185b, -1px -1px #4caf50;
   background: none;
-  -webkit-text-fill-color: #ffff00;
+  -webkit-text-fill-color: #ffffff;
   background-clip: unset;
 }
 
 .masthead h2, .masthead .h2 {
   max-width: 500px;
   font-size: 1rem;
-  color: #00ff00;
+  color: #ffffff;
 }
 
 .h-100 {
@@ -641,19 +640,19 @@ textarea {
 
 
 /*-----------------------------*/
-/* ABOUT SECTION - Y2K         */
+/* ABOUT SECTION - SPRING      */
 /*-----------------------------*/
 
 .about-section {
   padding: 2rem 0;
-  background: #000033;
+  background: #f1f8e9;
   text-align: center !important;
-  border-top: 2px ridge #6666ff;
+  border-top: 2px solid #a5d6a7;
 }
 
 .about-section-black {
   padding: 2rem 0;
-  background: #000033;
+  background: #f0f7e6;
   text-align: center !important;
 }
 
@@ -663,7 +662,7 @@ textarea {
 
 
 /*-----------------------------*/
-/* ALBUMS SECTION - Y2K        */
+/* ALBUMS SECTION - SPRING     */
 /*-----------------------------*/
 
 @media (min-width: 768px) {
@@ -684,7 +683,7 @@ textarea {
 .img-fluid {
   max-width: 100%;
   height: auto;
-  border: 3px ridge #6666ff;
+  border: 3px solid #a5d6a7;
 }
 
 .photo-gallery {
@@ -694,16 +693,16 @@ textarea {
 
 .projects-section {
   padding: 2rem 0;
-  border-top: 2px ridge #6666ff;
+  border-top: 2px solid #a5d6a7;
 }
 
 .album-link {
-  color: #00ffff;
+  color: #2e7d32;
   text-decoration: none;
 }
 
 .album-link:hover {
-  color: #ffff00;
+  color: #c2185b;
 }
 
 .album-link .album-img {
@@ -716,12 +715,12 @@ textarea {
 
 .album-img {
   margin-bottom: 10px;
-  border: 3px ridge #6666ff;
+  border: 3px solid #a5d6a7;
 }
 
 
 /*-----------------------------*/
-/* CAROUSEL - Y2K              */
+/* CAROUSEL - SPRING           */
 /*-----------------------------*/
 
 .carousel {
@@ -731,7 +730,7 @@ textarea {
 .carousel-img {
   max-width: 40%;
   height: auto;
-  border: 3px ridge #6666ff;
+  border: 3px solid #a5d6a7;
 }
 
 .carousel-inner {
@@ -787,7 +786,7 @@ textarea {
   display: block;
   width: 15%;
   padding: 0;
-  color: #ffff00;
+  color: #c2185b;
   text-align: center;
   background: none;
   border: 0;
@@ -808,23 +807,23 @@ textarea {
 }
 
 .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffff00'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c2185b'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
 }
 
 .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffff00'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c2185b'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
 
 /*-----------------------------*/
-/* FORM SECTION - Y2K          */
+/* FORM SECTION - SPRING       */
 /*-----------------------------*/
 
 .signup-section {
   padding: 2rem 0;
-  background: #000044;
-  border-top: 2px ridge #6666ff;
-  color: #00ff00;
+  background: #e8f5e9;
+  border-top: 2px solid #a5d6a7;
+  color: #2d5a27;
 }
 
 .signup-section .form-signup input {
@@ -832,7 +831,7 @@ textarea {
   height: auto;
   font-family: "Comic Sans MS", "Courier New", cursive;
   font-size: 14px;
-  border: 2px inset #999999;
+  border: 2px inset #a5d6a7;
   background-color: #ffffff;
   color: #000000;
 }
@@ -842,9 +841,9 @@ textarea {
   padding: 8px;
   max-width: 400px;
   margin: 10px auto;
-  background-color: #ff0000;
+  background-color: #e53935;
   color: #ffffff;
-  border: 2px outset #ff6666;
+  border: 2px outset #ef9a9a;
   font-weight: bold;
 }
 
@@ -852,13 +851,13 @@ textarea {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #00ffff;
+  color: #2e7d32;
 }
 
 .form-signup {
-  background: #000066;
+  background: #e8f5e9;
   padding: 1.5rem;
-  border: 2px ridge #6666ff;
+  border: 2px solid #a5d6a7;
 }
 
 .form-control {
@@ -870,15 +869,15 @@ textarea {
   line-height: 1.5;
   color: #000000;
   background-color: #ffffff;
-  border: 2px inset #999999;
+  border: 2px inset #a5d6a7;
   font-family: "Comic Sans MS", "Courier New", cursive;
 }
 
 .form-control:focus {
   color: #000000;
-  background-color: #ffffcc;
-  border-color: #0000ff;
-  outline: 1px dotted #000000;
+  background-color: #fff9c4;
+  border-color: #4caf50;
+  outline: 1px dotted #2e7d32;
 }
 
 .form-control::placeholder {
@@ -924,12 +923,12 @@ textarea.form-control {
 
 
 /*-----------------------------*/
-/* NEWS / BLOG - Y2K           */
+/* NEWS / BLOG - SPRING        */
 /*-----------------------------*/
 
 .news-section {
   padding: 2rem 0;
-  border-top: 2px ridge #6666ff;
+  border-top: 2px solid #a5d6a7;
 }
 
 #blog-posts-container {
@@ -937,15 +936,15 @@ textarea.form-control {
 }
 
 .blog-post {
-  background: #000066;
-  border: 2px ridge #6666ff;
+  background: #ffffff;
+  border: 2px solid #a5d6a7;
   padding: 15px;
   margin-bottom: 15px;
   cursor: pointer;
 }
 
 .blog-post:hover {
-  background: #000088;
+  background: #f1f8e9;
 }
 
 .blog-post-header {
@@ -953,13 +952,13 @@ textarea.form-control {
 }
 
 .blog-post-title {
-  color: #ffff00;
+  color: #c2185b;
   margin-bottom: 0.25rem;
   font-size: 1.2rem;
 }
 
 .blog-post-date {
-  color: #999999;
+  color: #8d6e63;
   font-size: 0.85rem;
   font-style: italic;
   margin-bottom: 0;
@@ -969,7 +968,7 @@ textarea.form-control {
   width: 100%;
   margin: 0.5rem 0;
   overflow: hidden;
-  border: 2px ridge #6666ff;
+  border: 2px solid #a5d6a7;
 }
 
 .blog-post-image img {
@@ -981,7 +980,7 @@ textarea.form-control {
 }
 
 .blog-post-content {
-  color: #00ff00;
+  color: #2d5a27;
   line-height: 1.6;
 }
 
@@ -993,24 +992,24 @@ textarea.form-control {
   display: block;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
-  border-top: 1px dashed #6666ff;
+  border-top: 1px dashed #a5d6a7;
 }
 
 .blog-post-stats .stat-item {
   display: inline;
-  color: #999999;
+  color: #8d6e63;
   font-size: 0.85rem;
   margin-right: 1rem;
 }
 
 .blog-post-stats .stat-item i {
-  color: #ff00ff;
+  color: #e91e63;
 }
 
 .blog-post-stats .comment-count,
 .blog-post-stats .reaction-count {
   font-weight: 600;
-  color: #00ffff;
+  color: #2e7d32;
 }
 
 .news-header {
@@ -1026,21 +1025,21 @@ textarea.form-control {
 .latest-news-section {
   padding: 2rem 0;
   position: relative;
-  border-top: 2px ridge #6666ff;
+  border-top: 2px solid #a5d6a7;
 }
 
 .latest-news-section h2 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #00ffff;
+  color: #388e3c;
 }
 
 .projects-section h2 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #00ffff;
+  color: #388e3c;
 }
 
 #latest-album-container .album-link {
@@ -1048,16 +1047,16 @@ textarea.form-control {
 }
 
 #latest-album-container .album-img {
-  border: 3px ridge #6666ff;
+  border: 3px solid #a5d6a7;
 }
 
 .projects-section .btn-main {
   font-size: 14px;
   padding: 8px 16px;
-  border: 3px outset #9966ff;
+  border: 3px outset #f48fb1;
 }
 
-/* Post modal - Y2K style */
+/* Post modal - spring style */
 .post-modal {
   display: none;
   position: fixed;
@@ -1067,7 +1066,7 @@ textarea.form-control {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 51, 0.9);
+  background-color: rgba(46, 125, 50, 0.85);
 }
 
 .post-modal.show {
@@ -1075,17 +1074,17 @@ textarea.form-control {
 }
 
 .post-modal-content {
-  background-color: #000044;
+  background-color: #fafff5;
   margin: 3% auto;
   padding: 1.5rem;
-  border: 3px ridge #6666ff;
+  border: 3px solid #66bb6a;
   width: 90%;
   max-width: 700px;
   position: relative;
 }
 
 .post-modal-close {
-  color: #ff0000;
+  color: #e53935;
   position: absolute;
   top: 0.5rem;
   right: 1rem;
@@ -1096,14 +1095,14 @@ textarea.form-control {
 
 .post-modal-close:hover,
 .post-modal-close:focus {
-  color: #ffff00;
+  color: #c2185b;
 }
 
 .modal-post-image {
   width: 100%;
   margin-bottom: 1rem;
   overflow: hidden;
-  border: 2px ridge #6666ff;
+  border: 2px solid #a5d6a7;
 }
 
 .modal-post-image img {
@@ -1115,20 +1114,20 @@ textarea.form-control {
 }
 
 .modal-post-title {
-  color: #ffff00;
+  color: #c2185b;
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
 }
 
 .modal-post-date {
-  color: #999999;
+  color: #8d6e63;
   font-size: 0.9rem;
   font-style: italic;
   margin-bottom: 1rem;
 }
 
 .modal-post-content {
-  color: #00ff00;
+  color: #2d5a27;
   line-height: 1.8;
   font-size: 14px;
 }
@@ -1139,7 +1138,7 @@ textarea.form-control {
 
 
 /*-----------------------------*/
-/* FOOTER & SOCIAL - Y2K       */
+/* FOOTER & SOCIAL - SPRING    */
 /*-----------------------------*/
 
 .small {
@@ -1149,7 +1148,7 @@ textarea.form-control {
 .contact-section {
   padding-top: 2rem;
   text-align: center;
-  border-top: 2px ridge #6666ff;
+  border-top: 2px solid #a5d6a7;
 }
 
 .contact-section .social {
@@ -1163,7 +1162,7 @@ textarea.form-control {
   width: auto;
   background: none;
   line-height: normal;
-  color: #0000ff;
+  color: #1565c0;
   text-decoration: underline;
   font-weight: bold;
   margin: 0 5px;
@@ -1171,43 +1170,43 @@ textarea.form-control {
 }
 
 .contact-section .social a:hover {
-  color: #ff00ff;
+  color: #c2185b;
 }
 
 .footer {
   padding: 1.5rem 0;
-  background-color: #000066 !important;
-  border-top: 3px ridge #6666ff;
-  color: #00ff00;
+  background-color: #c8e6c9 !important;
+  border-top: 3px solid #66bb6a;
+  color: #2d5a27;
   text-align: center;
   font-size: 12px;
 }
 
 
 /*-----------------------------*/
-/* GISCUS COMMENTS - Y2K       */
+/* GISCUS COMMENTS - SPRING    */
 /*-----------------------------*/
 
 .comments-section {
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 2px dashed #6666ff;
+  border-top: 2px dashed #a5d6a7;
 }
 
 .comments-title {
-  color: #00ffff;
+  color: #388e3c;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   text-align: left;
 }
 
 .giscus {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 
 /*-----------------------------*/
-/* EMBEDS - Y2K                */
+/* EMBEDS - SPRING             */
 /*-----------------------------*/
 
 .post-embeds {
@@ -1217,8 +1216,8 @@ textarea.form-control {
 
 .embed-container {
   overflow: hidden;
-  background: #000044;
-  border: 2px ridge #6666ff;
+  background: #f1f8e9;
+  border: 2px solid #a5d6a7;
   margin-bottom: 0.5rem;
 }
 
@@ -1241,13 +1240,13 @@ textarea.form-control {
 }
 
 .embed-bandcamp {
-  background: #003366;
+  background: #e8f5e9;
 }
 
 .bandcamp-link {
   display: block;
   padding: 8px 12px;
-  color: #00ffff;
+  color: #2e7d32;
   text-decoration: underline;
   font-weight: bold;
   font-size: 14px;
@@ -1256,7 +1255,7 @@ textarea.form-control {
 
 .bandcamp-logo {
   height: 20px;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .embed-soundcloud {
@@ -1264,20 +1263,20 @@ textarea.form-control {
 }
 
 .embed-link {
-  background: #000066;
-  border: 2px ridge #6666ff;
+  background: #e8f5e9;
+  border: 2px solid #a5d6a7;
 }
 
 .generic-link {
   display: block;
   padding: 8px;
-  color: #0000ff;
+  color: #1565c0;
   text-decoration: underline;
   word-break: break-all;
 }
 
 .generic-link:hover {
-  color: #ff00ff;
+  color: #c2185b;
 }
 
 .post-embeds {
@@ -1295,73 +1294,37 @@ textarea.form-control {
 
 
 /*-----------------------------*/
-/* Y2K SPECIAL ELEMENTS        */
+/* SPRING SPECIAL ELEMENTS     */
 /*-----------------------------*/
 
-/* Blink class */
+/* Bloom class (replaces blink) */
 .blink {
-  animation: blink 1s step-end infinite;
-}
-
-/* Under construction text */
-.under-construction {
-  color: #ff0000;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 10px;
-  border: 2px dashed #ff0000;
-  margin: 10px auto;
-  max-width: 400px;
-}
-
-/* Visitor counter style */
-.visitor-counter {
-  font-family: "Courier New", monospace;
-  background: #000000;
-  color: #00ff00;
-  border: 2px inset #333333;
-  padding: 3px 10px;
-  display: inline-block;
-  font-size: 14px;
-  letter-spacing: 2px;
-}
-
-/* Webring style */
-.webring {
-  margin: 10px 0;
-  color: #999999;
-}
-
-.webring a {
-  color: #0000ff;
-  text-decoration: underline;
-  margin: 0 5px;
+  animation: bloom 2s ease-in-out infinite;
 }
 
 /* Last updated text */
 .last-updated {
-  color: #999999;
+  color: #8d6e63;
   font-size: 12px;
   font-style: italic;
 }
 
-/* Marquee styling */
+/* Marquee styling - spring colors */
 marquee {
-  background: #000066;
-  color: #ffff00;
+  background: #c8e6c9;
+  color: #c2185b;
   padding: 8px;
   font-size: 1.1rem;
   font-weight: bold;
-  border-top: 2px ridge #6666ff;
-  border-bottom: 2px ridge #6666ff;
+  border-top: 2px solid #66bb6a;
+  border-bottom: 2px solid #66bb6a;
 }
 
-/* About page - Y2K story list */
+/* About page - story list */
 .y2k-story-list {
   text-align: left;
   list-style-type: disc;
-  color: #00ff00;
+  color: #2d5a27;
   padding-left: 2rem;
 }
 
@@ -1371,21 +1334,21 @@ marquee {
 }
 
 .y2k-story-list .story-year-label {
-  color: #ffff00;
+  color: #c2185b;
   font-weight: bold;
 }
 
 .y2k-story-list .story-title-label {
-  color: #00ffff;
+  color: #388e3c;
   font-weight: bold;
 }
 
-/* Dedication - simple Y2K style */
+/* Dedication - spring style */
 .dedication-simple {
   text-align: center;
-  border: 2px ridge #6666ff;
+  border: 2px solid #a5d6a7;
   padding: 15px;
-  background: #000066;
+  background: #ffffff;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -1393,7 +1356,7 @@ marquee {
 .dedication-simple img {
   width: 150px;
   height: 150px;
-  border: 3px ridge #cc66ff;
+  border: 3px solid #f48fb1;
   margin-bottom: 10px;
 }
 
@@ -1401,48 +1364,48 @@ marquee {
 .intro-text {
   font-size: 14px;
   line-height: 1.8;
-  color: #00ff00;
+  color: #2d5a27;
 }
 
 .intro-highlight {
-  color: #ffff00;
+  color: #c2185b;
   font-weight: 600;
 }
 
-/* Main page wrapper with ridge border */
+/* Main page wrapper with spring border */
 .y2k-wrapper {
   max-width: 800px;
   margin: 0 auto;
-  border-left: 2px ridge #6666ff;
-  border-right: 2px ridge #6666ff;
-  background: #000033;
+  border-left: 2px solid #a5d6a7;
+  border-right: 2px solid #a5d6a7;
+  background: #f0f7e6;
 }
 
 
 /*-----------------------------*/
-/* Y2K UTILITY COLORS          */
+/* SPRING UTILITY COLORS       */
 /*-----------------------------*/
 
-.text-green { color: #00ff00 !important; }
-.text-cyan { color: #00ffff !important; }
-.text-yellow { color: #ffff00 !important; }
-.text-magenta { color: #ff00ff !important; }
-.text-pink { color: #ff99ff !important; }
-.text-light-purple { color: #cc99ff !important; }
-.text-gray { color: #999999 !important; }
-.text-dark-gray { color: #666666 !important; }
-.text-green-light { color: #00ff99 !important; }
+.text-green { color: #2e7d32 !important; }
+.text-cyan { color: #388e3c !important; }
+.text-yellow { color: #c2185b !important; }
+.text-magenta { color: #ad1457 !important; }
+.text-pink { color: #e91e63 !important; }
+.text-light-purple { color: #7b1fa2 !important; }
+.text-gray { color: #8d6e63 !important; }
+.text-dark-gray { color: #6d4c41 !important; }
+.text-green-light { color: #43a047 !important; }
 .bold { font-weight: bold !important; }
 .mb-0 { margin-bottom: 0 !important; }
 .mb-8 { margin-bottom: 8px !important; }
 .mt-3 { margin-top: 1rem !important; }
 .mt-15 { margin-top: 15px !important; }
 
-.bg-dark-blue { background-color: #000044 !important; }
+.bg-dark-blue { background-color: #e8f5e9 !important; }
 
 
 /*-----------------------------*/
-/* Y2K HR VARIANTS             */
+/* SPRING HR VARIANTS          */
 /*-----------------------------*/
 
 .hr-short {
@@ -1457,48 +1420,48 @@ marquee {
 
 
 /*-----------------------------*/
-/* NAVBAR Y2K CLASSES           */
+/* NAVBAR SPRING CLASSES        */
 /*-----------------------------*/
 
 .navbar-brand-y2k {
-  color: #ffff00;
+  color: #c2185b;
   font-weight: bold;
   text-decoration: none;
   font-size: 16px;
 }
 
 .navbar-brand-y2k:hover {
-  color: #ffff00;
+  color: #c2185b;
 }
 
 .nav-separator {
-  color: #666666;
+  color: #81c784;
 }
 
 
 /*-----------------------------*/
-/* FOOTER Y2K CLASSES           */
+/* FOOTER SPRING CLASSES        */
 /*-----------------------------*/
 
 .footer-note {
-  color: #999999;
+  color: #689f38;
   font-size: 11px;
   margin-bottom: 5px;
 }
 
 .footer-copyright {
-  color: #666666;
+  color: #8d6e63;
   font-size: 11px;
   margin-bottom: 0;
 }
 
 
 /*-----------------------------*/
-/* SOCIAL Y2K CLASSES           */
+/* SOCIAL SPRING CLASSES        */
 /*-----------------------------*/
 
 .social-title {
-  color: #00ffff;
+  color: #388e3c;
   font-weight: bold;
   margin-bottom: 8px;
 }
@@ -1509,9 +1472,10 @@ marquee {
 /*-----------------------------*/
 
 .masthead-subtitle {
-  color: #00ff00;
+  color: #ffffff;
   max-width: 500px;
   margin: 10px auto;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 
@@ -1520,8 +1484,8 @@ marquee {
 /*-----------------------------*/
 
 .section-album-highlight {
-  background-color: #000066;
-  border: 2px ridge #6666ff;
+  background-color: #e8f5e9;
+  border: 2px solid #a5d6a7;
   margin: 0;
 }
 
@@ -1536,24 +1500,24 @@ marquee {
 /*-----------------------------*/
 
 .genres-text {
-  color: #00ffff;
+  color: #388e3c;
   font-weight: bold;
 }
 
 .dedication-years-text {
-  color: #ffff00;
+  color: #c2185b;
   font-size: 13px;
 }
 
 .dedication-body-text {
-  color: #00ff00;
+  color: #2d5a27;
   font-size: 13px;
   max-width: 450px;
   margin: 0 auto;
 }
 
 .dedication-role-text {
-  color: #cc99ff;
+  color: #7b1fa2;
   font-size: 12px;
   margin-top: 10px;
 }
@@ -1583,27 +1547,26 @@ marquee {
 }
 
 .feature-card {
-  background: rgba(116, 100, 161, 0.15);
-  border: 1px solid rgba(116, 100, 161, 0.3);
+  background: #ffffff;
+  border: 2px solid #a5d6a7;
   padding: 2rem;
   text-align: center;
-  border: 2px ridge #6666ff;
 }
 
 .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #00ffff;
+  color: #4caf50;
 }
 
 .feature-title {
-  color: #ffff00;
+  color: #c2185b;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
 .feature-desc {
-  color: #00ff00;
+  color: #2d5a27;
   font-size: 0.9rem;
   margin: 0;
 }
@@ -1617,7 +1580,7 @@ marquee {
 .screenshot-item {
   display: inline-block;
   overflow: hidden;
-  border: 2px ridge #6666ff;
+  border: 2px solid #a5d6a7;
   margin: 5px;
   vertical-align: top;
   width: 280px;
@@ -1633,55 +1596,54 @@ marquee {
 .screenshot-placeholder {
   width: 100%;
   height: 200px;
-  background: #000066;
+  background: #e8f5e9;
   display: block;
   text-align: center;
   line-height: 200px;
-  color: #999999;
+  color: #8d6e63;
   font-size: 0.9rem;
 }
 
 .download-box {
-  background: #000066;
-  border: 2px ridge #6666ff;
+  background: #ffffff;
+  border: 2px solid #a5d6a7;
   padding: 2rem;
   text-align: center;
 }
 
 .download-version {
-  color: #999999;
+  color: #8d6e63;
   font-size: 0.9rem;
   margin-top: 1rem;
 }
 
 .btn-download {
-  background-color: #339966;
-  border: 3px outset #66cc99;
+  background-color: #4caf50;
+  border: 3px outset #81c784;
   color: #ffffff;
   font-size: 1.1rem;
   padding: 10px 20px;
 }
 
 .btn-download:hover {
-  background-color: #44aa77;
-  color: #ffff00;
+  background-color: #66bb6a;
+  color: #ffffff;
 }
 
 .btn-album {
-  background-color: #6633cc;
-  border: 3px outset #9966ff;
+  background-color: #7b1fa2;
+  border: 3px outset #ba68c8;
   color: #ffffff;
 }
 
 .btn-album:hover {
-  background-color: #8855ee;
-  color: #ffff00;
+  background-color: #9c27b0;
+  color: #ffffff;
 }
 
 .album-connection {
-  background: #000066;
-  border-left: 4px solid #6666ff;
-  border: 2px ridge #6666ff;
+  background: #ffffff;
+  border: 2px solid #a5d6a7;
   padding: 1.5rem;
   margin: 1.5rem 0;
 }
@@ -1694,11 +1656,11 @@ marquee {
 
 .controls-table td {
   padding: 0.5rem;
-  color: #00ff00;
+  color: #2d5a27;
 }
 
 .controls-table td:first-child {
-  color: #00ffff;
+  color: #388e3c;
   font-weight: bold;
   text-align: right;
   padding-right: 1rem;
@@ -1706,7 +1668,7 @@ marquee {
 
 .secrets-hint {
   font-style: italic;
-  color: #999999;
+  color: #8d6e63;
   margin-top: 2rem;
 }
 
@@ -1723,9 +1685,9 @@ marquee {
 }
 
 .level-card {
-  background: #000066;
+  background: #ffffff;
   overflow: hidden;
-  border: 2px ridge #6666ff;
+  border: 2px solid #a5d6a7;
   display: inline-block;
   vertical-align: top;
   width: 300px;
@@ -1734,7 +1696,7 @@ marquee {
 }
 
 .level-card.available {
-  border-color: #00ffff;
+  border-color: #4caf50;
 }
 
 .level-card.coming-soon {
@@ -1751,10 +1713,10 @@ marquee {
 .level-image-placeholder {
   width: 100%;
   height: 180px;
-  background: #000044;
+  background: #e8f5e9;
   text-align: center;
   line-height: 180px;
-  color: #999999;
+  color: #81c784;
   font-size: 3rem;
 }
 
@@ -1773,31 +1735,31 @@ marquee {
 }
 
 .level-badge.playable {
-  background: #003333;
-  color: #00ffff;
-  border-color: #00ffff;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #4caf50;
 }
 
 .level-badge.coming {
-  background: #330033;
-  color: #cc99ff;
-  border-color: #cc99ff;
+  background: #f3e5f5;
+  color: #7b1fa2;
+  border-color: #ce93d8;
 }
 
 .level-title {
-  color: #ffff00;
+  color: #c2185b;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
 .level-album {
-  color: #00ffff;
+  color: #388e3c;
   font-size: 0.85rem;
   margin-bottom: 0.5rem;
 }
 
 .level-desc {
-  color: #00ff00;
+  color: #2d5a27;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
