@@ -227,6 +227,19 @@ textarea {
   color: #ffffff;
 }
 
+.btn:visited,
+.btn:visited:hover {
+  color: #ffffff;
+}
+
+.btn-main:visited { color: #ffffff; }
+.btn-abo:visited { color: #ffffff; }
+.btn-form:visited { color: #ffffff; }
+.btn-download:visited { color: #ffffff; }
+.btn-album:visited { color: #ffffff; }
+.btn-bc:visited { color: #ffffff; }
+.btn-carmelis:visited { color: #ffffff; }
+
 .btn:active {
   border-style: inset;
 }
@@ -347,7 +360,7 @@ textarea {
 }
 
 .text-white {
-  color: #ffffff !important;
+  color: #2d5a27 !important;
 }
 
 .text-muted {
@@ -355,7 +368,7 @@ textarea {
 }
 
 .text-white-50 {
-  color: #2e7d32 !important;
+  color: #558b2f !important;
 }
 
 .bg-secondary {
@@ -598,7 +611,7 @@ textarea {
   font-size: 2rem;
   line-height: 2rem;
   letter-spacing: 0.2rem;
-  color: #ffffff;
+  color: #ffffff !important;
   text-shadow: 2px 2px #c2185b, -1px -1px #4caf50;
   background: none;
   -webkit-text-fill-color: #ffffff;
@@ -608,7 +621,7 @@ textarea {
 .masthead h2, .masthead .h2 {
   max-width: 500px;
   font-size: 1rem;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .h-100 {
@@ -1472,7 +1485,7 @@ marquee {
 /*-----------------------------*/
 
 .masthead-subtitle {
-  color: #ffffff;
+  color: #ffffff !important;
   max-width: 500px;
   margin: 10px auto;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
