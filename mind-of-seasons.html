@@ -11,288 +11,7 @@
         <title>Mind of Seasons</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
-        <style>
-            /* Game-specific styles */
-            .mindofseasons {
-                position: relative;
-                background: #3c5030;
-            }
-
-            .mindofseasons canvas {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 0;
-            }
-
-            .mindofseasons .container {
-                position: relative;
-                z-index: 1;
-            }
-
-            .feature-card {
-                background: rgba(116, 100, 161, 0.15);
-                border: 1px solid rgba(116, 100, 161, 0.3);
-                border-radius: 12px;
-                padding: 2rem;
-                text-align: center;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .feature-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 30px rgba(116, 100, 161, 0.3);
-            }
-
-            .feature-icon {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-                color: #64a19d;
-            }
-
-            .feature-title {
-                color: #fff;
-                font-size: 1.2rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .feature-desc {
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 0.9rem;
-                margin: 0;
-            }
-
-            .screenshot-gallery {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 1.5rem;
-                margin-top: 2rem;
-            }
-
-            .screenshot-item {
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-                transition: transform 0.3s ease;
-            }
-
-            .screenshot-item:hover {
-                transform: scale(1.03);
-            }
-
-            .screenshot-item img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-                display: block;
-            }
-
-            .screenshot-placeholder {
-                width: 100%;
-                height: 200px;
-                background: rgba(116, 100, 161, 0.2);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: rgba(255, 255, 255, 0.4);
-                font-size: 0.9rem;
-            }
-
-            .download-box {
-                background: linear-gradient(135deg, rgba(116, 100, 161, 0.3) 0%, rgba(100, 161, 157, 0.3) 100%);
-                border: 2px solid rgba(116, 100, 161, 0.5);
-                border-radius: 16px;
-                padding: 3rem;
-                text-align: center;
-            }
-
-            .download-version {
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 0.9rem;
-                margin-top: 1rem;
-            }
-
-            .btn-download {
-                --bs-btn-color: #fff;
-                --bs-btn-bg: #64a19d;
-                --bs-btn-border-color: #64a19d;
-                --bs-btn-hover-color: #fff;
-                --bs-btn-hover-bg: #558985;
-                --bs-btn-hover-border-color: #50817e;
-                font-size: 1.1rem;
-                padding: 1rem 2.5rem;
-            }
-
-            .btn-album {
-                --bs-btn-color: #fff;
-                --bs-btn-bg: #7464a1;
-                --bs-btn-border-color: #7464a1;
-                --bs-btn-hover-color: #fff;
-                --bs-btn-hover-bg: #635589;
-                --bs-btn-hover-border-color: #5d5081;
-            }
-
-            .album-connection {
-                background: rgba(116, 100, 161, 0.1);
-                border-left: 4px solid #7464a1;
-                padding: 2rem;
-                border-radius: 0 8px 8px 0;
-                margin: 2rem 0;
-            }
-
-            .controls-table {
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .controls-table td {
-                padding: 0.5rem;
-                color: rgba(255, 255, 255, 0.8);
-            }
-
-            .controls-table td:first-child {
-                color: #64a19d;
-                font-weight: bold;
-                text-align: right;
-                padding-right: 1rem;
-            }
-
-            .secrets-hint {
-                font-style: italic;
-                color: rgba(255, 255, 255, 0.4);
-                margin-top: 2rem;
-            }
-
-            .game-logo {
-                max-width: 300px;
-                margin-bottom: 1rem;
-            }
-
-            /* Levels Grid */
-            .levels-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2rem;
-                margin-top: 2rem;
-            }
-
-            .level-card {
-                background: rgba(0, 0, 0, 0.4);
-                border-radius: 16px;
-                overflow: hidden;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .level-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 15px 40px rgba(116, 100, 161, 0.4);
-            }
-
-            .level-card.available {
-                border-color: rgba(100, 161, 157, 0.5);
-            }
-
-            .level-card.coming-soon {
-                opacity: 0.6;
-            }
-
-            .level-image {
-                width: 100%;
-                height: 180px;
-                object-fit: cover;
-                display: block;
-            }
-
-            .level-image-placeholder {
-                width: 100%;
-                height: 180px;
-                background: linear-gradient(135deg, rgba(116, 100, 161, 0.3) 0%, rgba(100, 161, 157, 0.2) 100%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: rgba(255, 255, 255, 0.3);
-                font-size: 3rem;
-            }
-
-            .level-content {
-                padding: 1.5rem;
-            }
-
-            .level-badge {
-                display: inline-block;
-                font-size: 0.7rem;
-                padding: 0.25rem 0.75rem;
-                border-radius: 20px;
-                margin-bottom: 0.75rem;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-
-            .level-badge.playable {
-                background: rgba(100, 161, 157, 0.3);
-                color: #64a19d;
-            }
-
-            .level-badge.coming {
-                background: rgba(116, 100, 161, 0.3);
-                color: #a89bd4;
-            }
-
-            .level-title {
-                color: #fff;
-                font-size: 1.3rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .level-album {
-                color: #64a19d;
-                font-size: 0.85rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .level-desc {
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 0.9rem;
-                margin-bottom: 1rem;
-            }
-
-            .level-actions {
-                display: flex;
-                gap: 0.5rem;
-                flex-wrap: wrap;
-            }
-
-            .btn-level {
-                font-size: 0.85rem;
-                padding: 0.5rem 1rem;
-            }
-
-            .features-grid {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            @media (min-width: 768px) {
-                .features-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 1.5rem;
-                }
-            }
-
-            @media (min-width: 992px) {
-                .features-grid {
-                    grid-template-columns: repeat(4, 1fr);
-                }
-            }
-        </style>
     </head>
     <body id="page-top">
 
@@ -302,104 +21,90 @@
         <!-- Header -->
         <header class="mindofseasons masthead">
             <canvas id="game-bg"></canvas>
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Mind of Seasons</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">A journey through the music.</h2>
-                        <a class="btn btn-download" href="#levels">
-                            <i class="fas fa-gamepad"></i> Explore Levels
-                        </a>
-                        <a class="btn btn-album" href="#story">
-                            <i class="fas fa-book"></i> The Story
-                        </a>
-                    </div>
-                </div>
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Mind of Seasons</h1>
+                <p class="masthead-subtitle mx-auto mt-2 mb-5">A journey through the music.</p>
+                <a class="btn btn-download" href="#levels">
+                    <i class="fas fa-gamepad"></i> Explore Levels
+                </a>
+                <a class="btn btn-album" href="#story">
+                    <i class="fas fa-book"></i> The Story
+                </a>
             </div>
         </header>
 
         <!-- Story Section -->
         <section class="about-section" id="story">
             <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white mb-4">The Story</h2>
-                        <p class="text-white-50">
-                            <em>"Every album is a step. Every step tells a piece of the story."</em>
-                        </p>
-                        <p class="text-white-50">
-                            Mind of Seasons is an exploration game that brings Matt Krupa's musical journey to life.
-                            Each level represents a different album - a unique world with its own atmosphere,
-                            mysteries, and secrets to uncover.
-                        </p>
-                        <p class="text-white-50">
-                            <strong><i class="fas fa-cat"></i> The Lost Kittens</strong> are scattered across all the worlds -
-                            lost pieces of emotions, memories, and moments from everyday life. Each kitten holds
-                            a part of the story. Your mission is to find them all.
-                        </p>
-                        <p class="text-white-50">
-                            Your guide through the worlds is <strong>Sprytek</strong> - a helper cat who knows
-                            all the secrets. With his help, you'll search through autumn forests, winter, cold lands
-                            of Norway, wild Iceland, and beyond - rescuing the lost kittens and piecing together
-                            the journey that connects all the albums into one story. When will the spring come?
-                        </p>
-                    </div>
-                </div>
+                <h2 class="text-white mb-4">The Story</h2>
+                <p class="text-green-light">
+                    <em>"Every album is a step. Every step tells a piece of the story."</em>
+                </p>
+                <p class="text-green-light">
+                    Mind of Seasons is an exploration game that brings Matt Krupa's musical journey to life.
+                    Each level represents a different album - a unique world with its own atmosphere,
+                    mysteries, and secrets to uncover.
+                </p>
+                <p class="text-green-light">
+                    <strong><i class="fas fa-cat"></i> The Lost Kittens</strong> are scattered across all the worlds -
+                    lost pieces of emotions, memories, and moments from everyday life. Each kitten holds
+                    a part of the story. Your mission is to find them all.
+                </p>
+                <p class="text-green-light">
+                    Your guide through the worlds is <strong>Sprytek</strong> - a helper cat who knows
+                    all the secrets. With his help, you'll search through autumn forests, winter, cold lands
+                    of Norway, wild Iceland, and beyond - rescuing the lost kittens and piecing together
+                    the journey that connects all the albums into one story. When will the spring come?
+                </p>
             </div>
         </section>
 
         <!-- Levels Section -->
         <section class="projects-section bg-black" id="levels">
             <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mb-4">Levels</h2>
-                        <p class="text-white-50">Each level takes you into a different album's world</p>
-                        <hr class="light my-4">
-                    </div>
+                <div class="text-center">
+                    <h2 class="text-white mb-4">Levels</h2>
+                    <p class="text-green-light">Each level takes you into a different album's world</p>
+                    <hr class="hr-short">
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="levels-grid">
-                            <!-- Level 1: In the Autumn Forest -->
-                            <div class="level-card available">
-                                <div class="level-image-placeholder">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                                <div class="level-content">
-                                    <span class="level-badge playable">Playable Now</span>
-                                    <h3 class="level-title">In the Autumn Forest</h3>
-                                    <p class="level-album"><i class="fas fa-compact-disc"></i> Based on the album "In the Autumn Forest"</p>
-                                    <p class="level-desc">
-                                        Explore the mysterious forest created by a lost musician. Find 5 scattered kittens,
-                                        collect hidden items, and uncover clues about the missing master. But beware -
-                                        the creatures whisper things you don't want to hear...
-                                    </p>
-                                    <div class="level-actions">
-                                        <a class="btn btn-download btn-level" href="#download">
-                                            <i class="fas fa-download"></i> Download and play
-                                        </a>
-                                        <a class="btn btn-album btn-level" href="/albums/autumn">
-                                            <i class="fas fa-headphones"></i> Listen
-                                        </a>
-                                    </div>
-                                </div>
+                <div class="levels-grid">
+                    <!-- Level 1: In the Autumn Forest -->
+                    <div class="level-card available">
+                        <div class="level-image-placeholder">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="level-content">
+                            <span class="level-badge playable">Playable Now</span>
+                            <h3 class="level-title">In the Autumn Forest</h3>
+                            <p class="level-album"><i class="fas fa-compact-disc"></i> Based on the album "In the Autumn Forest"</p>
+                            <p class="level-desc">
+                                Explore the mysterious forest created by a lost musician. Find 5 scattered kittens,
+                                collect hidden items, and uncover clues about the missing master. But beware -
+                                the creatures whisper things you don't want to hear...
+                            </p>
+                            <div class="level-actions">
+                                <a class="btn btn-download btn-level" href="#download">
+                                    <i class="fas fa-download"></i> Download and play
+                                </a>
+                                <a class="btn btn-album btn-level" href="/albums/autumn">
+                                    <i class="fas fa-headphones"></i> Listen
+                                </a>
                             </div>
+                        </div>
+                    </div>
 
-                            <!-- Placeholder for future levels -->
-                            <div class="level-card coming-soon">
-                                <div class="level-image-placeholder">
-                                    <i class="fas fa-question"></i>
-                                </div>
-                                <div class="level-content">
-                                    <span class="level-badge coming">Coming Soon</span>
-                                    <h3 class="level-title">???</h3>
-                                    <p class="level-album"><i class="fas fa-compact-disc"></i> Next chapter of the story</p>
-                                    <p class="level-desc">
-                                        A new world awaits. Which album will be next? Stay tuned as the journey continues...
-                                    </p>
-                                </div>
-                            </div>
+                    <!-- Placeholder for future levels -->
+                    <div class="level-card coming-soon">
+                        <div class="level-image-placeholder">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="level-content">
+                            <span class="level-badge coming">Coming Soon</span>
+                            <h3 class="level-title">???</h3>
+                            <p class="level-album"><i class="fas fa-compact-disc"></i> Next chapter of the story</p>
+                            <p class="level-desc">
+                                A new world awaits. Which album will be next? Stay tuned as the journey continues...
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -409,26 +114,20 @@
         <!-- Screenshots Section -->
         <section class="projects-section bg-secondary" id="screenshots">
             <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mb-4">Screenshots</h2>
-                        <p class="text-white-50">Explore the world of Mind of Seasons</p>
-                        <hr class="light my-4">
-                    </div>
+                <div class="text-center">
+                    <h2 class="text-white mb-4">Screenshots</h2>
+                    <p class="text-green-light">Explore the world of Mind of Seasons</p>
+                    <hr class="hr-short">
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="screenshot-gallery">
-                            <div class="screenshot-item">
-                                <img src="images/game/screen1.png" alt="Mind of Seasons screenshot 1">
-                            </div>
-                            <div class="screenshot-item">
-                                <img src="images/game/screen2.png" alt="Mind of Seasons screenshot 2">
-                            </div>
-                            <div class="screenshot-item">
-                                <img src="images/game/screen33.png" alt="Mind of Seasons screenshot 3">
-                            </div>
-                        </div>
+                <div class="screenshot-gallery">
+                    <div class="screenshot-item">
+                        <img src="images/game/screen1.png" alt="Mind of Seasons screenshot 1">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/game/screen2.png" alt="Mind of Seasons screenshot 2">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/game/screen33.png" alt="Mind of Seasons screenshot 3">
                     </div>
                 </div>
             </div>
@@ -437,11 +136,9 @@
         <!-- Features Section -->
         <section class="projects-section bg-black" id="features">
             <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center mb-5">
-                        <h2 class="text-white">Game Features</h2>
-                        <hr class="light my-4">
-                    </div>
+                <div class="text-center mb-5">
+                    <h2 class="text-white">Game Features</h2>
+                    <hr class="hr-short">
                 </div>
                 <div class="features-grid">
                     <div class="feature-card">
@@ -465,7 +162,7 @@
                         <p class="feature-desc">Avoid them - they whisper things you don't want to listen to</p>
                     </div>
                 </div>
-                <div class="features-grid mt-3 mt-md-4">
+                <div class="features-grid mt-3">
                     <div class="feature-card">
                         <div class="feature-icon"><i class="fas fa-bed"></i></div>
                         <h3 class="feature-title">Fatigue System</h3>
@@ -493,20 +190,18 @@
         <!-- Controls Section -->
         <section class="projects-section bg-black" id="controls">
             <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <h2 class="text-white mb-4">Controls</h2>
-                        <p class="text-white-50 mb-4">Full keyboard support - no mouse required!</p>
-                        <table class="controls-table">
-                            <tr><td>WASD / Arrows</td><td>Move</td></tr>
-                            <tr><td>E</td><td>Open Inventory</td></tr>
-                            <tr><td>F</td><td>Interact / Talk / Collect</td></tr>
-                            <tr><td>G</td><td>Place cat in cabin</td></tr>
-                            <tr><td>C</td><td>Brew coffee</td></tr>
-                            <tr><td>V</td><td>Drink coffee</td></tr>
-                            <tr><td>ESC</td><td>Pause menu</td></tr>
-                        </table>
-                    </div>
+                <div class="text-center">
+                    <h2 class="text-white mb-4">Controls</h2>
+                    <p class="text-green-light mb-4">Full keyboard support - no mouse required!</p>
+                    <table class="controls-table">
+                        <tr><td>WASD / Arrows</td><td>Move</td></tr>
+                        <tr><td>E</td><td>Open Inventory</td></tr>
+                        <tr><td>F</td><td>Interact / Talk / Collect</td></tr>
+                        <tr><td>G</td><td>Place cat in cabin</td></tr>
+                        <tr><td>C</td><td>Brew coffee</td></tr>
+                        <tr><td>V</td><td>Drink coffee</td></tr>
+                        <tr><td>ESC</td><td>Pause menu</td></tr>
+                    </table>
                 </div>
             </div>
         </section>
@@ -514,72 +209,64 @@
         <!-- Music Connection Section -->
         <section class="projects-section bg-secondary" id="music">
             <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="album-connection">
-                            <h3 class="text-white mb-3">
-                                <i class="fas fa-compact-disc"></i> Music & Game Connected
-                            </h3>
-                            <p class="text-white-50">
-                                Mind of Seasons is more than a game - it's an interactive journey through
-                                Matt Krupa's entire musical catalog. Each level transforms an album into
-                                a playable world, with collectibles, secrets, and story elements drawn
-                                directly from the music.
-                            </p>
-                            <p class="text-white-50">
-                                Play each level while listening to its corresponding album for the full experience.
-                                As new albums are released, the game expands with new worlds to explore.
-                            </p>
-                            <a class="btn btn-album" href="/music">
-                                <i class="fas fa-headphones"></i> Explore All Music
-                            </a>
-                        </div>
-                    </div>
+                <div class="album-connection">
+                    <h3 class="text-white mb-4">
+                        <i class="fas fa-compact-disc"></i> Music & Game Connected
+                    </h3>
+                    <p class="text-green-light">
+                        Mind of Seasons is more than a game - it's an interactive journey through
+                        Matt Krupa's entire musical catalog. Each level transforms an album into
+                        a playable world, with collectibles, secrets, and story elements drawn
+                        directly from the music.
+                    </p>
+                    <p class="text-green-light">
+                        Play each level while listening to its corresponding album for the full experience.
+                        As new albums are released, the game expands with new worlds to explore.
+                    </p>
+                    <a class="btn btn-album" href="/music">
+                        <i class="fas fa-headphones"></i> Explore All Music
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Download Section -->
         <section class="projects-section bg-black" id="download">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="download-box">
-                            <h2 class="text-white mb-4">Download</h2>
-                            <p class="text-white-50">Level 1: In the Autumn Forest</p>
-                            <p class="text-white-50 small">Windows 10/11 - No installation required</p>
-                            <a class="btn btn-download" href="https://github.com/OldBeardMan/Mind-Of-Seasons/releases" target="_blank">
-                                <i class="fab fa-windows"></i> Download for Windows
-                            </a>
-                            <p class="download-version">
-                                Alpha 1.0.0 Pre-release 1<br>
-                                <small>This is an early alpha build - expect bugs!</small>
-                            </p>
-                        </div>
-                    </div>
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="download-box">
+                    <h2 class="text-white mb-4">Download</h2>
+                    <p class="text-green-light">Level 1: In the Autumn Forest</p>
+                    <p class="text-green-light small">Windows 10/11 - No installation required</p>
+                    <a class="btn btn-download" href="https://github.com/OldBeardMan/Mind-Of-Seasons/releases" target="_blank">
+                        <i class="fab fa-windows"></i> Download for Windows
+                    </a>
+                    <p class="download-version">
+                        Alpha 1.0.0 Pre-release 1<br>
+                        <small>This is an early alpha build - expect bugs!</small>
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Social Links -->
-        <div class="contact-section bg-black">
-            <div class="social d-flex justify-content-center">
-                <a class="mx-2" href="https://github.com/OldBeardMan/Mind-Of-Seasons" title="GitHub"><i class="fab fa-github"></i></a>
-                <a class="mx-2" href="https://www.youtube.com/channel/UCGIB3mFHUD2Fh-MthueSbXQ"><i class="fab fa-youtube"></i></a>
-                <a class="mx-2" href="https://www.instagram.com/matt.krupa.music/"><i class="fab fa-instagram"></i></a>
-                <a class="mx-2" href="https://mattkrupa.bandcamp.com/"><i class="fab fa-bandcamp"></i></a>
+        <div class="contact-section">
+            <div class="container text-center">
+                <p class="mb-0">
+                    [<a href="https://github.com/OldBeardMan/Mind-Of-Seasons" title="GitHub">GitHub</a>]
+                    [<a href="https://www.youtube.com/channel/UCGIB3mFHUD2Fh-MthueSbXQ">YouTube</a>]
+                    [<a href="https://www.instagram.com/matt.krupa.music/">Instagram</a>]
+                    [<a href="https://mattkrupa.bandcamp.com/">Bandcamp</a>]
+                </p>
             </div>
         </div>
 
         <!-- Footer -->
-        <footer class="footer bg-black small text-center text-white-50">
+        <footer class="footer">
             <div class="container px-4 px-lg-5">
                 Mind of Seasons by MKGames | Copyright &copy; Matt Krupa 2020-2026
             </div>
         </footer>
 
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Custom JS -->
         <script src="js/scripts.js"></script>
 

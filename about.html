@@ -6,160 +6,7 @@
         <meta name="description" content="Matt Krupa - ambient, electronic and acoustic music. The story behind the albums and Mind of Seasons.">
         <title>Who is Matt?</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
-        <style>
-            .about-hero {
-                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%),
-                            url('images/bg-autumn.jpg') center center;
-                background-size: cover;
-            }
-
-            .story-section {
-                position: relative;
-            }
-
-            .story-timeline {
-                position: relative;
-                padding-left: 2rem;
-                border-left: 2px solid rgba(116, 100, 161, 0.3);
-            }
-
-            .story-item {
-                position: relative;
-                margin-bottom: 2.5rem;
-            }
-
-            .story-item::before {
-                content: '';
-                position: absolute;
-                left: -2.4rem;
-                top: 0.5rem;
-                width: 12px;
-                height: 12px;
-                background: #7464a1;
-                border-radius: 50%;
-            }
-
-            .story-year {
-                color: #64a19d;
-                font-size: 0.85rem;
-                font-weight: bold;
-                margin-bottom: 0.5rem;
-            }
-
-            .story-title {
-                color: #fff;
-                font-size: 1.2rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .story-text {
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 0.95rem;
-                line-height: 1.7;
-            }
-
-            .dedication-section {
-                background: linear-gradient(135deg, rgba(116, 100, 161, 0.15) 0%, rgba(100, 161, 157, 0.1) 100%);
-                border-top: 1px solid rgba(116, 100, 161, 0.3);
-                border-bottom: 1px solid rgba(116, 100, 161, 0.3);
-            }
-
-            .dedication-card {
-                background: rgba(0, 0, 0, 0.4);
-                border-radius: 16px;
-                padding: 2.5rem;
-                text-align: center;
-                border: 1px solid rgba(116, 100, 161, 0.3);
-            }
-
-            .dedication-image {
-                width: 200px;
-                height: 200px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 4px solid rgba(116, 100, 161, 0.5);
-                margin-bottom: 1.5rem;
-            }
-
-            .dedication-name {
-                color: #fff;
-                font-size: 1.8rem;
-                margin-bottom: 0.25rem;
-            }
-
-            .dedication-years {
-                color: #64a19d;
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-
-            .dedication-text {
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 1rem;
-                line-height: 1.8;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .dedication-role {
-                display: inline-block;
-                background: rgba(116, 100, 161, 0.3);
-                color: #a89bd4;
-                padding: 0.25rem 1rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-                margin-top: 1rem;
-            }
-
-            .intro-text {
-                font-size: 1.15rem;
-                line-height: 1.9;
-                color: rgba(255, 255, 255, 0.8);
-            }
-
-            .intro-highlight {
-                color: #64a19d;
-                font-weight: 600;
-            }
-
-            .music-genres {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-top: 1.5rem;
-                justify-content: center;
-            }
-
-            .genre-tag {
-                background: rgba(116, 100, 161, 0.2);
-                color: rgba(255, 255, 255, 0.8);
-                padding: 0.4rem 1rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-                border: 1px solid rgba(116, 100, 161, 0.3);
-            }
-
-            .inspiration-box {
-                background: rgba(100, 161, 157, 0.1);
-                border-left: 4px solid #64a19d;
-                padding: 1.5rem;
-                border-radius: 0 8px 8px 0;
-                margin-top: 2rem;
-            }
-
-            .inspiration-box p {
-                margin: 0;
-                color: rgba(255, 255, 255, 0.7);
-            }
-
-            .inspiration-box strong {
-                color: #64a19d;
-            }
-        </style>
     </head>
     <body id="page-top">
 
@@ -167,163 +14,121 @@
         <div id="navbar-container"></div>
 
         <!-- Header -->
-        <header class="about-hero masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Who is Matt?</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-4">The story behind the music</h2>
-                    </div>
-                </div>
+        <header class="who masthead">
+            <div class="container text-center">
+                <h1 class="text-uppercase">Who is Matt?</h1>
+                <p class="masthead-subtitle">The story behind the music</p>
             </div>
         </header>
 
         <!-- Intro Section -->
         <section class="about-section text-center" id="intro">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <p class="intro-text">
-                            Hi, I'm <span class="intro-highlight">Matt Krupa</span> - a musician and composer from Poland.
-                            I create music that tells stories - from cozy forests through frozen Nordic landscapes to a spring at last.
-                            My albums are chapters of one bigger journey, and my game
-                            <span class="intro-highlight">Mind of Seasons</span> brings these worlds to life.
-                        </p>
-                        <div class="music-genres">
-                            <span class="genre-tag"><i class="fas fa-leaf"></i> Ambient</span>
-                            <span class="genre-tag"><i class="fas fa-bolt"></i> Electronic</span>
-                            <span class="genre-tag"><i class="fas fa-guitar"></i> Acoustic</span>
-                            <span class="genre-tag"><i class="fas fa-music"></i> Instrumental</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="container">
+                <p class="intro-text">
+                    Hi, I'm <span class="intro-highlight">Matt Krupa</span> - a musician and composer from Poland.
+                    I create music that tells stories - from cozy forests through frozen Nordic landscapes to a spring at last.
+                    My albums are chapters of one bigger journey, and my game
+                    <span class="intro-highlight">Mind of Seasons</span> brings these worlds to life.
+                </p>
+                <p class="genres-text">
+                    Genres: Ambient | Electronic | Acoustic | Instrumental
+                </p>
             </div>
         </section>
 
-        <!-- Story Timeline -->
-        <section class="projects-section bg-black story-section" id="story">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center mb-5">
-                        <h2 class="text-white">The Journey</h2>
-                        <hr class="light my-4">
-                    </div>
+        <hr class="hr-wide">
+
+        <!-- Story Timeline - as simple bulleted list -->
+        <section class="projects-section bg-black" id="story">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="text-cyan">The Journey</h2>
+                    <hr class="hr-short">
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="story-timeline">
-                            <div class="story-item">
-                                <div class="story-year">The Beginning</div>
-                                <h3 class="story-title"><i class="fas fa-gamepad"></i> From Guitar Hero to Real Guitar</h3>
-                                <p class="story-text">
-                                    It all started when I was 14 and loved playing Guitar Hero. I asked my brother to teach me guitar,
-                                    but he convinced me that bass would be easier to learn. So I picked up the bass and soon joined
-                                    a local band where I learned to play by ear.
-                                </p>
-                            </div>
 
-                            <div class="story-item">
-                                <div class="story-year">2020</div>
-                                <h3 class="story-title"><i class="fas fa-microphone"></i> First Covers</h3>
-                                <p class="story-text">
-                                    I started recording covers at home, experimenting with whatever equipment I had.
-                                    My first releases were acoustic covers - simple recordings that taught me the basics
-                                    of home production. I was figuring things out one step at a time.
-                                </p>
-                            </div>
-
-                            <div class="story-item">
-                                <div class="story-year">2020</div>
-                                <h3 class="story-title"><i class="fas fa-leaf"></i> In The Autumn Forest</h3>
-                                <p class="story-text">
-                                    After getting a MIDI controller and Ableton, I decided to compose my first real album.
-                                    Inspired by C418's atmospheric music, I created 7 tracks that became
-                                    <em>In The Autumn Forest</em> - the beginning of a bigger story.
-                                </p>
-                            </div>
-
-                            <div class="story-item">
-                                <div class="story-year">2021-2022</div>
-                                <h3 class="story-title"><i class="fas fa-snowflake"></i> Nordic Countries</h3>
-                                <p class="story-text">
-                                    I wanted to push further - more melodies, better production, bigger soundscapes.
-                                    The Nordic Countries albums (Norway, Iceland, Winter) expanded the musical universe
-                                    with cold, atmospheric journeys through imaginary northern lands.
-                                </p>
-                            </div>
-
-                            <div class="story-item">
-                                <div class="story-year">2023-2024</div>
-                                <h3 class="story-title"><i class="fas fa-cat"></i> Cats & Lost Kittens</h3>
-                                <p class="story-text">
-                                    I started exploring electronic music more deeply - remixing old tracks, creating new beats,
-                                    and releasing the "Cats" series. This led to <em>Lost Kittens</em> - an album of tracks
-                                    scattered across all my previous albums, finally brought together.
-                                </p>
-                            </div>
-
-                            <div class="story-item">
-                                <div class="story-year">Now</div>
-                                <h3 class="story-title"><i class="fas fa-gamepad"></i> Mind of Seasons</h3>
-                                <p class="story-text">
-                                    All the albums are connected by one story - and now that story is becoming a game.
-                                    <em>Mind of Seasons</em> transforms each album into a playable world where you can
-                                    explore, find lost kittens, and discover the secrets hidden in the music.
-                                </p>
-                            </div>
-
-                            <div class="story-item">
-                                <div class="story-year">2025-2026</div>
-                                <h3 class="story-title"><i class="fas fa-seedling"></i> Spring at Last</h3>
-                                <p class="story-text">
-                                    After years of autumn, winter, and cold Nordic lands... spring is finally coming.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ul class="y2k-story-list">
+                    <li>
+                        <span class="story-year-label">The Beginning:</span>
+                        <span class="story-title-label">From Guitar Hero to Real Guitar</span> -
+                        It all started when I was 14 and loved playing Guitar Hero. I asked my brother to teach me guitar,
+                        but he convinced me that bass would be easier to learn. So I picked up the bass and soon joined
+                        a local band where I learned to play by ear.
+                    </li>
+                    <li>
+                        <span class="story-year-label">2020:</span>
+                        <span class="story-title-label">First Covers</span> -
+                        I started recording covers at home, experimenting with whatever equipment I had.
+                        My first releases were acoustic covers - simple recordings that taught me the basics
+                        of home production. I was figuring things out one step at a time.
+                    </li>
+                    <li>
+                        <span class="story-year-label">2020:</span>
+                        <span class="story-title-label">In The Autumn Forest</span> -
+                        After getting a MIDI controller and Ableton, I decided to compose my first real album.
+                        Inspired by C418's atmospheric music, I created 7 tracks that became
+                        <i>In The Autumn Forest</i> - the beginning of a bigger story.
+                    </li>
+                    <li>
+                        <span class="story-year-label">2021-2022:</span>
+                        <span class="story-title-label">Nordic Countries</span> -
+                        I wanted to push further - more melodies, better production, bigger soundscapes.
+                        The Nordic Countries albums (Norway, Iceland, Winter) expanded the musical universe
+                        with cold, atmospheric journeys through imaginary northern lands.
+                    </li>
+                    <li>
+                        <span class="story-year-label">2023-2024:</span>
+                        <span class="story-title-label">Cats & Lost Kittens</span> -
+                        I started exploring electronic music more deeply - remixing old tracks, creating new beats,
+                        and releasing the "Cats" series. This led to <i>Lost Kittens</i> - an album of tracks
+                        scattered across all my previous albums, finally brought together.
+                    </li>
+                    <li>
+                        <span class="story-year-label">Now:</span>
+                        <span class="story-title-label">Mind of Seasons</span> -
+                        All the albums are connected by one story - and now that story is becoming a game.
+                        <i>Mind of Seasons</i> transforms each album into a playable world where you can
+                        explore, find lost kittens, and discover the secrets hidden in the music.
+                    </li>
+                    <li>
+                        <span class="story-year-label">2025-2026:</span>
+                        <span class="story-title-label">Spring at Last</span> -
+                        After years of autumn, winter, and cold Nordic lands... spring is finally coming.
+                    </li>
+                </ul>
             </div>
         </section>
+
+        <hr class="hr-wide">
 
         <!-- Sprytek Dedication -->
-        <section class="projects-section dedication-section" id="sprytek">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="dedication-card">
-                            <img src="images/sprytek.jpg" alt="Sprytek" class="dedication-image" onerror="this.src='images/CAT1.jpg'">
-                            <h2 class="dedication-name">Sprytek</h2>
-                            <p class="dedication-years">26.03.2012 - 23.01.2026</p>
-                            <p class="dedication-text">
-                                My beloved cat, faithful companion and emotional support through all these years.
-                                He loved cuddles, warming others with his presence, and his calming purr for those who needed it.
-                                Now he lives on in the music and as the guide character in Mind of Seasons -
-                                helping players find their way through the worlds, just like he always helped me.
-                            </p>
-                            <span class="dedication-role"><i class="fas fa-paw"></i> Forever the guide</span>
-                        </div>
-                    </div>
+        <section class="projects-section bg-dark-blue" id="sprytek">
+            <div class="container text-center">
+                <div class="dedication-simple">
+                    <img src="images/sprytek.jpg" alt="Sprytek" onerror="this.src='images/CAT1.jpg'">
+                    <h2 class="text-pink">Sprytek</h2>
+                    <p class="dedication-years-text">26.03.2012 - 23.01.2026</p>
+                    <p class="dedication-body-text">
+                        My beloved cat, faithful companion and emotional support through all these years.
+                        He loved cuddles, warming others with his presence, and his calming purr for those who needed it.
+                        Now he lives on in the music and as the guide character in Mind of Seasons -
+                        helping players find their way through the worlds, just like he always helped me.
+                    </p>
+                    <p class="dedication-role-text">~ Forever the guide ~</p>
                 </div>
             </div>
         </section>
+
+        <hr class="hr-wide">
 
         <!-- Links Section -->
         <section class="projects-section bg-black" id="explore">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Explore</h2>
-                        <p class="text-white-50 mb-4">Dive into the music and the worlds it created</p>
-                        <div class="d-flex flex-wrap justify-content-center">
-                            <a class="btn btn-main me-3 mb-2" href="/music">
-                                <i class="fas fa-headphones"></i> Listen to Music
-                            </a>
-                            <a class="btn btn-main mb-2" href="/mind-of-seasons">
-                                <i class="fas fa-gamepad"></i> Play the Game
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="container text-center">
+                <h2 class="text-cyan">Explore</h2>
+                <p class="text-green-light">Dive into the music and the worlds it created</p>
+                <br>
+                <a class="btn btn-main" href="/albums">Listen to Music</a>
+                &nbsp;
+                <a class="btn btn-main" href="/mind-of-seasons">Play the Game</a>
             </div>
         </section>
 
@@ -333,7 +138,6 @@
         <!-- Footer -->
         <div id="footer-container"></div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
     </body>
 </html>

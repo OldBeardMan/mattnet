@@ -1,146 +1,162 @@
 /*------------------------------------------*/
-/* STYLE UŻYWANE W RÓŻNYCH SEKCJACH STRONY */
+/* Y2K STYLE - Matt Krupa's Music Homepage  */
+/* Best viewed in 800x600 with IE6           */
 /*------------------------------------------*/
 
-/* Ustawienie box-sizing na border-box dla wszystkich elementów, co ułatwia zarządzanie rozmiarami */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Gładkie przewijanie strony dla użytkowników, którzy nie preferują redukcji ruchu */
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
+/* Blink animation for Y2K feel */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-/* Podstawowe stylizacje dla całego ciała dokumentu, włączając czcionkę, kolor tła, itp. */
+/* Rainbow HR animation */
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Star twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
 body {
   margin: 0;
-  font-family: "Nunito", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-  font-size: 1rem;
+  font-family: "Comic Sans MS", "Courier New", cursive, monospace;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #000000;
-  letter-spacing: 0.0625em;
+  line-height: 1.6;
+  color: #00ff00;
+  background-color: #000033;
+  /* Tiled star pattern */
+  background-image:
+    radial-gradient(1px 1px at 10px 20px, #ffffff44, transparent),
+    radial-gradient(1px 1px at 50px 80px, #ffffff33, transparent),
+    radial-gradient(1px 1px at 120px 40px, #ffffff55, transparent),
+    radial-gradient(1px 1px at 180px 120px, #ffffff22, transparent),
+    radial-gradient(1.5px 1.5px at 200px 60px, #ffffff66, transparent),
+    radial-gradient(1px 1px at 80px 150px, #ffffff44, transparent),
+    radial-gradient(1px 1px at 250px 100px, #ffffff33, transparent),
+    radial-gradient(1.5px 1.5px at 30px 110px, #ffffff55, transparent),
+    radial-gradient(1px 1px at 160px 170px, #ffffff44, transparent),
+    radial-gradient(1px 1px at 280px 30px, #ffffff22, transparent);
+  background-size: 300px 200px;
+  background-repeat: repeat;
+  cursor: crosshair;
+  letter-spacing: normal;
 }
 
-/* Ustawia padding przy przewijaniu, aby treść nie była zasłaniana przez pasek nawigacyjny */
 html {
-  scroll-padding-top: calc(4.5rem - 1px);
+  scroll-padding-top: 0;
 }
 
-/* Styl dla linii poziomej (hr), ustawiający przeźroczystość, kolory i marginesy */
+/* Rainbow HR separator */
 hr {
   margin: 1rem 0;
-  color: inherit;
   border: 0;
-  border-top: 1px solid;
-  opacity: 0.25;
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
+  background-size: 200% 100%;
+  animation: rainbow 3s linear infinite;
+  opacity: 1;
 }
 
-/* Stylizacje dla nagłówków, definiujące marginesy, grubość czcionki i wysokość linii */
+hr.light {
+  border-color: #ffff00;
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
+  background-size: 200% 100%;
+  animation: rainbow 3s linear infinite;
+}
+
 h3, h2, h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
+  font-weight: bold;
+  line-height: 1.3;
+  font-family: "Comic Sans MS", "Courier New", cursive;
 }
 
-/* Zmienne rozmiary czcionek dla h1 w zależności od szerokości ekranu */
 h1 {
-  font-size: calc(1.375rem + 1.5vw);
-}
-@media (min-width: 1200px) {
-  h1 {
-    font-size: 2.5rem;
-  }
+  font-size: 2rem;
+  color: #ffff00;
+  text-shadow: 2px 2px #ff00ff;
 }
 
-/* Zmienne rozmiary czcionek dla h2 */
 h2 {
-  font-size: calc(1.325rem + 0.9vw);
-}
-@media (min-width: 1200px) {
-  h2 {
-    font-size: 2rem;
-  }
+  font-size: 1.5rem;
+  color: #00ffff;
 }
 
-/* Zmienne rozmiary czcionek dla h3 */
 h3 {
-  font-size: calc(1.3rem + 0.6vw);
-}
-@media (min-width: 1200px) {
-  h3 {
-    font-size: 1.75rem;
-  }
+  font-size: 1.2rem;
+  color: #ff99ff;
 }
 
-/* Stylizacje dla paragrafów, definiujące marginesy */
 p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-/* Stylizacje dla list, definiujące wcięcia i marginesy */
 ul {
   padding-left: 2rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-/* Styl dla linków, ustawia kolor oraz wyłącza podkreślenie */
+/* Classic blue underlined links */
 a {
-  color: #64a19d;
-  text-decoration: none;
+  color: #0000ff;
+  text-decoration: underline;
 }
-/* Styl dla linków przy najechaniu, zmienia kolor */
 a:hover {
-  color: #b1b1b1;
+  color: #ff00ff;
+}
+a:visited {
+  color: #800080;
 }
 
-/* Styl dla obrazków, ustawia ich wyrównanie pionowe */
 img {
   vertical-align: middle;
 }
 
-/* Styl dla etykiet (label), ustawia sposób wyświetlania na blokowy */
 label {
   display: inline-block;
 }
 
-/* Styl dla przycisków, usuwa zaokrąglenie ramek */
+/* 3D outset buttons */
 button {
-  border-radius: 0;
+  border: 3px outset #999999;
+  background: #c0c0c0;
+  font-family: "Comic Sans MS", "Courier New", cursive;
 }
 
-/* Usuwa obramowanie dla przycisków, które nie są aktywnie zaznaczone */
 button:focus:not(:focus-visible) {
   outline: 0;
 }
 
-/* Styl dla pól formularzy, ustawia marginesy, dziedziczenie czcionki i wielkości */
 input,
 button,
 select,
 textarea {
   margin: 0;
-  font-family: inherit;
+  font-family: "Comic Sans MS", "Courier New", cursive;
   font-size: inherit;
   line-height: inherit;
 }
 
-/* Dla przycisków i selektorów, wyłącza zmianę wielkości liter */
 button,
 select {
   text-transform: none;
 }
 
-/* Styl dla przycisków aktywnych, zmienia kursor na wskaźnik */
 button:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
@@ -148,377 +164,298 @@ button:not(:disabled),
   cursor: pointer;
 }
 
-/* Dla obszarów tekstowych (textarea), pozwala na pionową zmianę rozmiaru */
 textarea {
   resize: vertical;
 }
 
-/* Ustawienia kontenera, definiuje marginesy, paddingi i maksymalne szerokości w zależności od rozdzielczości ekranu */
+/* Main container - Y2K style with ridge border */
 .container {
   width: 100%;
-  padding-right: calc(1.5rem * 0.5); /* responsywny odstęp */
-  padding-left: calc(1.5rem * 0.5);
+  max-width: 800px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 
-/* Styl dla kontenera dla różnych breakpointów, ustala maksymalne szerokości */
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}
-
-/* Styl dla wierszy (row), definiuje wyświetlanie jako flex, wrap oraz marginesy */
+/* Simple row - no flex needed for Y2K */
 .row {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   margin-top: 0;
-  margin-right: calc(-0.5 * 1.5rem);
-  margin-left: calc(-0.5 * 1.5rem);
 }
-/* Styl dla elementów wewnątrz wiersza, definiuje szerokość, padding */
 .row > * {
-  flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  padding-right: calc(1.5rem * 0.5);
-  padding-left: calc(1.5rem * 0.5);
+  padding-right: 10px;
+  padding-left: 10px;
   margin-top: 0;
 }
 
-/* Styl dla kolumn w odpowiedzi na szerokość ekranu, definiuje flex i szerokość */
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .col-lg-6 {
-    flex: 0 0 auto;
-    width: 50%;
+    width: 100%;
   }
   .col-lg-8 {
-    flex: 0 0 auto;
-    width: 66.66666667%;
+    width: 100%;
   }
 }
 
-/* Styl dla przycisków, definiuje padding, czcionkę, kolor, tło, obramowanie, zaokrąglenie i efekty przy interakcji */
+/* 3D buttons Y2K style */
 .btn {
-  --bs-btn-color: #212529;
-  --bs-btn-bg: transparent;
-  --bs-btn-border-color: transparent;
-  --bs-btn-hover-border-color: transparent;
   display: inline-block;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
   line-height: 1.5;
-  color: var(--bs-btn-color);
+  color: #000000;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
-  user-select: none; /*żeby nie można było zaznaczyć tekstu w przycisku*/
-  border: 1px solid var(--bs-btn-border-color);
-  border-radius: 0.375rem;
-  background-color: var(--bs-btn-bg);
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn {
-    transition: none; /* Wyłącza animacje dla użytkowników preferujących zredukowany ruch */
-  }
-}
-.btn:hover {
-  color: var(--bs-btn-hover-color);
-  background-color: var(--bs-btn-hover-bg);
-  border-color: var(--bs-btn-hover-border-color);
-}
-.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
-  color: var(--bs-btn-active-color);
-  background-color: var(--bs-btn-active-bg);
-  border-color: var(--bs-btn-active-border-color);
+  user-select: none;
+  border: 3px outset #9999ff;
+  background-color: #6666cc;
+  color: #ffffff;
+  font-family: "Comic Sans MS", "Courier New", cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  width: auto;
+  margin-top: 0.5rem;
 }
 
-/*styl dla głównego przycisku, inne style znajdują się w sekcjach*/
+.btn:hover {
+  background-color: #8888ee;
+  color: #ffff00;
+}
+
+.btn:active {
+  border-style: inset;
+}
+
 .btn-main {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #7464a1;
-  --bs-btn-border-color: #7464a1;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #635589;
-  --bs-btn-hover-border-color: #5d5081;
-  --bs-btn-focus-shadow-rgb: 137, 123, 175;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #5d5081;
-  --bs-btn-active-border-color: #574b79;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #7464a1;
-  --bs-btn-disabled-border-color: #7464a1;
+  background-color: #6633cc;
+  border-color: #9966ff;
+  color: #ffffff;
+}
+
+.btn-main:hover {
+  background-color: #8855ee;
+  color: #ffff00;
 }
 
 .btn-abo {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #1a0f38;
-  --bs-btn-border-color: #08001f;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #24115a;
-  --bs-btn-hover-border-color: #5d5081;
-  --bs-btn-focus-shadow-rgb: 137, 123, 175;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #5d5081;
-  --bs-btn-active-border-color: #574b79;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #7464a1;
-  --bs-btn-disabled-border-color: #7464a1;
+  background-color: #333399;
+  border-color: #6666cc;
+  color: #00ffff;
 }
 
-/* Styl dla ustawienia wyświetlania elementów jako flex */
+.btn-abo:hover {
+  background-color: #4444aa;
+  color: #ffff00;
+}
+
+.btn-bc {
+  background-color: #996633;
+  border-color: #cc9966;
+  color: #ffffff;
+}
+
+.btn-carmelis {
+  background-color: #993366;
+  border-color: #cc6699;
+  color: #ffffff;
+}
+
+.btn-form {
+  background-color: #339966;
+  border-color: #66cc99;
+  color: #ffffff;
+}
+
+.btn-form:hover {
+  background-color: #44aa77;
+  color: #ffff00;
+}
+
+/* Utility classes */
 .d-flex {
-  display: flex !important;
+  display: block !important;
 }
 
-/* Wyśrodkowanie zawartości elementu w poziomie */
 .justify-content-center {
-  justify-content: center !important;
+  text-align: center !important;
 }
 
-/* Wyrównanie zawartości elementu do środka w pionie */
 .align-items-center {
-  align-items: center !important;
+  text-align: center !important;
 }
 
-/* Ustawienie marginesów poziomych */
 .mx-2 {
   margin-right: 0.5rem !important;
   margin-left: 0.5rem !important;
 }
 
-/* Automatyczne marginesy poziome, wyśrodkowuje element */
 .mx-auto {
   margin-right: auto !important;
   margin-left: auto !important;
 }
 
-/* Usuwa marginesy pionowe */
 .my-0 {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* Ustawienie marginesów pionowych */
 .my-4 {
-  margin-top: 1.5rem !important;
-  margin-bottom: 1.5rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
 }
 
-/* Usuwa górny margines */
 .mt-0 {
   margin-top: 0 !important;
 }
 
-/* Ustawia górny margines na 0.5 rem */
 .mt-2 {
   margin-top: 0.5rem !important;
 }
 
-/* Ustawia dolny margines na 0.5 rem */
 .mb-2 {
   margin-bottom: 0.5rem !important;
 }
 
-/* Ustawia dolny margines na 1.5 rem */
 .mb-4 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1rem !important;
 }
 
-/* Ustawia dolny margines na 3 rem */
 .mb-5 {
-  margin-bottom: 3rem !important;
+  margin-bottom: 2rem !important;
 }
 
-/* Automatyczny margines po lewej stronie, służący do wyrównywania elementu do prawej strony kontenera */
 .ms-auto {
   margin-left: auto !important;
 }
 
-/* Ustawia poziome paddingi na 1.5 rem */
 .px-4 {
-  padding-right: 1.5rem !important;
-  padding-left: 1.5rem !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
 }
 
-/* Centruje tekst */
 .text-center {
   text-align: center !important;
 }
 
-/* Zamienia tekst na wielkie litery */
 .text-uppercase {
   text-transform: uppercase !important;
 }
 
-/* Ustawia kolor tekstu na biały */
 .text-white {
-  color: rgba(255, 255, 255) !important;
+  color: #ffffff !important;
 }
 
-/* Ustawia kolor tekstu na szary */
 .text-muted {
-  color: #6c757d !important;
+  color: #999999 !important;
 }
 
-/* Ustawia kolor tekstu na półprzezroczysty biały */
 .text-white-50 {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: #00ff99 !important;
 }
 
-/* Ustawia kolor tła na kolor drugorzędny (secondary) */
 .bg-secondary {
-  background-color: rgba(116, 100, 161) !important;
+  background-color: #000066 !important;
+  border-top: 2px ridge #6666ff;
+  border-bottom: 2px ridge #6666ff;
 }
 
-/* Ustawia kolor tła na czarny */
 .bg-black {
-  background-color: rgba(0, 0, 0) !important;
+  background-color: #000033 !important;
 }
 
-/* Ustawia większe poziome paddingi na dużych ekranach */
 @media (min-width: 992px) {
   .px-lg-5 {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
   }
 }
 
 
 /*-----------------------------*/
-/* SEKCJA Z PASKIEM NAWIGACYJNYM */
+/* Y2K NAVBAR                  */
 /*-----------------------------*/
 
-/* Ukrywanie zawartości niepokazywanej (domyślnie nie rozwiniętej) */
 .collapse:not(.show) {
   display: none;
 }
 
-/* Animacja zwijania, ustawia wysokość na 0 i ukrywa zawartość podczas zwijania */
 .collapsing {
   height: 0;
   overflow: hidden;
-  transition: height 0.35s ease;
 }
 
-/* Styl dla linków w nawigacji, definiuje blokowe wyświetlanie, padding, czcionkę i kolor */
 .nav-link {
-  display: block;
-  padding: 0.5rem 0;
-  color: rgba(255, 255, 255, 0.55);
-  text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  display: inline;
+  padding: 0;
+  color: #00ffff;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-/* Zmienia kolor linków w nawigacji po najechaniu lub fokusie */
 .nav-link:hover, .nav-link:focus {
-  color: rgba(255, 255, 255, 0.7);
+  color: #ffff00;
 }
 
-/* Styl dla paska nawigacyjnego, ustawia pozycję, wyświetlanie, wyrównanie i padding */
+.nav-link.active {
+  color: #ff00ff;
+}
+
 .navbar {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 0;
+  position: static;
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #000066;
+  border-bottom: 3px ridge #6666ff;
 }
 
-/* Kontener wewnątrz navbara dziedziczy ustawienia flexa z navbar */
 .navbar > .container {
-  display: flex;
-  flex-wrap: inherit;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
+  text-align: center;
 }
 
-/* Styl dla nawigacji w navbarze, ustawia wyświetlanie jako flex, kierunek jako kolumnę i usuwa list-style */
 .navbar-nav {
-  display: flex;
-  flex-direction: column;
+  display: inline;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
 
 .navbar-logo {
-  height: 30px; /* wysokość obrazka */
-  width: auto; /* automatyczne dostosowanie szerokości */
-  display: inline-block; /* dla lepszego umiejscowienia w linku */
-  vertical-align: middle; /* wyrównanie logo względem tekstu */
+  height: 30px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-
-/* Styl dla zawartości rozwijanej w navbarze, ustawia podstawę i rozwój flexa oraz wyrównanie */
 .navbar-collapse {
-  flex-basis: 100%;
-  flex-grow: 1;
-  align-items: center;
+  display: inline !important;
 }
 
-/* Styl dla przycisku rozwijania navbaru, definiuje padding, rozmiar czcionki, kolor i styl obramowania */
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.55);
-  background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.375rem;
-  transition: box-shadow 0.15s ease-in-out;
+  display: none !important;
 }
 
-/* Usuwa podkreślenie dla przycisku rozwijania navbaru po najechaniu i fokusie */
-.navbar-toggler:hover,
-.navbar-toggler:focus {
-  text-decoration: none;
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem;
-}
-
-/* Styl dla dużego navbara na szerokich ekranach, zmienia ustawienia flexa i rozmieszczenie elementów */
 @media (min-width: 992px) {
   .navbar-expand-lg {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    display: block;
   }
   .navbar-expand-lg .navbar-nav {
-    flex-direction: row;  /* zmiana kierunku na rzędowy */
+    display: inline;
   }
   .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-right: 0;
+    padding-left: 0;
   }
   .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
+    display: inline !important;
   }
   .navbar-expand-lg .navbar-toggler {
     display: none;
@@ -526,369 +463,265 @@ textarea {
 }
 
 .language-selector {
-  display: flex;
-  align-items: center;
-  margin-left: 1rem; /* Możesz dostosować wartość marginesu */
-}
-.language-selector img {
-  width: 24px;
-  height: 24px;
-  margin-left: 5px;
-  cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s; /* Dodanie animacji */
-}
-.language-selector img:hover {
-  transform: scale(1.1); /* Powiększenie ikony po najechaniu */
-  opacity: 0.8; /* Zmniejszenie przezroczystości po najechaniu */
-}
-.language-selector img.selected {
-  border: 2px solid #007bff; /* Dodanie obramowania dla aktywnej ikony */
-  border-radius: 50%;
+  display: none;
 }
 
-/* Pozycjonowanie na górze strony dla elementu */
 .fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
+  position: static;
+  z-index: auto;
 }
 
-/* Styl dla głównego paska nawigacyjnego */
 #mainNav {
-  min-height: 3.5rem;
-  background-color: #000000; /* czarne tło */
+  min-height: auto;
+  background-color: #000066;
+  border-bottom: 3px ridge #6666ff;
+  padding: 8px 0;
 }
-/* Styl dla przycisku rozwijania menu w pasku nawigacyjnym */
+
 #mainNav .navbar-toggler {
-  font-size: 80%;
-  padding: 0.75rem;
-  color: #64a19d; /* kolor tekstu i obramowania */
-  border: 1px solid #64a19d;
+  display: none;
 }
-/* Usuwa obramowanie z przycisku rozwijania przy fokusie */
-#mainNav .navbar-toggler:focus {
-  outline: none;
-}
-/* Styl dla marki (logo) w pasku nawigacyjnym */
+
 #mainNav .navbar-brand {
-  color: hsl(0, 0%, 100%); /* biały kolor tekstu */
+  color: #ffff00;
   font-weight: 700;
-  padding: 0.9rem 0;
+  padding: 0;
+  margin-right: 10px;
 }
-/* Styl dla elementów nawigacyjnych przy najechaniu */
+
+#mainNav .navbar-nav .nav-item {
+  display: inline;
+}
+
 #mainNav .navbar-nav .nav-item:hover {
-  color: rgba(0, 0, 0, 0.8);
-  outline: none;
-  background-color: transparent;
-}
-/* Styl dla aktywnego lub fokusowanego elementu nawigacyjnego */
-#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
-  outline: none;
   background-color: transparent;
 }
 
-/* Styl dla paska nawigacyjnego na dużych ekranach */
+#mainNav .navbar-nav .nav-item:active,
+#mainNav .navbar-nav .nav-item:focus {
+  background-color: transparent;
+}
+
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-    background-color: transparent; /* przezroczyste tło */
-    transition: background-color 0.3s ease-in-out; /* animacja zmiany koloru tła */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 3px ridge #6666ff;
+    background-color: #000066;
   }
-  /* Zmienia styl marki (logo) przy zmniejszeniu paska */
   #mainNav .navbar-brand {
-    padding: 0.5rem 0;
-    color: rgba(255, 255, 255, 0.5); /* półprzezroczysty biały */
+    padding: 0;
+    color: #ffff00;
   }
-  /* Styl dla linków w pasku nawigacyjnym */
   #mainNav .nav-link {
-    transition: none;
-    padding: 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.5); /* półprzezroczysty biały */
+    padding: 0;
+    color: #00ffff;
   }
-  /* Styl dla linków w pasku nawigacyjnym przy najechaniu */
   #mainNav .nav-link:hover {
-    color: rgba(255, 255, 255, 0.75); /* jaśniejszy półprzezroczysty biały */
+    color: #ffff00;
   }
-  /* Styl dla aktywnego linku w pasku nawigacyjnym */
   #mainNav .nav-link:active {
-    color: #000000; /* czarny */
+    color: #ff00ff;
   }
-  /* Styl dla paska nawigacyjnego po zmniejszeniu */
+  #mainNav .nav-link.active {
+    color: #ff00ff;
+    border-bottom: none;
+  }
   #mainNav.navbar-shrink {
-    background-color: #000000; /* tło zmienia się na czarne */
+    background-color: #000066;
   }
-  /* Styl dla marki w zmniejszonym pasku nawigacyjnym */
   #mainNav.navbar-shrink .navbar-brand {
-    color: #ffffff; /* biały */
+    color: #ffff00;
   }
-  /* Styl dla linków w zmniejszonym pasku nawigacyjnym */
   #mainNav.navbar-shrink .nav-link {
-    color: #ffffff; /* biały */
-    padding: 1.5rem 1.5rem 1.25rem;
-    border-bottom: 0.25rem solid transparent;
+    color: #00ffff;
+    padding: 0;
+    border-bottom: none;
   }
-  /* Styl dla linków w zmniejszonym pasku nawigacyjnym przy najechaniu */
   #mainNav.navbar-shrink .nav-link:hover {
-    color: #64a19d; /* zmienia kolor tekstu na określony odcień turkusowego */
+    color: #ffff00;
   }
-
-  /* Styl dla aktywnego linku w zmniejszonym pasku nawigacyjnym przy akcji */
   #mainNav.navbar-shrink .nav-link:active {
-    color: #467370; /* zmienia kolor tekstu na ciemniejszy odcień turkusowego */
+    color: #ff00ff;
   }
-
-  /* Styl dla aktywnego linku w zmniejszonym pasku nawigacyjnym */
   #mainNav.navbar-shrink .nav-link.active {
-    color: #64a19d; /* zmienia kolor tekstu na określony odcień turkusowego */
-    outline: none; /* usuwa obramowanie przy fokusie */
-    border-bottom: 0.25rem solid #64a19d; /* dodaje turkusową linię podkreślającą na dole */
+    color: #ff00ff;
+    border-bottom: none;
   }
-
 }
+
 
 /*-----------------------------*/
-/* SEKCJA Z NAGŁÓWKIEM */
+/* Y2K HEADER / MASTHEAD       */
 /*-----------------------------*/
 
-/* Styl dla przycisków w sekcji nagłówka */
-.btn {
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important; /* cień dla przycisku */
-  padding: 1.25rem 2rem; /* padding przycisku */
-  font-family: "Varela Round", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* rodzina czcionek */
-  font-size: 80%; /* rozmiar czcionki */
-  text-transform: uppercase; /* wielkie litery */
-  letter-spacing: 0.15rem; /* odstęp między literami */
-  border: 0; /* brak obramowania */
-  width: 100%; /* szerokość na całą dostępną przestrzeń */
-  margin-top: 1rem; /* margines górny */
-}
-
-/* ustawiam różne obrazy na tło w zależności od podstrony */
-.cats {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-cats.jpg");
-}
-
-.iceland {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-iceland.jpg");
-}
-
-.norway {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-norway.jpg");
-}
-
-.covers1 {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-covers1.jpg");
-}
-
-.covers2 {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-covers2.jpg");
-}
-
-.autumn {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-autumn.jpg");
-}
-
-.winter {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-winter.jpg");
-}
-
-.carmelis {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-carmelis.jpg");
-}
-
-.bc {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-bc.jpg");
-}
-
-.front {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-masthead.jpg");
-}
-
+/* Background images - simplified without gradients */
+.cats,
+.iceland,
+.norway,
+.covers1,
+.covers2,
+.autumn,
+.winter,
+.carmelis,
+.bc,
+.front,
 .who {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-cats.jpg");
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  padding: 2rem 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
-/* Style dla tła różnych sekcji, położenie, rozmiar i efekt paralaksy */
-.iceland, .norway, .covers1, .autumn, .winter, .carmelis, .bc, .front, .covers2, .cats, .who {
-  position: relative; /* pozycjonowanie względem */
-  width: 100%; /* szerokość na całą dostępną przestrzeń */
-  height: auto; /* wysokość automatyczna */
-  min-height: 35rem; /* minimalna wysokość */
-  padding: 15rem 0; /* padding pionowy */
-  background-position: center; /* centrowanie tła */
-  background-repeat: no-repeat; /* brak powtarzania tła */
-  background-attachment: scroll; /* przewijanie tła razem ze stroną */
-  background-size: cover; /* rozciągnięcie tła na całą dostępną przestrzeń */
-}
+.cats { background-image: url("../images/bg-cats.jpg"); }
+.iceland { background-image: url("../images/bg-iceland.jpg"); }
+.norway { background-image: url("../images/bg-norway.jpg"); }
+.covers1 { background-image: url("../images/bg-covers1.jpg"); }
+.covers2 { background-image: url("../images/bg-covers2.jpg"); }
+.autumn { background-image: url("../images/bg-autumn.jpg"); }
+.winter { background-image: url("../images/bg-winter.jpg"); }
+.carmelis { background-image: url("../images/bg-carmelis.jpg"); }
+.bc { background-image: url("../images/bg-bc.jpg"); }
+.front { background-image: url("../images/bg-masthead.jpg"); }
+.who { background-image: url("../images/bg-cats.jpg"); }
 
-/* Style dla przycisków na stronach innych projektów, aby pasowały kolorystycznie*/
-
-.btn-bc {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #a18964;
-  --bs-btn-border-color: #a19364;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #897f55;
-  --bs-btn-hover-border-color: #817650;
-  --bs-btn-focus-shadow-rgb: 137, 123, 175;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #817450;
-  --bs-btn-active-border-color: #796b4b;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #a19664;
-  --bs-btn-disabled-border-color: #a18c64;
-}
-
-.btn-carmelis {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #a16492;
-  --bs-btn-border-color: #a164a1;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #895585;
-  --bs-btn-hover-border-color: #81507d;
-  --bs-btn-focus-shadow-rgb: 137, 123, 175;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #815081;
-  --bs-btn-active-border-color: #754b79;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #a164a1;
-  --bs-btn-disabled-border-color: #a164a1;
-}
-
-/* Ustawienie wysokości elementu na 100% */
-.h-100 {
-  height: 100% !important;
-}
-
-/* Styl dla nagłówków w sekcji masthead, zastosowanie gradientów dla tekstu */
+/* Masthead - small Y2K header */
 .masthead h1, .masthead .h1, .masthead h2, .masthead .h2 {
-  font-family: "Varela Round", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* rodzina czcionek */
+  font-family: "Comic Sans MS", "Courier New", cursive;
 }
 
 .masthead h1, .masthead .h1 {
-  font-size: 2.5rem; /* rozmiar czcionki */
-  line-height: 2.5rem; /* wysokość linii */
-  letter-spacing: 0.8rem; /* odstęp między literami */
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)); /* gradient dla tekstu */
-  -webkit-text-fill-color: transparent; /* przezroczysty kolor tekstu */
-  background-clip: text;
+  font-size: 2rem;
+  line-height: 2rem;
+  letter-spacing: 0.2rem;
+  color: #ffff00;
+  text-shadow: 2px 2px #ff00ff, -1px -1px #00ffff;
+  background: none;
+  -webkit-text-fill-color: #ffff00;
+  background-clip: unset;
 }
 
 .masthead h2, .masthead .h2 {
-  max-width: 20rem; /* maksymalna szerokość */
-  font-size: 1rem; /* rozmiar czcionki */
+  max-width: 500px;
+  font-size: 1rem;
+  color: #00ff00;
 }
 
-/* Style dla nagłówków w większych rozdzielczościach, dostosowanie rozmiarów */
+.h-100 {
+  height: auto !important;
+}
+
 @media (min-width: 768px) {
   .masthead h1, .masthead .h1 {
-    font-size: 4rem; /* większy rozmiar czcionki */
-    line-height: 4rem; /* większa wysokość linii */
+    font-size: 3rem;
+    line-height: 3rem;
   }
 }
+
 @media (min-width: 992px) {
   .masthead {
-    height: 100vh; /* wysokość na całą wysokość widoku */
-    padding: 0; /* brak paddingu */
+    height: auto;
+    min-height: 250px;
+    padding: 3rem 0;
   }
   .masthead h1, .masthead .h1 {
-    font-size: 6.5rem; /* jeszcze większy rozmiar czcionki */
-    line-height: 6.5rem; /* jeszcze większa wysokość linii */
+    font-size: 3.5rem;
+    line-height: 3.5rem;
   }
   .masthead h2, .masthead .h2 {
-    max-width: 30rem; /* większa maksymalna szerokość */
-    font-size: 1.25rem; /* większy rozmiar czcionki */
+    max-width: 500px;
+    font-size: 1.1rem;
   }
 }
 
+
 /*-----------------------------*/
-/* SEKCJA Z ROZWINIĘCIEM */
+/* ABOUT SECTION - Y2K         */
 /*-----------------------------*/
 
-/* Ogólny styl dla sekcji 'O mnie/O nas', ustawia duży padding górny, gradient tła i centruje tekst */
 .about-section {
-  padding-top: 10rem; /* duża przestrzeń od górnej krawędzi */
-  background: #000000; /* czareni do fioletu */
-  text-align: center !important; /* centrowanie tekstu, nadpisuje inne style */
+  padding: 2rem 0;
+  background: #000033;
+  text-align: center !important;
+  border-top: 2px ridge #6666ff;
 }
 
-/* Specyficzny styl dla czarnej wersji sekcji 'O mnie/O nas', ustawia tło na czarne */
 .about-section-black {
-  padding-top: 10rem; /* tak samo duża przestrzeń od górnej krawędzi jak w standardowej sekcji */
-  background: black; /* tło ustawione na czarne */
-  text-align: center !important; /* centrowanie tekstu */
+  padding: 2rem 0;
+  background: #000033;
+  text-align: center !important;
 }
 
-/* Styl dla paragrafów w sekcji 'O mnie/O nas', ustawia duży margines dolny */
 .about-section p {
-  margin-bottom: 5rem; /* duży margines dolny dla paragrafów, tworząc przestrzeń pomiędzy tekstami */
+  margin-bottom: 2rem;
 }
 
+
 /*-----------------------------*/
-/* SEKCJA Z ALBUMAMI */
+/* ALBUMS SECTION - Y2K        */
 /*-----------------------------*/
 
-/*Zrobienie kolumn z obrazkami albumów*/
 @media (min-width: 768px) {
   .col-album {
-    flex: 0 0 auto;
-    width: 50%;
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
   }
 }
 @media (min-width: 992px) {
   .col-album {
-    flex: 0 0 auto;
-    width: 25%;
+    display: inline-block;
+    width: 24%;
+    vertical-align: top;
   }
 }
 
-/* Styl dla obrazków, które mają być responsywne */
 .img-fluid {
-  max-width: 100%; /* maksymalna szerokość to 100% kontenera, dzięki czemu obrazek skaluje się do szerokości elementu nadrzędnego */
-  height: auto; /* wysokość automatyczna zachowująca proporcje */
+  max-width: 100%;
+  height: auto;
+  border: 3px ridge #6666ff;
 }
 
-/* Styl dla kontenera galerii zdjęć */
 .photo-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centruje elementy w pionie */
-  gap: 20px; /* Odstęp między elementami */
+  display: block;
+  text-align: center;
 }
 
-/* Ogólne style dla sekcji z projektami, definiuje padding */
 .projects-section {
-  padding: 10rem 0; /* duży padding pionowy */
+  padding: 2rem 0;
+  border-top: 2px ridge #6666ff;
 }
 
-/* Styl dla linków w sekcji albumów, dziedziczy kolor z elementu nadrzędnego */
 .album-link {
-  color: inherit; /* dziedziczy kolor tekstu z elementu nadrzędnego, zachowując jednolitość */
+  color: #00ffff;
+  text-decoration: none;
 }
 
-/* Styl dla obrazków albumów, definiuje animację transformacji */
+.album-link:hover {
+  color: #ffff00;
+}
+
 .album-link .album-img {
-  transition: transform 0.3s ease-in-out; /* animacja transformacji, która trwa 0.3 sekundy */
+  /* No transitions */
 }
 
-/* Styl dla obrazków albumów przy najechaniu kursorem, powiększa obrazek */
 .album-link:hover .album-img {
-  transform: scale(1.05); /* skaluje obrazek do 105% jego normalnego rozmiaru */
+  /* No transforms */
 }
 
-/* Styl dla obrazków albumów, definiuje margines dolny */
 .album-img {
-  margin-bottom: 20px; /* ustala margines dolny na 20 pikseli */
+  margin-bottom: 10px;
+  border: 3px ridge #6666ff;
 }
+
 
 /*-----------------------------*/
-/*SEKCJA Z INNYMI PROJEKTAMI*/
+/* CAROUSEL - Y2K              */
 /*-----------------------------*/
 
 .carousel {
@@ -896,18 +729,9 @@ textarea {
 }
 
 .carousel-img {
-  max-width: 40%;  /* Maksymalna szerokość obrazu to 100% szerokości swojego kontenera */
-  height: auto;     /* Wysokość auto, aby zachować proporcje */
-  border-radius: 70%; /* Zachowujemy okrągły kształt */
-
-}
-
-.carousel-item .carousel-img {
-  transition: transform 0.3s ease-in-out; /* Dodaj efekt przejścia */
-}
-
-.carousel-item:hover .carousel-img {
-  transform: scale(0.95); /* Pmniejsz obrazek po najechaniu kursorem */
+  max-width: 40%;
+  height: auto;
+  border: 3px ridge #6666ff;
 }
 
 .carousel-inner {
@@ -921,340 +745,243 @@ textarea {
   content: "";
 }
 
-/* Centrowanie treści w elementach karuzeli */
 .carousel-item a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  text-align: center;
 }
 
-/* Styl dla tekstów w karuzeli, aby były wyśrodkowane pod obrazem */
 .carousel-item h3 {
-  margin-top: 15px; /* Dodaj odstęp między obrazem a tekstem */
+  margin-top: 10px;
 }
 
 .carousel-item {
-  position: relative; /* Pozycjonuje element względem swojego normalnego położenia */
-  display: none; /* Element domyślnie jest ukryty */
-  float: left; /* Elementy są umieszczane po lewej stronie */
-  width: 100%; /* Szerokość elementu ustawiona na 100% rodzica */
-  margin-right: -100%; /* Ujemny margines prawy, by przesunąć elementy */
-  transition: transform 0.6s ease-in-out; /* Animacja transformacji trwa 0.6s, płynne przyspieszenie i zwolnienie */
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
 }
 
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
-  display: block; /* Aktywne elementy są widoczne */
+  display: block;
 }
 
 .carousel-item-next:not(.carousel-item-start),
 .active.carousel-item-end {
-  transform: translateX(100%); /* Przesunięcie elementu o 100% jego szerokości w prawo */
+  transform: translateX(100%);
 }
 
 .carousel-item-prev:not(.carousel-item-end),
 .active.carousel-item-start {
-  transform: translateX(-100%); /* Przesunięcie elementu o 100% jego szerokości w lewo */
+  transform: translateX(-100%);
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  position: absolute; /* Pozycjonuje kontrolki absolutnie względem najbliższego pozycjonowanego przodka */
-  top: 0; /* Górna krawędź kontrolki wyrównana do górnej krawędzi kontenera */
-  bottom: 0; /* Dolna krawędź kontrolki wyrównana do dolnej krawędzi kontenera */
-  z-index: 1; /* Kontrolki są umieszczone nad innymi elementami */
-  display: flex; /* Ustawia model wyświetlania na flex, umożliwiający centrowanie dzieci */
-  align-items: center; /* Centruje elementy pionowo w kontenerze */
-  justify-content: center; /* Centruje elementy poziomo w kontenerze */
-  width: 15%; /* Szerokość kontrolki to 15% szerokości kontenera */
-  padding: 0; /* Bez wewnętrznego marginesu */
-  color: #fff; /* Biały kolor tekstu */
-  text-align: center; /* Tekst wyśrodkowany */
-  background: none; /* Bez tła */
-  border: 0; /* Bez ramki */
-  opacity: 0.5; /* Półprzezroczystość kontrolki */
-  transition: opacity 0.15s ease; /* Animacja przeźroczystości trwa 0.15s */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  width: 15%;
+  padding: 0;
+  color: #ffff00;
+  text-align: center;
+  background: none;
+  border: 0;
+  opacity: 0.8;
 }
 
-.carousel-control-prev {
-  left: 0; /* Kontrolka poprzednia wyrównana do lewej */
-}
-
-.carousel-control-next {
-  right: 0; /* Kontrolka następna wyrównana do prawej */
-}
+.carousel-control-prev { left: 0; }
+.carousel-control-next { right: 0; }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  display: inline-block; /* Elementy wyświetlane jako bloki liniowe */
-  width: 2rem; /* Szerokość ikon wynosi 2 rem */
-  height: 2rem; /* Wysokość ikon wynosi 2 rem */
-  background-repeat: no-repeat; /* Tło nie powtarza się */
-  background-position: 50%; /* Pozycjonowanie tła w centrum */
-  background-size: 100% 100%; /* Rozmiar tła dopasowany do kontenera */
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
 }
 
 .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e"); 
-  /* Grafika ikony kontrolki poprzedniej */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffff00'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
 }
 
 .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); 
-  /* Grafika ikony kontrolki następnej */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffff00'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
 
 /*-----------------------------*/
-/*SEKCJA Z FORMULARZEM*/
+/* FORM SECTION - Y2K          */
 /*-----------------------------*/
-
-/* Style dla przycisków typu primary na zmiennych dla ułatwienia i przejżystości */
-.btn-form {
-  --bs-btn-color: #fff;  /* kolor tekstu */
-  --bs-btn-bg: #64a19d;  /* kolor tła */
-  --bs-btn-border-color: #64a19d;  /* kolor obramowania */
-  --bs-btn-hover-color: #fff;  /* kolor tekstu po najechaniu */
-  --bs-btn-hover-bg: #558985;  /* kolor tła po najechaniu */
-  --bs-btn-hover-border-color: #50817e;  /* kolor obramowania po najechaniu */
-  --bs-btn-focus-shadow-rgb: 123, 175, 172;  /* kolor cienia przy fokusie */
-  --bs-btn-active-color: #fff;  /* kolor tekstu w stanie aktywnym */
-  --bs-btn-active-bg: #50817e;  /* kolor tła w stanie aktywnym */
-  --bs-btn-active-border-color: #4b7976;  /* kolor obramowania w stanie aktywnym */
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);  /* cień w stanie aktywnym */
-  --bs-btn-disabled-color: #fff;  /* kolor tekstu w stanie wyłączonym */
-  --bs-btn-disabled-bg: #64a19d;  /* kolor tła w stanie wyłączonym */
-  --bs-btn-disabled-border-color: #64a19d;  /* kolor obramowania w stanie wyłączonym */
-}
 
 .signup-section {
-  padding: 10rem 0; /* Dostosowuje górną i dolną wypełnienie sekcji do 10 rem */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../images/bg-signup.jpg"); /* Gradient na tle oraz obraz tła */
-  background-position: center; /* Centruje obraz tła */
-  background-repeat: no-repeat; /* Zapobiega powtarzaniu się tła */
-  background-attachment: scroll; /* Tło przewija się wraz z treścią */
-  background-size: cover; /* Tło pokrywa całą dostępną przestrzeń */
-  color: #fff; /* Ustawia kolor tekstu na biały */
-}
-.signup-section .form-signup input {
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important; /* Dodaje cień do elementów input */
-  padding: 1.25rem 2rem; /* Dostosowuje wewnętrzne wypełnienie elementów input */
-  height: auto; /* Wysokość input ustawiona na auto */
-  font-family: "Varela Round", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Definiuje rodzinę czcionek dla input */
-  font-size: 80%; /* Ustawia rozmiar czcionki na 80% wartości dziedziczonej */
-  text-transform: uppercase; /* Tekst w input zostaje przekształcony na wielkie litery */
-  letter-spacing: 0.15rem; /* Dostosowuje odstępy między literami */
-  border: 0; /* Usuwa obramowanie */
+  padding: 2rem 0;
+  background: #000044;
+  border-top: 2px ridge #6666ff;
+  color: #00ff00;
 }
 
-/* Stylizacja błędów formularza */
+.signup-section .form-signup input {
+  padding: 8px;
+  height: auto;
+  font-family: "Comic Sans MS", "Courier New", cursive;
+  font-size: 14px;
+  border: 2px inset #999999;
+  background-color: #ffffff;
+  color: #000000;
+}
+
 .form-error {
-  margin-bottom: 20px; /* Zwiększa margines dolny */
-  padding: 10px; /* Zwiększa padding wewnętrzny */
-  border-radius: 5px; /* Zaokrąglenie rogów */
-  max-width: 400px; /* Ustawia maksymalną szerokość komunikatu */
-  margin: 10px auto; /* Wyśrodkowuje komunikat */
-  background-color: #f8d7da; /* Kolor tła dla błędu */
-  color: #721c24; /* Kolor tekstu */
-  border: 1px solid #f5c6cb; /* Kolor obramowania */
+  margin-bottom: 10px;
+  padding: 8px;
+  max-width: 400px;
+  margin: 10px auto;
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 2px outset #ff6666;
+  font-weight: bold;
 }
 
 .form-label {
   display: block;
-  margin-bottom: 0.5rem; /* Odstęp między etykietą a polem */
-  font-weight: bold; /* Opcjonalne: pogrubienie tekstu */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #00ffff;
 }
 
-
 .form-signup {
-  background: rgba(255, 255, 255, 0.1); /* Tło formularza jest lekko przezroczyste */
-  padding: 2rem; /* Wypełnienie formularza */
-  border-radius: 8px; /* Zaokrąglenie rogów formularza */
+  background: #000066;
+  padding: 1.5rem;
+  border: 2px ridge #6666ff;
 }
 
 .form-control {
-  display: block; /* Elementy form-control są blokowe */
-  width: 100%; /* Szerokość na 100% kontenera */
-  padding: 0.375rem 0.75rem; /* Wewnętrzne wypełnienie */
-  font-size: 1rem; /* Rozmiar czcionki */
-  font-weight: 400; /* Grubość czcionki */
-  line-height: 1.5; /* Wysokość linii */
-  color: #212529; /* Kolor tekstu */
-  background-color: #fff; /* Kolor tła */
-  background-clip: padding-box; /* Tło tylko wewnątrz wypełnienia */
-  border: 1px solid #ced4da; /* Obramowanie */
-  border-radius: 0.375rem; /* Zaokrąglenie rogów */
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Animacja zmiany koloru obramowania i cienia */
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px inset #999999;
+  font-family: "Comic Sans MS", "Courier New", cursive;
 }
 
-.form-control, .form-check-input {
-  appearance: none;
-  background-color: rgba(255, 255, 255, 0.8); /* Lekko przezroczyste tło dla kontrolek formularza */
-  border: 0; /* Brak obramowania */
-  border-radius: 0.375rem; /* Zaokrąglenie rogów */
-}
-
-.form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25); /* Efekt podświetlenia (focus glow) przy aktywacji pola */
-}
-
-.form-check-label {
-  margin-left: 0.5rem; /* Odstęp etykiety od pola wyboru */
-}
-@media (prefers-reduced-motion: reduce) {
-  .form-control {
-    transition: none; /* Wyłącza animacje dla użytkowników, którzy preferują mniej ruchu */
-  }
-}
-.form-control[type=file] {
-  overflow: hidden; /* Ukrywa nadmiar treści */
-}
-.form-control[type=file]:not(:disabled):not([readonly]) {
-  cursor: pointer; /* Kursor wskazujący dla aktywnych pól typu file */
-}
 .form-control:focus {
-  color: #212529; /* Kolor tekstu przy fokusie */
-  background-color: #fff; /* Kolor tła przy fokusie */
-  border-color: #b2d0ce; /* Kolor obramowania przy fokusie */
-  outline: 0; /* Usuwa zewnętrzne obramowanie przy fokusie */
-  box-shadow: 0 0 0 0.25rem rgba(100, 161, 157, 0.25); /* Cień podświetlenia przy fokusie */
+  color: #000000;
+  background-color: #ffffcc;
+  border-color: #0000ff;
+  outline: 1px dotted #000000;
 }
+
 .form-control::placeholder {
-  color: #6c757d; /* Kolor tekstu w polu zastępczym */
-  opacity: 1; /* Nieprzezroczystość tekstu zastępczego */
+  color: #999999;
+  opacity: 1;
 }
+
 .form-control:disabled {
-  background-color: #e9ecef; /* Kolor tła dla nieaktywnych pól */
-  opacity: 1; /* Nieprzezroczystość dla nieaktywnych pól */
+  background-color: #cccccc;
+  opacity: 1;
 }
 
 textarea.form-control {
-  min-height: calc(1.5em + 0.75rem + 2px); /* Minimalna wysokość textarea */
+  min-height: 60px;
 }
 
 .form-check {
-  display: flex; /* Kontrolki form-check są blokowe */
-  align-items: center;
-  min-height: 1.5rem; /* Minimalna wysokość */
-  padding-left: 1.5em; /* Lewe wypełnienie */
-  margin-bottom: 0.125rem; /* Margines dolny */
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+  margin-bottom: 0.125rem;
 }
+
 .form-check .form-check-input {
-  float: left; /* Checkboxy i radiobuttony są wyrównane do lewej */
-  margin-left: -1.5em; /* Lewy margines dla wyrównania */
+  float: left;
+  margin-left: -1.5em;
 }
 
 .form-check-input {
-  width: 1rem; /* Szerokość */
-  height: 1rem; /* Wysokość */
-  margin-top: 0.25rem; /* Górny margines */
-  vertical-align: middle; /* Wyrównanie pionowe */
-  background-color: #fff; /* Kolor tła */
-  background-repeat: no-repeat; /* Tło nie powtarza się */
-  background-position: center; /* Tło wyśrodkowane */
-  background-size: contain; /* Rozmiar tła dopasowany do zawartości */
-  border: 1px solid rgba(0, 0, 0, 0.25); /* Obramowanie */
-}
-.form-check-input[type=checkbox] {
-  border-radius: 0.25rem; /* Zaokrąglenie rogów dla checkbox */
-}
-.form-check-input[type=radio] {
-  border-radius: 50%; /* Okrągłe rogi dla radio */
-}
-.form-check-input:active {
-  filter: brightness(90%); /* Zmniejsza jasność przy aktywacji */
-}
-.form-check-input:focus {
-  border-color: #b2d0ce; /* Kolor obramowania przy fokusie */
-  outline: 0; /* Usuwa zewnętrzne obramowanie przy fokusie */
-  box-shadow: 0 0 0 0.25rem rgba(100, 161, 157, 0.25); /* Cień podświetlenia przy fokusie */
-}
-.form-check-input:checked {
-  background-color: #64a19d; /* Kolor tła po zaznaczeniu */
-  border-color: #5a8d89; /* Kolor obramowania po zaznaczeniu */
-}
-.form-check-input:checked[type=checkbox] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e"); 
-  /* Obraz tła dla zaznaczonego checkbox */
-}
-.form-check-input:checked[type=radio] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e"); 
-  /* Obraz tła dla zaznaczonego radio */
-}
-.form-check-input[type=checkbox]:indeterminate {
-  background-color: #64a19d; /* Kolor tła dla stanu nieokreślonego */
-  border-color: #5a8d89; /* Kolor obramowania dla stanu nieokreślonego */
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e"); /* Obraz tła dla stanu nieokreślonego */
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  vertical-align: middle;
 }
 
+.form-check-label {
+  margin-left: 0.5rem;
+}
+
+.form-control[type=file]:not(:disabled):not([readonly]) {
+  cursor: pointer;
+}
+
+
 /*-----------------------------*/
-/*SEKCJA Z NEWSAMI/BLOGIEM*/
+/* NEWS / BLOG - Y2K           */
 /*-----------------------------*/
 
-/* Styl dla sekcji z newsami */
 .news-section {
-  padding: 10rem 0;
+  padding: 2rem 0;
+  border-top: 2px ridge #6666ff;
 }
 
-/* Styl dla kontenera z postami */
 #blog-posts-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: block;
 }
 
-/* Styl dla pojedynczego posta */
 .blog-post {
-  background: rgba(116, 100, 161, 0.1);
-  border-left: 4px solid #7464a1;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background: #000066;
+  border: 2px ridge #6666ff;
+  padding: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .blog-post:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 8px rgba(116, 100, 161, 0.3);
+  background: #000088;
 }
 
-/* Header posta */
 .blog-post-header {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .blog-post-title {
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  color: #ffff00;
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
 }
 
 .blog-post-date {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
+  color: #999999;
+  font-size: 0.85rem;
   font-style: italic;
   margin-bottom: 0;
 }
 
-/* Obrazek w poście */
 .blog-post-image {
   width: 100%;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   overflow: hidden;
-  border-radius: 0.375rem;
+  border: 2px ridge #6666ff;
 }
 
 .blog-post-image img {
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
   object-position: center;
   display: block;
 }
 
-/* Zawartość posta */
 .blog-post-content {
-  color: rgba(255, 255, 255, 0.8);
+  color: #00ff00;
   line-height: 1.6;
 }
 
@@ -1262,98 +989,75 @@ textarea.form-control {
   margin-bottom: 0;
 }
 
-/* Statystyki posta (komentarze i reakcje) */
 .blog-post-stats {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(116, 100, 161, 0.3);
+  display: block;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #6666ff;
 }
 
 .blog-post-stats .stat-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
+  display: inline;
+  color: #999999;
+  font-size: 0.85rem;
+  margin-right: 1rem;
 }
 
 .blog-post-stats .stat-item i {
-  color: #7464a1;
+  color: #ff00ff;
 }
 
 .blog-post-stats .comment-count,
 .blog-post-stats .reaction-count {
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  color: #00ffff;
 }
 
-/* Linia oddzielająca dla news section */
-hr.light {
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Styl dla strony z newsami - header z tłem */
 .news-header {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../images/bg-signup.jpg");
+  background-image: url("../images/bg-signup.jpg");
+  background-size: cover;
 }
 
-/* Styl dla sekcji z zawartością newsów */
 .news-content-section {
-  padding: 5rem 0;
-  min-height: 50vh;
+  padding: 2rem 0;
+  min-height: 300px;
 }
 
-/* Styl dla sekcji z najnowszym newsem na stronie głównej */
 .latest-news-section {
-  padding: 5rem 0;
+  padding: 2rem 0;
   position: relative;
+  border-top: 2px ridge #6666ff;
 }
 
 .latest-news-section h2 {
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
+  color: #00ffff;
 }
 
-/* Wyróżnienie sekcji z albumami */
 .projects-section h2 {
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
+  color: #00ffff;
 }
 
-/* Większy album na stronie głównej */
 #latest-album-container .album-link {
   display: block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#latest-album-container .album-link:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(116, 100, 161, 0.4);
 }
 
 #latest-album-container .album-img {
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 3px ridge #6666ff;
 }
 
-/* Przycisk View All Albums - lepszy kontrast */
 .projects-section .btn-main {
-  font-size: 1.1rem;
-  padding: 0.75rem 2rem;
-  box-shadow: 0 4px 15px rgba(116, 100, 161, 0.4);
-  border: 2px solid #7464a1;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 3px outset #9966ff;
 }
 
-.projects-section .btn-main:hover {
-  box-shadow: 0 6px 20px rgba(116, 100, 161, 0.6);
-  transform: translateY(-2px);
-}
-
-/* Styl dla modala */
+/* Post modal - Y2K style */
 .post-modal {
   display: none;
   position: fixed;
@@ -1363,7 +1067,7 @@ hr.light {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 51, 0.9);
 }
 
 .post-modal.show {
@@ -1371,160 +1075,153 @@ hr.light {
 }
 
 .post-modal-content {
-  background-color: #1a1a1a;
-  margin: 5% auto;
-  padding: 2rem;
-  border: 1px solid #7464a1;
-  border-radius: 0.5rem;
+  background-color: #000044;
+  margin: 3% auto;
+  padding: 1.5rem;
+  border: 3px ridge #6666ff;
   width: 90%;
-  max-width: 800px;
+  max-width: 700px;
   position: relative;
-  box-shadow: 0 4px 20px rgba(116, 100, 161, 0.5);
 }
 
 .post-modal-close {
-  color: #aaa;
+  color: #ff0000;
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+  top: 0.5rem;
+  right: 1rem;
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .post-modal-close:hover,
 .post-modal-close:focus {
-  color: #fff;
+  color: #ffff00;
 }
 
 .modal-post-image {
   width: 100%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   overflow: hidden;
-  border-radius: 0.375rem;
+  border: 2px ridge #6666ff;
 }
 
 .modal-post-image img {
   width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 300px;
   object-fit: cover;
-  object-position: center;
   display: block;
 }
 
 .modal-post-title {
-  color: #ffffff;
+  color: #ffff00;
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .modal-post-date {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1rem;
+  color: #999999;
+  font-size: 0.9rem;
   font-style: italic;
-  margin-bottom: 1.5rem;
-}
-
-.modal-post-content {
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
-  font-size: 1.1rem;
-}
-
-.modal-post-content p {
   margin-bottom: 1rem;
 }
 
+.modal-post-content {
+  color: #00ff00;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.modal-post-content p {
+  margin-bottom: 0.5rem;
+}
+
+
 /*-----------------------------*/
-/*SEKCJA ZE STOPKĄ I LINKAMI*/
+/* FOOTER & SOCIAL - Y2K       */
 /*-----------------------------*/
 
-/* Stylizacje dla mniejszej czcionki */
 .small {
-  font-size: 0.875em;
+  font-size: 0.8em;
 }
 
 .contact-section {
-  padding-top: 5rem; /* Dodaje górną wypełnienie sekcji kontaktowej wynoszące 5 rem */
+  padding-top: 2rem;
+  text-align: center;
+  border-top: 2px ridge #6666ff;
 }
 
 .contact-section .social {
-  margin-top: 5rem; /* Ustawia margines górny dla kontenera z linkami społecznościowymi na 5 rem */
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .contact-section .social a {
-  text-align: center; /* Centruje tekst wewnątrz linków */
-  height: 3rem; /* Ustawia wysokość linków na 3 rem */
-  width: 3rem; /* Ustawia szerokość linków na 3 rem */
-  background: rgba(255, 255, 255, 0.1); /* Ustawia przezroczyste, białe tło linków */
-  border-radius: 100%; /* Nadaje linkom okrągły kształt */
-  line-height: 3rem; /* Ustawia wysokość linii tekstu na 3 rem, aby tekst był wyśrodkowany pionowo */
-  color: rgba(255, 255, 255, 0.3); /* Ustawia kolor tekstu (ikony) na słabo widoczną biel */
+  text-align: center;
+  height: auto;
+  width: auto;
+  background: none;
+  line-height: normal;
+  color: #0000ff;
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 0 5px;
+  display: inline;
 }
 
 .contact-section .social a:hover {
-  color: rgba(255, 255, 255, 0.5); /* Zmienia kolor tekstu na jaśniejszą biel podczas najechania kursorem */
+  color: #ff00ff;
 }
 
 .footer {
-  padding: 5rem 0; /* Ustawia wypełnienie górne i dolne stopki na 5 rem */
+  padding: 1.5rem 0;
+  background-color: #000066 !important;
+  border-top: 3px ridge #6666ff;
+  color: #00ff00;
+  text-align: center;
+  font-size: 12px;
 }
 
+
 /*-----------------------------*/
-/*SEKCJA Z KOMENTARZAMI GISCUS*/
+/* GISCUS COMMENTS - Y2K       */
 /*-----------------------------*/
 
-/* Styl dla sekcji komentarzy w modalu */
 .comments-section {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 2px solid rgba(116, 100, 161, 0.3);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px dashed #6666ff;
 }
 
 .comments-title {
-  color: #ffffff;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  color: #00ffff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
   text-align: left;
 }
 
-/* Stylowanie kontenera Giscus */
 .giscus {
   color-scheme: dark;
 }
 
-/* Responsywność dla mniejszych ekranów */
-@media (max-width: 768px) {
-  .comments-section {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-  }
-
-  .comments-title {
-    font-size: 1.25rem;
-  }
-}
 
 /*-----------------------------*/
-/*SEKCJA Z EMBEDAMI W POSTACH*/
+/* EMBEDS - Y2K                */
 /*-----------------------------*/
 
 .post-embeds {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  margin-top: 1rem;
+  display: block;
 }
 
 .embed-container {
-  border-radius: 8px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.2);
+  background: #000044;
+  border: 2px ridge #6666ff;
+  margin-bottom: 0.5rem;
 }
 
-/* YouTube embed - responsive 16:9 */
 .embed-youtube {
   position: relative;
   padding-bottom: 56.25%;
@@ -1539,67 +1236,50 @@ hr.light {
   height: 100%;
 }
 
-/* Spotify embed */
 .embed-spotify {
   background: transparent;
 }
 
-.embed-spotify iframe {
-  border-radius: 8px;
-}
-
-/* Bandcamp link button */
 .embed-bandcamp {
-  background: #629aa9;
-  transition: background 0.3s ease;
-}
-
-.embed-bandcamp:hover {
-  background: #4a7a87;
+  background: #003366;
 }
 
 .bandcamp-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
+  display: block;
+  padding: 8px 12px;
+  color: #00ffff;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
 }
 
 .bandcamp-logo {
-  height: 24px;
+  height: 20px;
   filter: brightness(0) invert(1);
 }
 
-/* SoundCloud embed */
 .embed-soundcloud {
   background: transparent;
 }
 
-/* Generic link fallback */
 .embed-link {
-  background: rgba(116, 100, 161, 0.2);
-  border: 1px solid rgba(116, 100, 161, 0.4);
+  background: #000066;
+  border: 2px ridge #6666ff;
 }
 
 .generic-link {
   display: block;
-  padding: 1rem;
-  color: #b8a9d9;
-  text-decoration: none;
+  padding: 8px;
+  color: #0000ff;
+  text-decoration: underline;
   word-break: break-all;
-  transition: color 0.3s ease;
 }
 
 .generic-link:hover {
-  color: #d4c8eb;
+  color: #ff00ff;
 }
 
-/* Stop click propagation on embeds */
 .post-embeds {
   pointer-events: auto;
 }
@@ -1613,18 +1293,549 @@ hr.light {
   pointer-events: auto;
 }
 
-/* Responsive embeds */
-@media (max-width: 768px) {
-  .post-embeds {
-    margin-top: 1rem;
-  }
 
-  .bandcamp-link {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-  }
+/*-----------------------------*/
+/* Y2K SPECIAL ELEMENTS        */
+/*-----------------------------*/
 
-  .bandcamp-logo {
-    height: 20px;
+/* Blink class */
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Under construction text */
+.under-construction {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 10px;
+  border: 2px dashed #ff0000;
+  margin: 10px auto;
+  max-width: 400px;
+}
+
+/* Visitor counter style */
+.visitor-counter {
+  font-family: "Courier New", monospace;
+  background: #000000;
+  color: #00ff00;
+  border: 2px inset #333333;
+  padding: 3px 10px;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Webring style */
+.webring {
+  margin: 10px 0;
+  color: #999999;
+}
+
+.webring a {
+  color: #0000ff;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+/* Last updated text */
+.last-updated {
+  color: #999999;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Marquee styling */
+marquee {
+  background: #000066;
+  color: #ffff00;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-top: 2px ridge #6666ff;
+  border-bottom: 2px ridge #6666ff;
+}
+
+/* About page - Y2K story list */
+.y2k-story-list {
+  text-align: left;
+  list-style-type: disc;
+  color: #00ff00;
+  padding-left: 2rem;
+}
+
+.y2k-story-list li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.y2k-story-list .story-year-label {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+.y2k-story-list .story-title-label {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* Dedication - simple Y2K style */
+.dedication-simple {
+  text-align: center;
+  border: 2px ridge #6666ff;
+  padding: 15px;
+  background: #000066;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.dedication-simple img {
+  width: 150px;
+  height: 150px;
+  border: 3px ridge #cc66ff;
+  margin-bottom: 10px;
+}
+
+/* Intro text on about page */
+.intro-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #00ff00;
+}
+
+.intro-highlight {
+  color: #ffff00;
+  font-weight: 600;
+}
+
+/* Main page wrapper with ridge border */
+.y2k-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-left: 2px ridge #6666ff;
+  border-right: 2px ridge #6666ff;
+  background: #000033;
+}
+
+
+/*-----------------------------*/
+/* Y2K UTILITY COLORS          */
+/*-----------------------------*/
+
+.text-green { color: #00ff00 !important; }
+.text-cyan { color: #00ffff !important; }
+.text-yellow { color: #ffff00 !important; }
+.text-magenta { color: #ff00ff !important; }
+.text-pink { color: #ff99ff !important; }
+.text-light-purple { color: #cc99ff !important; }
+.text-gray { color: #999999 !important; }
+.text-dark-gray { color: #666666 !important; }
+.text-green-light { color: #00ff99 !important; }
+.bold { font-weight: bold !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.mb-8 { margin-bottom: 8px !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-15 { margin-top: 15px !important; }
+
+.bg-dark-blue { background-color: #000044 !important; }
+
+
+/*-----------------------------*/
+/* Y2K HR VARIANTS             */
+/*-----------------------------*/
+
+.hr-short {
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+.hr-wide {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/*-----------------------------*/
+/* NAVBAR Y2K CLASSES           */
+/*-----------------------------*/
+
+.navbar-brand-y2k {
+  color: #ffff00;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-brand-y2k:hover {
+  color: #ffff00;
+}
+
+.nav-separator {
+  color: #666666;
+}
+
+
+/*-----------------------------*/
+/* FOOTER Y2K CLASSES           */
+/*-----------------------------*/
+
+.footer-note {
+  color: #999999;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.footer-copyright {
+  color: #666666;
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+
+/*-----------------------------*/
+/* SOCIAL Y2K CLASSES           */
+/*-----------------------------*/
+
+.social-title {
+  color: #00ffff;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+
+/*-----------------------------*/
+/* MASTHEAD SUBTITLE            */
+/*-----------------------------*/
+
+.masthead-subtitle {
+  color: #00ff00;
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+
+/*-----------------------------*/
+/* INDEX PAGE SECTIONS          */
+/*-----------------------------*/
+
+.section-album-highlight {
+  background-color: #000066;
+  border: 2px ridge #6666ff;
+  margin: 0;
+}
+
+.last-updated-section {
+  text-align: center;
+  padding: 10px 0;
+}
+
+
+/*-----------------------------*/
+/* ABOUT PAGE SPECIFICS         */
+/*-----------------------------*/
+
+.genres-text {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.dedication-years-text {
+  color: #ffff00;
+  font-size: 13px;
+}
+
+.dedication-body-text {
+  color: #00ff00;
+  font-size: 13px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.dedication-role-text {
+  color: #cc99ff;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+
+/*-----------------------------*/
+/* MIND OF SEASONS - GAME PAGE */
+/*-----------------------------*/
+
+.mindofseasons {
+  position: relative;
+  background: #3c5030;
+}
+
+.mindofseasons canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.mindofseasons .container {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card {
+  background: rgba(116, 100, 161, 0.15);
+  border: 1px solid rgba(116, 100, 161, 0.3);
+  padding: 2rem;
+  text-align: center;
+  border: 2px ridge #6666ff;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00ffff;
+}
+
+.feature-title {
+  color: #ffff00;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-desc {
+  color: #00ff00;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.screenshot-gallery {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.screenshot-item {
+  display: inline-block;
+  overflow: hidden;
+  border: 2px ridge #6666ff;
+  margin: 5px;
+  vertical-align: top;
+  width: 280px;
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.screenshot-placeholder {
+  width: 100%;
+  height: 200px;
+  background: #000066;
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+.download-box {
+  background: #000066;
+  border: 2px ridge #6666ff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.download-version {
+  color: #999999;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.btn-download {
+  background-color: #339966;
+  border: 3px outset #66cc99;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+}
+
+.btn-download:hover {
+  background-color: #44aa77;
+  color: #ffff00;
+}
+
+.btn-album {
+  background-color: #6633cc;
+  border: 3px outset #9966ff;
+  color: #ffffff;
+}
+
+.btn-album:hover {
+  background-color: #8855ee;
+  color: #ffff00;
+}
+
+.album-connection {
+  background: #000066;
+  border-left: 4px solid #6666ff;
+  border: 2px ridge #6666ff;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.controls-table {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.controls-table td {
+  padding: 0.5rem;
+  color: #00ff00;
+}
+
+.controls-table td:first-child {
+  color: #00ffff;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.secrets-hint {
+  font-style: italic;
+  color: #999999;
+  margin-top: 2rem;
+}
+
+.game-logo {
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+/* Levels Grid */
+.levels-grid {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.level-card {
+  background: #000066;
+  overflow: hidden;
+  border: 2px ridge #6666ff;
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+  margin: 10px;
+  text-align: left;
+}
+
+.level-card.available {
+  border-color: #00ffff;
+}
+
+.level-card.coming-soon {
+  opacity: 0.6;
+}
+
+.level-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.level-image-placeholder {
+  width: 100%;
+  height: 180px;
+  background: #000044;
+  text-align: center;
+  line-height: 180px;
+  color: #999999;
+  font-size: 3rem;
+}
+
+.level-content {
+  padding: 1rem;
+}
+
+.level-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+}
+
+.level-badge.playable {
+  background: #003333;
+  color: #00ffff;
+  border-color: #00ffff;
+}
+
+.level-badge.coming {
+  background: #330033;
+  color: #cc99ff;
+  border-color: #cc99ff;
+}
+
+.level-title {
+  color: #ffff00;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.level-album {
+  color: #00ffff;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.level-desc {
+  color: #00ff00;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.level-actions {
+  display: block;
+}
+
+.level-actions .btn {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.btn-level {
+  font-size: 0.85rem;
+  padding: 5px 10px;
+}
+
+.features-grid {
+  display: block;
+  text-align: center;
+}
+
+.features-grid .feature-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 180px;
+  margin: 5px;
+}
+
+@media (min-width: 768px) {
+  .features-grid .feature-card {
+    width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  .features-grid .feature-card {
+    width: 180px;
   }
 }

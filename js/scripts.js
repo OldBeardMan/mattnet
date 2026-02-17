@@ -42,48 +42,6 @@ window.addEventListener('DOMContentLoaded', async event => {
     // Load latest news and album for homepage
     loadLatestNews();
     loadLatestAlbum();
-
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
-    };
-
-    // Shrink the navbar
-    navbarShrink();
-
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            rootMargin: '0px 0px -40%',
-        });
-    }
-
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
-    });
-
 });
 
 // Function to load and render blog posts from JSON
@@ -357,8 +315,6 @@ function parseEmbed(url) {
     const bandcampRegex = /([a-zA-Z0-9-]+)\.bandcamp\.com\/(album|track)\/([a-zA-Z0-9-]+)/;
     const bandcampMatch = url.match(bandcampRegex);
     if (bandcampMatch) {
-        // Bandcamp requires fetching the embed ID, so we'll use their player URL format
-        // For simplicity, we'll create a link that opens in new tab with a styled button
         return `<div class="embed-container embed-bandcamp">
             <a href="${url}" target="_blank" rel="noopener noreferrer" class="bandcamp-link">
                 <img src="https://s4.bcbits.com/img/bclogo.png" alt="Bandcamp" class="bandcamp-logo">
@@ -383,7 +339,7 @@ function parseEmbed(url) {
     // Generic link fallback
     return `<div class="embed-container embed-link">
         <a href="${url}" target="_blank" rel="noopener noreferrer" class="generic-link">
-            🔗 ${url}
+            -> ${url}
         </a>
     </div>`;
 }
