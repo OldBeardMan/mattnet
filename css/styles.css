@@ -1441,6 +1441,72 @@ marquee {
   color: #81c784;
 }
 
+/* Nav flex layout — left links, right account */
+.nav-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  max-width: 800px;
+}
+
+.nav-left {
+  line-height: 1.8;
+}
+
+.nav-right {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* Hamburger button — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: 2px outset #a5d6a7;
+  color: #2e7d32;
+  font-size: 1.3rem;
+  padding: 2px 8px;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-left: 6px;
+  line-height: 1;
+}
+
+.nav-hamburger:hover {
+  background: #c8e6c9;
+  color: #c2185b;
+}
+
+@media (max-width: 600px) {
+  .nav-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .nav-right {
+    margin-top: 4px;
+  }
+  .nav-hamburger {
+    display: inline-block;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links.open {
+    display: block;
+    margin-top: 6px;
+  }
+  .nav-links.open .nav-separator {
+    display: none;
+  }
+  .nav-links.open .nav-link {
+    display: block;
+    padding: 4px 0;
+  }
+}
+
 
 /*-----------------------------*/
 /* FOOTER SPRING CLASSES        */
@@ -1803,4 +1869,46 @@ marquee {
   .features-grid .feature-card {
     width: 180px;
   }
+}
+
+/* Features grid — 4 columns flex */
+.features-grid-4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.features-grid-4 .feature-card {
+  width: calc(50% - 10px);
+}
+
+@media (min-width: 768px) {
+  .features-grid-4 .feature-card {
+    width: calc(25% - 10px);
+  }
+}
+
+/* Compact controls table under download */
+.controls-compact {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  width: auto;
+}
+
+.controls-compact td {
+  padding: 2px 5px;
+  font-size: 12px;
+}
+
+.controls-compact td:nth-child(odd) {
+  color: #388e3c;
+  font-weight: bold;
+  text-align: right;
+}
+
+.controls-compact td:nth-child(even) {
+  color: #2d5a27;
+  text-align: left;
+  padding-right: 12px;
 }
