@@ -1460,7 +1460,7 @@ marquee {
   white-space: nowrap;
 }
 
-/* Hamburger button — hidden on desktop */
+/* Hamburger button — hidden on desktop, visible on mobile */
 .nav-hamburger {
   display: none;
   background: none;
@@ -1479,6 +1479,20 @@ marquee {
   color: #c2185b;
 }
 
+/* Desktop: links always visible inline, hamburger hidden */
+.nav-links {
+  display: inline;
+}
+
+.nav-links .nav-link {
+  display: inline;
+}
+
+.nav-links .nav-separator {
+  display: inline;
+}
+
+/* Mobile: hamburger visible, links hidden behind toggle */
 @media (max-width: 600px) {
   .nav-flex {
     flex-direction: column;
@@ -1492,10 +1506,10 @@ marquee {
     display: inline-block;
   }
   .nav-links {
-    display: none;
+    display: none !important;
   }
   .nav-links.open {
-    display: block;
+    display: block !important;
     margin-top: 6px;
   }
   .nav-links.open .nav-separator {
