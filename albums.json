@@ -1,5 +1,12 @@
 [
   {
+    "id": 8,
+    "title": "Light of Spring",
+    "date": "2026-05-28",
+    "image": "images/lightofspring.jpg",
+    "url": "albums/lightofspring"
+  },
+  {
     "id": 1,
     "title": "Lost Kittens",
     "date": "2024-11-15",
