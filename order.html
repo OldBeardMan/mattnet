@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Order a physical CD or Vinyl copy of Light of Spring by Matt Krupa.">
+        <meta property="og:image" content="https://mattkrupa.net/static/images/lightofspring.jpg">
+        <meta property="og:type" content="website" />
+        <title>Order CD &amp; Vinyl &mdash; Matt Krupa</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body id="page-top">
+
+        <!-- Navigation -->
+        <div id="navbar-container"></div>
+
+        <!-- Header -->
+        <header class="spring masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Order</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">CD &amp; Vinyl</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Order Form -->
+        <section class="signup-section" id="order">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+
+                        <!-- Success banner (shown after a successful submit) -->
+                        <div id="order-success" style="display:none; margin-bottom: 1.5rem; padding: 12px; background:#a5d6a7; border:2px outset #c8e6c9; color:#1b5e20; font-weight:bold; text-align:center;">
+                            Thank you! Your order has been sent. I'll get back to you by e-mail soon. &#127807;
+                        </div>
+
+                        <h2 class="mb-3">Order a physical copy</h2>
+                        <p class="mb-3">
+                            Fill in the form below to order <strong>Light of Spring</strong> on CD and/or Vinyl.
+                            The physical editions include two extra, more personal songs that aren't available online.
+                            This is not an automated shop &mdash; I'll personally reply by e-mail to arrange payment and the details.
+                        </p>
+                        <p class="mb-4">
+                            <strong>Please note:</strong> physical copies are currently available only for <strong>Light of Spring</strong>. None of my other albums are available on CD or Vinyl at the moment.
+                        </p>
+
+                        <!-- Validation error banner -->
+                        <div id="form-error" class="form-error" style="display:none;"></div>
+
+                        <form id="order-form" class="form-signup" action="https://formsubmit.co/TWOJ@EMAIL.com" method="POST">
+
+                            <!-- FormSubmit configuration (https://formsubmit.co) -->
+                            <input type="hidden" name="_subject" value="New order: Light of Spring (CD/Vinyl)">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="true">
+                            <input type="hidden" name="_next" value="https://mattkrupa.net/order?sent=1">
+                            <!-- Honeypot anti-spam field -->
+                            <input type="text" name="_honey" style="display:none">
+
+                            <input type="hidden" name="Album" id="album-field" value="Light of Spring">
+
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Name and surname *</label>
+                                <input class="form-control" type="text" id="name" name="Name and surname" required autocomplete="name">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Your e-mail *</label>
+                                <input class="form-control" type="email" id="email" name="Email" required autocomplete="email">
+                            </div>
+
+                            <!-- Format -->
+                            <div class="mb-3">
+                                <label class="form-label">Format * (choose at least one)</label>
+                                <div class="form-check">
+                                    <input class="form-check-input format-input" type="checkbox" id="format-cd" name="Format" value="CD">
+                                    <label class="form-check-label" for="format-cd">CD</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input format-input" type="checkbox" id="format-vinyl" name="Format" value="Vinyl">
+                                    <label class="form-check-label" for="format-vinyl">Vinyl</label>
+                                </div>
+                            </div>
+
+                            <!-- Delivery method -->
+                            <div class="mb-3">
+                                <label class="form-label">Delivery *</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="delivery-shipping" name="Delivery" value="Shipping to address" checked>
+                                    <label class="form-check-label" for="delivery-shipping">Ship to my address</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="delivery-pickup" name="Delivery" value="Personal pickup">
+                                    <label class="form-check-label" for="delivery-pickup">Personal pickup</label>
+                                </div>
+                            </div>
+
+                            <!-- Shipping address (shown only when shipping is selected) -->
+                            <div class="mb-3" id="address-wrap">
+                                <label class="form-label" for="address">Shipping address *</label>
+                                <textarea class="form-control" id="address" name="Shipping address" rows="3" placeholder="Street, number, postal code, city, country"></textarea>
+                            </div>
+
+                            <!-- Optional message -->
+                            <div class="mb-3">
+                                <label class="form-label" for="message">Message (optional)</label>
+                                <textarea class="form-control" id="message" name="Message" rows="3" placeholder="Anything you'd like to add?"></textarea>
+                            </div>
+
+                            <button class="btn btn-form" type="submit">Send order</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Links -->
+        <div id="social-container"></div>
+
+        <!-- Footer -->
+        <div id="footer-container"></div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JS -->
+        <script src="js/scripts.js"></script>
+
+        <!-- Order page logic -->
+        <script>
+            (function () {
+                var params = new URLSearchParams(window.location.search);
+
+                // Show the success banner after a successful FormSubmit redirect (?sent=1)
+                if (params.get('sent') === '1') {
+                    var success = document.getElementById('order-success');
+                    if (success) success.style.display = 'block';
+                    var form = document.getElementById('order-form');
+                    if (form) form.style.display = 'none';
+                }
+
+                // Toggle the shipping address field based on the chosen delivery method
+                var addressWrap = document.getElementById('address-wrap');
+                var addressField = document.getElementById('address');
+                function syncDelivery() {
+                    var shipping = document.getElementById('delivery-shipping').checked;
+                    addressWrap.style.display = shipping ? 'block' : 'none';
+                }
+                document.querySelectorAll('input[name="Delivery"]').forEach(function (el) {
+                    el.addEventListener('change', syncDelivery);
+                });
+                syncDelivery();
+
+                // Client-side validation: at least one format, address required when shipping
+                var form = document.getElementById('order-form');
+                var errorBox = document.getElementById('form-error');
+                if (form) {
+                    form.addEventListener('submit', function (e) {
+                        var errors = [];
+                        var anyFormat = Array.prototype.some.call(
+                            document.querySelectorAll('.format-input'),
+                            function (cb) { return cb.checked; }
+                        );
+                        if (!anyFormat) errors.push('Please choose CD, Vinyl, or both.');
+
+                        var shipping = document.getElementById('delivery-shipping').checked;
+                        if (shipping && addressField.value.trim() === '') {
+                            errors.push('Please provide a shipping address (or choose personal pickup).');
+                        }
+
+                        if (errors.length > 0) {
+                            e.preventDefault();
+                            errorBox.innerHTML = errors.join('<br>');
+                            errorBox.style.display = 'block';
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    });
+                }
+            })();
+        </script>
+    </body>
+</html>
