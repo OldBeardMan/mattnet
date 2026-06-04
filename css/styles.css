@@ -1106,6 +1106,7 @@ textarea.form-control {
 }
 
 .news-header {
+  position: relative;
   background-image: url("../images/bg-signup.jpg");
   background-size: cover;
 }
