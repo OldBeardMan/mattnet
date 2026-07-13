@@ -575,6 +575,7 @@ textarea {
 .covers2,
 .autumn,
 .winter,
+.spring,
 .front,
 .front2,
 .who {
@@ -596,6 +597,7 @@ textarea {
 .covers2 { background-image: url("../images/bg-covers2.jpg"); }
 .autumn { background-image: url("../images/bg-autumn.jpg"); }
 .winter { background-image: url("../images/bg-winter.jpg"); }
+.spring { background-image: url("../images/bg-spring.jpg"); }
 .front { background-image: url("../images/bg-masthead.jpg"); }
 .front2 { background-image: url("../images/bg-masthead2.jpg"); }
 .who { background-image: url("../images/background.jpg"); }
