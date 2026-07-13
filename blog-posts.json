@@ -23,5 +23,13 @@
     "author": "Matt Krupa",
     "content": "Go watch the Little Light video!",
     "embeds": ["https://www.youtube.com/watch?v=xKB_DOIE7TU"]
+  },
+  {
+      "id": 4,
+    "title": "New album: Light of Spring",
+    "date": "2026-05-29",
+    "author": "Matt Krupa",
+    "content": "After years of autmn, winter, nordic countries and loosing my kittens the spring has came! This album is about every day life, about nature, about miracle of life, about work... Go listen to it and find it out!",
+    "embeds": ["https://www.youtube.com/watch?v=BWEHNn0H6Og"]
   }
 ]
