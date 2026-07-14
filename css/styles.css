@@ -1068,7 +1068,7 @@ textarea.form-control {
 .blog-post-image img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
 }
@@ -1207,7 +1207,7 @@ textarea.form-control {
 .modal-post-image img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
 }
