@@ -31,5 +31,14 @@
     "author": "Matt Krupa",
     "content": "After years of autmn, winter, nordic countries and loosing my kittens the spring has came! This album is about every day life, about nature, about miracle of life, about work... Go listen to it and find it out!",
     "embeds": ["https://www.youtube.com/watch?v=BWEHNn0H6Og"]
+  },
+  {
+    "id": 5,
+    "title": "Light of Spring now on CD",
+    "date": "2026-07-14",
+    "author": "Matt Krupa",
+    "content": "Light of Spring is now available on CD. Get your physical copy and enjoy the album the way it was meant to be heard. Order it here: <a href=\"/order\">/order</a>.",
+    "image": "../images/news-images/LightofSpringCD.jpg",
+    "embeds": []
   }
 ]
