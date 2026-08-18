@@ -1,5 +1,12 @@
 [
   {
+    "id": 9,
+    "title": "Microprocessor",
+    "date": "2026-08-18",
+    "image": "images/microprocessor.jpg",
+    "url": "albums/microprocessor"
+  },
+  {
     "id": 8,
     "title": "Light of Spring",
     "date": "2026-05-28",

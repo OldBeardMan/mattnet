@@ -624,6 +624,7 @@ textarea {
 .autumn,
 .winter,
 .spring,
+.microprocessor,
 .front,
 .front2,
 .who {
@@ -646,6 +647,7 @@ textarea {
 .autumn { background-image: url("../images/bg-autumn.jpg"); }
 .winter { background-image: url("../images/bg-winter.jpg"); }
 .spring { background-image: url("../images/bg-spring.jpg"); }
+.microprocessor { background-image: url("../images/bg-microprocessor.jpg"); }
 .front { background-image: url("../images/bg-masthead.jpg"); }
 .front2 { background-image: url("../images/bg-masthead2.jpg"); }
 .who { background-image: url("../images/background.jpg"); }
@@ -2078,3 +2080,4 @@ marquee {
 .streaming-links a.sl-apple:hover    { background: #fc3c44; border-color: #fc3c44; }
 .streaming-links a.sl-youtube:hover  { background: #ff0000; border-color: #ff0000; }
 .streaming-links a.sl-bandcamp:hover { background: #629aa9; border-color: #629aa9; }
+.streaming-links a.sl-soundcloud:hover { background: #ff5500; border-color: #ff5500; }
