@@ -42,6 +42,20 @@
     "url": "albums/norway"
   },
   {
+    "id": 11,
+    "title": "Pls Come",
+    "date": "2021-12-24",
+    "image": "images/plscome.jpg",
+    "url": "albums/plscome"
+  },
+  {
+    "id": 10,
+    "title": "Do Not Listen II",
+    "date": "2021-06-12",
+    "image": "images/DoNotListenII.jpg",
+    "url": "albums/donotlistenii"
+  },
+  {
     "id": 5,
     "title": "Covers Vol.1",
     "date": "2020-12-10",

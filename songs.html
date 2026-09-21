@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="description" content="Every song Matt Krupa has ever released - searchable archive.">
+        <title>Song Archive</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body id="page-top">
+
+        <!-- Header -->
+        <header class="spring masthead">
+            <div class="container text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Song Archive</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-0">Every song I have ever released, in one big table</h2>
+            </div>
+        </header>
+
+        <!-- Song table -->
+        <section class="projects-section" id="archive">
+            <div class="container container-wide">
+
+                <p class="songs-intro text-center">
+                    A little hidden corner of the site - the complete list of everything I have recorded and put out,
+                    with release dates, where you can still find it and all the little stories behind the tracks.
+                    Search it, sort it, filter it.
+                </p>
+
+                <!-- Filters -->
+                <div class="songs-controls">
+                    <div class="songs-control songs-control-search">
+                        <label for="songSearch">Search</label>
+                        <input type="search" id="songSearch" class="form-control" placeholder="Song, album or note..." autocomplete="off">
+                    </div>
+                    <div class="songs-control">
+                        <label for="albumFilter">Album</label>
+                        <select id="albumFilter" class="form-control"></select>
+                    </div>
+                    <div class="songs-control">
+                        <label for="typeFilter">Release type</label>
+                        <select id="typeFilter" class="form-control">
+                            <option value="">All types</option>
+                            <option value="Album">Album track</option>
+                            <option value="Single">Single</option>
+                            <option value="EP">EP</option>
+                        </select>
+                    </div>
+                    <div class="songs-control">
+                        <label for="availFilter">Available on</label>
+                        <select id="availFilter" class="form-control"></select>
+                    </div>
+                    <div class="songs-control songs-control-reset">
+                        <button type="button" id="resetFilters" class="btn btn-abo">Reset</button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="songs-stats" id="songsStats"></div>
+
+                <!-- Album note (shown when a single album is selected) -->
+                <div class="songs-album-note" id="albumNote" hidden></div>
+
+                <!-- Table -->
+                <div class="songs-table-wrap">
+                    <table class="songs-table" id="songsTable">
+                        <thead>
+                            <tr>
+                                <th class="songs-sortable" data-sort="index" scope="col">#</th>
+                                <th class="songs-sortable" data-sort="title" scope="col">Song</th>
+                                <th class="songs-sortable" data-sort="album" scope="col">Album</th>
+                                <th class="songs-sortable songs-num" data-sort="seconds" scope="col">Length</th>
+                                <th class="songs-sortable" data-sort="date" scope="col">First release</th>
+                                <th scope="col">Available on</th>
+                                <th class="songs-sortable" data-sort="type" scope="col">Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="songsBody"></tbody>
+                    </table>
+                    <p class="songs-empty" id="songsEmpty" hidden>No songs match that. Try a different search.</p>
+                </div>
+
+                <p class="songs-hint text-center">
+                    Click a column header to sort, click a row with a <span class="songs-note-dot">i</span> to read the story behind the song.
+                </p>
+
+                <!-- Notes about whole releases -->
+                <div class="songs-notes-list" id="albumNotes">
+                    <h3>Notes about the releases</h3>
+                    <ul id="albumNotesList"></ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Back to main page -->
+        <div class="back-home-bar">
+            <div class="container text-center">
+                <a class="btn btn-home" href="/">&#8592; Back to main page</a>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div id="social-container"></div>
+
+        <!-- Footer -->
+        <div id="footer-container"></div>
+
+        <script src="js/scripts.js"></script>
+        <script src="js/songs-data.js"></script>
+        <script src="js/songs.js"></script>
+    </body>
+</html>

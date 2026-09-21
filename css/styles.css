@@ -446,6 +446,8 @@ textarea {
 .winter,
 .spring,
 .microprocessor,
+.donotlisten2,
+.plscome,
 .front,
 .front2,
 .who {
@@ -469,6 +471,8 @@ textarea {
 .winter { background-image: url("../images/bg-winter.jpg"); }
 .spring { background-image: url("../images/bg-spring.jpg"); }
 .microprocessor { background-image: url("../images/bg-microprocessor.jpg"); }
+.donotlisten2 { background-image: url("../images/DoNotListenII.jpg"); }
+.plscome { background-image: url("../images/plscome.jpg"); }
 .front { background-image: url("../images/bg-masthead.jpg"); }
 .front2 { background-image: url("../images/bg-masthead2.jpg"); }
 .who { background-image: url("../images/background.jpg"); }
@@ -1837,4 +1841,317 @@ marquee {
 .streaming-links a[href="#"] {
   opacity: 0.4;
   pointer-events: none;
+}
+
+
+/*-----------------------------*/
+/* SONG ARCHIVE (hidden page)  */
+/*-----------------------------*/
+
+.container-wide {
+  max-width: 1180px;
+}
+
+.songs-intro {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  color: #5b6b52;
+}
+
+/* Filter bar */
+.songs-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1rem;
+  align-items: flex-end;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.songs-control {
+  flex: 1 1 170px;
+  min-width: 0;
+}
+
+.songs-control-search {
+  flex: 2 1 260px;
+}
+
+.songs-control-reset {
+  flex: 0 0 auto;
+}
+
+.songs-control label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+}
+
+.songs-control .btn {
+  margin-top: 0;
+}
+
+/* Little stats strip */
+.songs-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #5b6b52;
+}
+
+.songs-stats strong {
+  color: var(--accent-pink);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.songs-album-note {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #fdf1f5;
+  border: 1px solid #f3cdd9;
+  border-left: 4px solid var(--accent-pink);
+  border-radius: 10px;
+  font-size: 0.92rem;
+  color: #6a4150;
+}
+
+/* The table itself */
+.songs-table-wrap {
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.songs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+  text-align: left;
+}
+
+.songs-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 0.85rem 0.75rem;
+  background: #eef3e6;
+  border-bottom: 2px solid var(--border-soft);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+  white-space: nowrap;
+}
+
+.songs-sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.songs-sortable:hover {
+  color: var(--accent-pink);
+}
+
+.songs-sortable::after {
+  content: " \2195";
+  opacity: 0.3;
+}
+
+.songs-sortable.songs-sorted {
+  color: var(--accent-pink);
+}
+
+.songs-sortable.songs-sorted::after {
+  content: " \2191";
+  opacity: 1;
+}
+
+.songs-sortable.songs-sorted.songs-sorted-desc::after {
+  content: " \2193";
+}
+
+.songs-table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid #edf1e7;
+  vertical-align: top;
+}
+
+.songs-row:hover td {
+  background: #f4f8ee;
+}
+
+.songs-row-note {
+  cursor: pointer;
+}
+
+.songs-row-open td {
+  background: #f1f7ea !important;
+}
+
+.songs-title {
+  font-weight: 700;
+  color: #2f4a28;
+}
+
+.songs-index,
+.songs-num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.songs-index {
+  color: #a8b39f;
+  font-size: 0.85rem;
+}
+
+.songs-date,
+.songs-type {
+  white-space: nowrap;
+  color: #5b6b52;
+}
+
+.songs-approx {
+  color: var(--accent-pink);
+}
+
+/* Availability chips */
+.songs-tags {
+  min-width: 190px;
+}
+
+.songs-tag {
+  display: inline-block;
+  padding: 1px 8px;
+  margin: 0 3px 3px 0;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: #f3f7ed;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #4a6340;
+  white-space: nowrap;
+}
+
+.songs-tag-cd { background: #eef2fb; border-color: #cfd9f0; color: #3b4f80; }
+.songs-tag-vinyl { background: #f3eefb; border-color: #ddd0f0; color: #5b3b80; }
+.songs-tag-bandcamp { background: #e9f3f5; border-color: #c6dfe4; color: #316975; }
+.songs-tag-streaming { background: #eaf6ec; border-color: #c8e6cd; color: #2f7d4f; }
+.songs-tag-music-video { background: #fdecec; border-color: #f4cccc; color: #a63030; }
+.songs-tag-soundcloud { background: #fff0e6; border-color: #ffd6bb; color: #b25100; }
+
+/* Expandable note row */
+.songs-detail td {
+  padding: 0.7rem 1rem 0.9rem 2.6rem;
+  background: #fbf8ef;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 0.9rem;
+  color: #6a5f43;
+}
+
+.songs-note-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: var(--accent-pink);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  vertical-align: 1px;
+}
+
+.songs-empty {
+  padding: 2rem 1rem;
+  margin: 0;
+  text-align: center;
+  color: #8a9682;
+}
+
+.songs-hint {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #8a9682;
+}
+
+@media (max-width: 991px) {
+  /* Narrow screens: let the table scroll sideways instead of squeezing */
+  .songs-table-wrap {
+    overflow-x: auto;
+  }
+  .songs-table thead th {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .songs-table {
+    font-size: 0.85rem;
+  }
+  .songs-table thead th,
+  .songs-table td {
+    padding: 0.55rem 0.5rem;
+  }
+  .songs-control-reset {
+    flex: 1 1 100%;
+  }
+  .songs-control-reset .btn {
+    width: 100%;
+  }
+}
+
+/* Notes that describe a whole release */
+.songs-notes-list {
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.songs-notes-list h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  color: var(--accent-green);
+}
+
+.songs-notes-list ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: #5b6b52;
+}
+
+.songs-notes-list li {
+  margin-bottom: 0.45rem;
+}
+
+.songs-notes-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Music video embed on a release page */
+.video-embed {
+  max-width: 720px;
+  margin: 0 auto;
 }
