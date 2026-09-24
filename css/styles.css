@@ -448,6 +448,7 @@ textarea {
 .microprocessor,
 .donotlisten2,
 .plscome,
+.ineedacoffee,
 .front,
 .front2,
 .who {
@@ -473,6 +474,7 @@ textarea {
 .microprocessor { background-image: url("../images/bg-microprocessor.jpg"); }
 .donotlisten2 { background-image: url("../images/DoNotListenII.jpg"); }
 .plscome { background-image: url("../images/plscome.jpg"); }
+.ineedacoffee { background-image: url("../images/I_Need_A_Coffee.jpg"); }
 .front { background-image: url("../images/bg-masthead.jpg"); }
 .front2 { background-image: url("../images/bg-masthead2.jpg"); }
 .who { background-image: url("../images/background.jpg"); }
@@ -2154,4 +2156,53 @@ marquee {
 .video-embed {
   max-width: 720px;
   margin: 0 auto;
+}
+
+/* More music videos under the featured one */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 2rem auto 0;
+}
+
+.video-grid .embed-container {
+  margin-bottom: 0;
+}
+
+.video-caption {
+  margin: 0.75rem auto 0;
+  font-size: 0.95rem;
+  color: #43a047;
+  text-align: center;
+}
+
+/* Hidden season switch in the footer */
+.footer-note .season-toggle {
+  margin-left: 4px;
+  padding: 0;
+  border: 0;
+  background: none !important;
+  font-size: 11px;
+  line-height: 1;
+  opacity: 0.15;
+  cursor: default;
+  transition: opacity 0.4s;
+}
+
+.footer-note .season-toggle:hover,
+.footer-note .season-toggle:focus-visible {
+  opacity: 1;
+}
+
+/* Falling pixel leaves in autumn mode */
+.leaf-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  image-rendering: pixelated;
 }

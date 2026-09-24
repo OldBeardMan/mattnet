@@ -72,6 +72,12 @@ const SONG_DB = {
       "url": "",
       "image": "",
       "note": ""
+    },
+    {
+      "title": "Zzz",
+      "url": "albums/ineedacoffee",
+      "image": "images/I_Need_A_Coffee.jpg",
+      "note": ""
     }
   ],
   "songs": [
@@ -1010,7 +1016,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Music Video"
       ],
       "type": "Album and Single",
       "note": "Songs made for Minecraft: Volume Beta Remixed by C418 Community, on streaming released 10, 17 and 24 November 2023"
@@ -1026,7 +1033,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Music Video"
       ],
       "type": "Album and Single",
       "note": ""
@@ -1042,7 +1050,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Music Video"
       ],
       "type": "Album and Single",
       "note": ""
@@ -1666,6 +1675,21 @@ const SONG_DB = {
       "dateApprox": false,
       "availability": [
         "Soundcloud"
+      ],
+      "type": "Single",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "I Need A Coffee",
+      "duration": "2:20",
+      "seconds": 140,
+      "date": "2026-09-23",
+      "dateText": "Sep 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "Bandcamp",
+        "Music Video"
       ],
       "type": "Single",
       "note": ""
