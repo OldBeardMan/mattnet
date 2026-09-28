@@ -265,8 +265,6 @@ textarea {
 .btn:visited:hover {
   color: #ffffff;
 }
-
-.btn-main:visited { color: #ffffff; }
 .btn-abo:visited { color: #ffffff; }
 .btn-form:visited { color: #ffffff; }
 .btn-download:visited { color: #ffffff; }
@@ -277,17 +275,6 @@ textarea {
 .btn:active {
   transform: translateY(0);
   box-shadow: var(--shadow-soft);
-}
-
-.btn-main {
-  background-color: #e91e63;
-  border-color: #f48fb1;
-  color: #ffffff;
-}
-
-.btn-main:hover {
-  background-color: #f06292;
-  color: #ffffff;
 }
 
 .btn-abo {
@@ -975,12 +962,6 @@ textarea.form-control {
   border-radius: 10px;
 }
 
-.projects-section .btn-main {
-  font-size: 15px;
-  padding: 11px 22px;
-  border: none;
-}
-
 /* Post modal - spring style */
 .post-modal {
   display: none;
@@ -1249,70 +1230,6 @@ marquee {
   border-bottom: 2px solid #66bb6a;
 }
 
-/* About page - story list */
-.y2k-story-list {
-  text-align: left;
-  list-style-type: disc;
-  color: #2d5a27;
-  padding-left: 2rem;
-}
-
-.y2k-story-list li {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.y2k-story-list .story-year-label {
-  color: #c2185b;
-  font-weight: bold;
-}
-
-.y2k-story-list .story-title-label {
-  color: #388e3c;
-  font-weight: bold;
-}
-
-/* Dedication - spring style */
-.dedication-simple {
-  text-align: center;
-  border: 1px solid var(--border-soft);
-  border-radius: 14px;
-  padding: 22px;
-  background: #ffffff;
-  max-width: 500px;
-  margin: 0 auto;
-  box-shadow: var(--shadow-soft);
-}
-
-.dedication-simple img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
-  border: 3px solid #f5b8c4;
-  margin-bottom: 10px;
-}
-
-/* Intro text on about page */
-.intro-text {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #2d5a27;
-}
-
-.intro-highlight {
-  color: #c2185b;
-  font-weight: 600;
-}
-
-/* Main page wrapper with spring border */
-.y2k-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  background: transparent;
-}
-
 
 /*-----------------------------*/
 /* SPRING UTILITY COLORS       */
@@ -1322,7 +1239,6 @@ marquee {
 .text-cyan { color: #388e3c !important; }
 .text-yellow { color: #c2185b !important; }
 .text-magenta { color: #ad1457 !important; }
-.text-pink { color: #e91e63 !important; }
 .text-light-purple { color: #7b1fa2 !important; }
 .text-gray { color: #8d6e63 !important; }
 .text-dark-gray { color: #6d4c41 !important; }
@@ -1332,8 +1248,6 @@ marquee {
 .mb-8 { margin-bottom: 8px !important; }
 .mt-3 { margin-top: 1rem !important; }
 .mt-15 { margin-top: 15px !important; }
-
-.bg-dark-blue { background-color: #e8f5e9 !important; }
 
 
 /*-----------------------------*/
@@ -1430,34 +1344,6 @@ marquee {
 .last-updated-section {
   text-align: center;
   padding: 10px 0;
-}
-
-
-/*-----------------------------*/
-/* ABOUT PAGE SPECIFICS         */
-/*-----------------------------*/
-
-.genres-text {
-  color: #388e3c;
-  font-weight: bold;
-}
-
-.dedication-years-text {
-  color: #c2185b;
-  font-size: 13px;
-}
-
-.dedication-body-text {
-  color: #2d5a27;
-  font-size: 13px;
-  max-width: 450px;
-  margin: 0 auto;
-}
-
-.dedication-role-text {
-  color: #7b1fa2;
-  font-size: 12px;
-  margin-top: 10px;
 }
 
 

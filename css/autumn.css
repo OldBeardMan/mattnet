@@ -73,10 +73,6 @@
   color: #ffffff;
 }
 
-:where(html.autumn-mode) .btn-main:visited {
-  color: #ffffff;
-}
-
 :where(html.autumn-mode) .btn-abo:visited {
   color: #ffffff;
 }
@@ -103,17 +99,6 @@
 
 :where(html.autumn-mode) .btn:active {
   box-shadow: var(--shadow-soft);
-}
-
-:where(html.autumn-mode) .btn-main {
-  background-color: #e9321e;
-  border-color: #f4998f;
-  color: #ffffff;
-}
-
-:where(html.autumn-mode) .btn-main:hover {
-  background-color: #f07062;
-  color: #ffffff;
 }
 
 :where(html.autumn-mode) .btn-abo {
@@ -344,10 +329,6 @@
   border: 1px solid var(--border-soft);
 }
 
-:where(html.autumn-mode) .projects-section .btn-main {
-  border: none;
-}
-
 :where(html.autumn-mode) .post-modal {
   background-color: rgba(125, 67, 46, 0.85);
 }
@@ -455,40 +436,6 @@
   border-bottom: 2px solid #bb7d66;
 }
 
-:where(html.autumn-mode) .y2k-story-list {
-  color: #5a3727;
-}
-
-:where(html.autumn-mode) .y2k-story-list .story-year-label {
-  color: #c22918;
-}
-
-:where(html.autumn-mode) .y2k-story-list .story-title-label {
-  color: #8e4f38;
-}
-
-:where(html.autumn-mode) .dedication-simple {
-  border: 1px solid var(--border-soft);
-  background: #ffffff;
-  box-shadow: var(--shadow-soft);
-}
-
-:where(html.autumn-mode) .dedication-simple img {
-  border: 3px solid #f5beb8;
-}
-
-:where(html.autumn-mode) .intro-text {
-  color: #5a3727;
-}
-
-:where(html.autumn-mode) .intro-highlight {
-  color: #c22918;
-}
-
-:where(html.autumn-mode) .y2k-wrapper {
-  background: transparent;
-}
-
 :where(html.autumn-mode) .text-green {
   color: #7d432e !important;
 }
@@ -505,10 +452,6 @@
   color: #ad2314 !important;
 }
 
-:where(html.autumn-mode) .text-pink {
-  color: #e9321e !important;
-}
-
 :where(html.autumn-mode) .text-light-purple {
   color: #885139 !important;
 }
@@ -523,10 +466,6 @@
 
 :where(html.autumn-mode) .text-green-light {
   color: #a05c43 !important;
-}
-
-:where(html.autumn-mode) .bg-dark-blue {
-  background-color: #f5ebe8 !important;
 }
 
 :where(html.autumn-mode) .back-home-bar {
@@ -568,22 +507,6 @@
   background-color: var(--cream-soft);
   border-top: 1px solid var(--border-soft);
   border-bottom: 1px solid var(--border-soft);
-}
-
-:where(html.autumn-mode) .genres-text {
-  color: #8e4f38;
-}
-
-:where(html.autumn-mode) .dedication-years-text {
-  color: #c22918;
-}
-
-:where(html.autumn-mode) .dedication-body-text {
-  color: #5a3727;
-}
-
-:where(html.autumn-mode) .dedication-role-text {
-  color: #885139;
 }
 
 :where(html.autumn-mode) .mindofseasons {
