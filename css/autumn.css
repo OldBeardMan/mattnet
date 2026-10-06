@@ -847,6 +847,16 @@
   background: none !important;
 }
 
+:where(html.autumn-mode) .footer-note .season-toggle, :where(html.autumn-mode) .footer-note .sleep-toggle {
+  color: inherit;
+}
+
+:where(html.autumn-mode) .footer-note .sleep-toggle {
+  border: 0;
+  background: none !important;
+  color: inherit;
+}
+
 /* Hand-made extras */
 :root:where(.autumn-mode) { --cream: #f8f1e6; --cream-soft: #f2e7d8; }
 :where(html.autumn-mode) .front { background-image: url("../images/bg-autumn.jpg"); }

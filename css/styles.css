@@ -433,9 +433,11 @@ textarea {
 .winter,
 .spring,
 .microprocessor,
+.mattdelivery,
 .donotlisten2,
 .plscome,
 .ineedacoffee,
+.zzz,
 .front,
 .front2,
 .who {
@@ -462,6 +464,8 @@ textarea {
 .donotlisten2 { background-image: url("../images/DoNotListenII.jpg"); }
 .plscome { background-image: url("../images/plscome.jpg"); }
 .ineedacoffee { background-image: url("../images/I_Need_A_Coffee.jpg"); }
+.mattdelivery { background-image: url("../images/Matt Delivery.jpg"); }
+.zzz { background-image: url("../images/Zzz-tlo.jpg"); }
 .front { background-image: url("../images/bg-masthead.jpg"); }
 .front2 { background-image: url("../images/bg-masthead2.jpg"); }
 .who { background-image: url("../images/background.jpg"); }
@@ -2080,6 +2084,43 @@ marquee {
 .footer-note .season-toggle:hover,
 .footer-note .season-toggle:focus-visible {
   opacity: 1;
+}
+
+.footer-note .season-toggle,
+.footer-note .sleep-toggle {
+  color: inherit;
+}
+
+.footer-note .season-toggle svg,
+.footer-note .sleep-toggle svg {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: -1px;
+}
+
+/* Hidden "Go to sleep" / "Wake up" switch next to the leaf, autumn only (js/sleep.js) */
+.footer-note .sleep-toggle {
+  margin-left: 6px;
+  padding: 0;
+  border: 0;
+  background: none !important;
+  color: inherit;
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1;
+  opacity: 0.15;
+  cursor: default;
+  transition: opacity 0.4s;
+}
+
+.footer-note .sleep-toggle:hover,
+.footer-note .sleep-toggle:focus-visible {
+  opacity: 1;
+}
+
+html:not(.autumn-mode) .footer-note .sleep-toggle {
+  display: none;
 }
 
 /* Falling pixel leaves in autumn mode */

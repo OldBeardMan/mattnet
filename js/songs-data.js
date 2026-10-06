@@ -50,33 +50,21 @@ const SONG_DB = {
       "note": "All of the cats got their names with the album release"
     },
     {
-      "title": "Habitual Crush",
-      "url": "",
-      "image": "",
-      "note": ""
-    },
-    {
       "title": "Light Of Spring",
       "url": "albums/lightofspring",
       "image": "images/lightofspring.jpg",
       "note": "The whole album got a ,,Full Album Listening Video\" (expcept for the two CD only songs)"
     },
     {
-      "title": "Microprocessor",
-      "url": "albums/microprocessor",
-      "image": "images/microprocessor.jpg",
-      "note": ""
-    },
-    {
-      "title": "Kitten",
-      "url": "",
-      "image": "",
-      "note": ""
+      "title": "Matt Delivery",
+      "url": "albums/mattdelivery",
+      "image": "images/Matt%20Delivery.jpg",
+      "note": "Album available only on Bandcamp and CD, made of deleted tracks"
     },
     {
       "title": "Zzz",
-      "url": "albums/ineedacoffee",
-      "image": "images/I_Need_A_Coffee.jpg",
+      "url": "albums/zzz",
+      "image": "images/Zzz.jpg",
       "note": ""
     }
   ],
@@ -1395,21 +1383,6 @@ const SONG_DB = {
       "note": ""
     },
     {
-      "album": "Habitual Crush",
-      "title": "Habitual Crush",
-      "duration": "6:02",
-      "seconds": 362,
-      "date": "2025-12-18",
-      "dateText": "Dec 18, 2025",
-      "dateApprox": false,
-      "availability": [
-        "Soundcloud",
-        "C418 Community Bandcamp"
-      ],
-      "type": "Single",
-      "note": "Released with 148 Remixed by C418 Community"
-    },
-    {
       "album": "Light Of Spring",
       "title": "Spring At Last",
       "duration": "4:48",
@@ -1651,7 +1624,7 @@ const SONG_DB = {
       "note": ""
     },
     {
-      "album": "Microprocessor",
+      "album": "Matt Delivery",
       "title": "Microprocessor",
       "duration": "4:58",
       "seconds": 298,
@@ -1659,24 +1632,404 @@ const SONG_DB = {
       "dateText": "Aug 18, 2026",
       "dateApprox": false,
       "availability": [
+        "CD",
         "Bandcamp",
         "Soundcloud"
       ],
-      "type": "Single",
+      "type": "Album and Single",
       "note": ""
     },
     {
-      "album": "Kitten",
-      "title": "Kitten",
-      "duration": "4:03",
-      "seconds": 243,
+      "album": "Matt Delivery",
+      "title": "Habitual Crush (Matt Krupa Remix)",
+      "duration": "6:00",
+      "seconds": 360,
+      "date": "2025-12-18",
+      "dateText": "Dec 18, 2025",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Soundcloud"
+      ],
+      "type": "Album and Single",
+      "note": "Released with 148 Remixed by C418 Community"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "This Day Is Begining",
+      "duration": "2:54",
+      "seconds": 174,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "different mix of a song from Zzz"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "S-11436-1-P43101",
+      "duration": "1:39",
+      "seconds": 99,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Kitten (Matt Krupa Remix)",
+      "duration": "4:00",
+      "seconds": 240,
       "date": "2026-08-19",
       "dateText": "Aug 19, 2026",
       "dateApprox": false,
       "availability": [
+        "CD",
+        "Bandcamp",
         "Soundcloud"
       ],
-      "type": "Single",
+      "type": "Album and Single",
+      "note": "Done for C418 Community remix of Mixes by C418"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Irritated",
+      "duration": "2:56",
+      "seconds": 176,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Winter Leftovers",
+      "duration": "4:15",
+      "seconds": 255,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "Deleted song from Light Of Spring"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Goofy Ahh",
+      "duration": "1:01",
+      "seconds": 61,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Found Like A Kitten",
+      "duration": "3:46",
+      "seconds": 226,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "different mix of a song from Zzz"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Feel The Clouds",
+      "duration": "2:30",
+      "seconds": 150,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "Deleted song from Light Of Spring"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Basugud",
+      "duration": "3:14",
+      "seconds": 194,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "Deleted song from Light Of Spring"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Cold Day",
+      "duration": "1:58",
+      "seconds": 118,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "different mix of a song from Zzz"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Cat7 (Cat19_) demo",
+      "duration": "3:15",
+      "seconds": 195,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "Supposed to be Cat 7 but ended up Cat 19 but with a different mix"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "Fyrirgefðu",
+      "duration": "5:19",
+      "seconds": 319,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "axolotl_coffee_mug",
+      "duration": "0:40",
+      "seconds": 40,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "Bonus track on Bandcamp, available after purchase"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "linux_abomination",
+      "duration": "0:34",
+      "seconds": 34,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "Created on linux. Bonus track on Bandcamp, available after purchase"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "shy_away",
+      "duration": "1:34",
+      "seconds": 94,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp"
+      ],
+      "type": "Album",
+      "note": "Cover. Bonus track on Bandcamp, available after purchase"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "maeno",
+      "duration": "2:40",
+      "seconds": 160,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD"
+      ],
+      "type": "Album",
+      "note": "Created from deleted tracks from In The Autumn Forest in 2020"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "run_away",
+      "duration": "5:41",
+      "seconds": 341,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD"
+      ],
+      "type": "Album",
+      "note": "Remix of a first version of Ellidaey from Iceland"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "sprytek",
+      "duration": "0:32",
+      "seconds": 32,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD"
+      ],
+      "type": "Album",
+      "note": "Record used in This Day Is Over/Begining"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "[REDACTED]_unedited",
+      "duration": "3:13",
+      "seconds": 193,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD"
+      ],
+      "type": "Album",
+      "note": "From Light of Spring CD"
+    },
+    {
+      "album": "Matt Delivery",
+      "title": "never_seen_the_ocean",
+      "duration": "3:16",
+      "seconds": 196,
+      "date": "2026-10-22",
+      "dateText": "Oct 22, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD"
+      ],
+      "type": "Album",
+      "note": "Cover by Natt"
+    },
+    {
+      "album": "Zzz",
+      "title": "This Day Is Over",
+      "duration": "3:33",
+      "seconds": 213,
+      "date": "2026-10-23",
+      "dateText": "Oct 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "October Dream",
+      "duration": "3:07",
+      "seconds": 187,
+      "date": "2026-10-06",
+      "dateText": "Oct 6, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming",
+        "Music Video"
+      ],
+      "type": "Album and Single",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "Lost Like A Kitten",
+      "duration": "3:47",
+      "seconds": 227,
+      "date": "2026-10-23",
+      "dateText": "Oct 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "Cold Night",
+      "duration": "1:56",
+      "seconds": 116,
+      "date": "2026-10-23",
+      "dateText": "Oct 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "Fear/Touch",
+      "duration": "2:51",
+      "seconds": 171,
+      "date": "2026-10-23",
+      "dateText": "Oct 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming"
+      ],
+      "type": "Album",
       "note": ""
     },
     {
@@ -1688,10 +2041,76 @@ const SONG_DB = {
       "dateText": "Sep 23, 2026",
       "dateApprox": false,
       "availability": [
+        "CD",
         "Bandcamp",
+        "Streaming",
         "Music Video"
       ],
-      "type": "Single",
+      "type": "Album and Single",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "Late Quiet",
+      "duration": "3:17",
+      "seconds": 197,
+      "date": "2026-10-23",
+      "dateText": "Oct 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "Longing",
+      "duration": "2:47",
+      "seconds": 167,
+      "date": "2026-10-23",
+      "dateText": "Oct 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "Dreams Of The Old Friend",
+      "duration": "3:13",
+      "seconds": 193,
+      "date": "2026-10-23",
+      "dateText": "Oct 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming"
+      ],
+      "type": "Album",
+      "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "Waking Up [Try Again]",
+      "duration": "3:20",
+      "seconds": 200,
+      "date": "2026-10-23",
+      "dateText": "Oct 23, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Bandcamp",
+        "Streaming"
+      ],
+      "type": "Album",
       "note": ""
     }
   ]
