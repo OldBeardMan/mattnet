@@ -50,8 +50,8 @@ function setupSeasonToggle() {
         const autumn = window.season.current() === 'autumn';
         toggle.innerHTML = switchIcon(autumn ? SWITCH_ICON.sprout : SWITCH_ICON.leaf);
         toggle.title = autumn ? 'Spring' : 'Autumn';
-        if (autumn) startLeaves();
-        else stopLeaves();
+        stopFalling();
+        startFalling(autumn ? LEAVES : FLOWERS);
     };
 
     toggle.addEventListener('click', () => {
@@ -61,17 +61,41 @@ function setupSeasonToggle() {
     refresh();
 }
 
-// Pixel leaves falling all the time in autumn mode, like in Mind of Seasons.
+// Pixel leaves falling all the time in autumn mode, like in Mind of Seasons,
+// and colourful little flowers in spring.
 // Drawn on a low-res canvas that the browser scales up without smoothing.
 const LEAF_PIXEL = 3;       // one leaf pixel = 3x3 screen pixels
 const LEAF_DENSITY = 60000; // one leaf per this many screen px² (so ~15 on a laptop)
-const LEAF_COLORS = [
-    '#8b3a3a', '#a04646', '#783232', '#aa5555', // red / burgundy
-    '#9b8b3b', '#aa9646', '#8c7d32', '#b4a050'  // yellow / olive
-];
+
+// Diamond-shaped leaf
+const LEAVES = {
+    colors: [
+        '#8b3a3a', '#a04646', '#783232', '#aa5555', // red / burgundy
+        '#9b8b3b', '#aa9646', '#8c7d32', '#b4a050'  // yellow / olive
+    ],
+    size: () => 7 + Math.floor(Math.random() * 4),
+    pixel: (lx, ly, size) => Math.abs(lx) / (size / 3) + Math.abs(ly) / (size / 2) <= 1
+};
+
+// Five petals around a yellow middle
+const FLOWER_CENTER = '#e8c547';
+const FLOWERS = {
+    colors: [
+        '#e88aa8', '#f2a7c3', '#d8698f', // pink
+        '#b79be0', '#9d86d4',            // lilac
+        '#8fb8ea', '#f4f1ec', '#f2a477'  // blue / white / peach
+    ],
+    size: () => 9 + Math.floor(Math.random() * 3),
+    pixel: (lx, ly, size) => {
+        const r = Math.hypot(lx, ly), max = size / 2;
+        if (r <= max * 0.32) return FLOWER_CENTER;
+        return r <= max * (0.3 + 0.7 * Math.abs(Math.cos(2.5 * Math.atan2(ly, lx))));
+    }
+};
+
 let leafAnimation = null;
 
-function startLeaves() {
+function startFalling(kind) {
     if (leafAnimation || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const canvas = document.createElement('canvas');
@@ -92,8 +116,8 @@ function startLeaves() {
     const newLeaf = (anywhere) => ({
         x: Math.random() * width,
         y: anywhere ? Math.random() * height : -10 - Math.random() * height * 0.5,
-        color: LEAF_COLORS[Math.floor(Math.random() * LEAF_COLORS.length)],
-        size: 7 + Math.floor(Math.random() * 4),
+        color: kind.colors[Math.floor(Math.random() * kind.colors.length)],
+        size: kind.size(),
         fall: 8 + Math.random() * 10,
         swaySpeed: 1 + Math.random() * 2,
         swayAmp: 7 + Math.random() * 10,
@@ -104,16 +128,18 @@ function startLeaves() {
     });
     const leaves = Array.from({ length: target }, () => newLeaf(true));
 
-    // Diamond-shaped leaf filled pixel by pixel, so the edges stay crisp
+    // Filled pixel by pixel, so the edges stay crisp. kind.pixel says whether a pixel
+    // belongs to the shape, or returns its own colour (the flower's middle)
     const drawLeaf = (leaf) => {
-        const hw = leaf.size / 3, hh = leaf.size / 2;
         const cos = Math.cos(leaf.rotation), sin = Math.sin(leaf.rotation);
-        const cx = Math.round(leaf.x), cy = Math.round(leaf.y), r = Math.ceil(hh);
-        ctx.fillStyle = leaf.color;
+        const cx = Math.round(leaf.x), cy = Math.round(leaf.y), r = Math.ceil(leaf.size / 2);
         for (let py = -r; py <= r; py++) {
             for (let px = -r; px <= r; px++) {
                 const lx = px * cos + py * sin, ly = -px * sin + py * cos;
-                if (Math.abs(lx) / hw + Math.abs(ly) / hh <= 1) ctx.fillRect(cx + px, cy + py, 1, 1);
+                const hit = kind.pixel(lx, ly, leaf.size);
+                if (!hit) continue;
+                ctx.fillStyle = hit === true ? leaf.color : hit;
+                ctx.fillRect(cx + px, cy + py, 1, 1);
             }
         }
     };
@@ -138,7 +164,7 @@ function startLeaves() {
     leafAnimation = { canvas, resize, id: requestAnimationFrame(frame) };
 }
 
-function stopLeaves() {
+function stopFalling() {
     if (!leafAnimation) return;
     cancelAnimationFrame(leafAnimation.id);
     window.removeEventListener('resize', leafAnimation.resize);

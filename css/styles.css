@@ -2123,7 +2123,7 @@ html:not(.autumn-mode) .footer-note .sleep-toggle {
   display: none;
 }
 
-/* Falling pixel leaves in autumn mode */
+/* Falling pixel leaves in autumn mode, flowers in spring */
 .leaf-canvas {
   position: fixed;
   inset: 0;
