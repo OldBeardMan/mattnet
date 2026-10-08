@@ -857,6 +857,101 @@
   color: inherit;
 }
 
+:where(html.autumn-mode) .streaming-links a.sl-shop:hover {
+  background: #d65344;
+  border-color: #d65344;
+}
+
+:where(html.autumn-mode) .form-success {
+  background-color: #f5ebe8;
+  color: #5e2d1b;
+  border: 1px solid #d6b2a5;
+}
+
+:where(html.autumn-mode) .shop-item {
+  border: 1px solid var(--border-soft);
+  background-color: #ffffff;
+}
+
+:where(html.autumn-mode) .shop-item.is-picked {
+  border-color: #af664c;
+  background-color: #faf5f2;
+}
+
+:where(html.autumn-mode) .shop-item-img {
+  background-color: #ffffff;
+  border: 1px solid var(--border-soft);
+}
+
+:where(html.autumn-mode) .shop-item-info p {
+  color: #6b5b50;
+}
+
+:where(html.autumn-mode) .shop-qty-btn {
+  color: #7d432e;
+  background-color: #ffffff;
+  border: 1px solid var(--border-soft);
+}
+
+:where(html.autumn-mode) .shop-qty-btn:hover {
+  border-color: #af664c;
+  background-color: #f5ebe8;
+}
+
+:where(html.autumn-mode) .shop-bundle {
+  border: 1px dashed #f2beb8;
+  background-color: #fdf4f3;
+}
+
+:where(html.autumn-mode) .shop-summary {
+  background-color: #f1eee8;
+}
+
+:where(html.autumn-mode) .shop-summary-row.is-discount {
+  color: #d65344;
+}
+
+:where(html.autumn-mode) .shop-summary-row.is-total {
+  border-top: 1px solid var(--border-soft);
+}
+
+:where(html.autumn-mode) .shop-summary-empty {
+  color: #6b5b50;
+}
+
+:where(html.autumn-mode) .shop-preview-price {
+  color: #6b5b50;
+}
+
+:where(html.autumn-mode) .shop-preview-bundle {
+  color: #d65344;
+}
+
+:where(html.autumn-mode) .shop-notice {
+  background-color: #fdf4f3;
+  border: 1px solid #f2beb8;
+}
+
+:where(html.autumn-mode) .shop-group p {
+  color: #6b5b50;
+}
+
+:where(html.autumn-mode) .shop-item-options {
+  border-top: 1px solid var(--border-soft);
+}
+
+:where(html.autumn-mode) .shop-option-label {
+  color: #6b5b50;
+}
+
+:where(html.autumn-mode) .shop-summary-detail {
+  color: #6b5b50;
+}
+
+:where(html.autumn-mode) .shop-preview-img {
+  background-color: #ffffff;
+}
+
 /* Hand-made extras */
 :root:where(.autumn-mode) { --cream: #f8f1e6; --cream-soft: #f2e7d8; }
 :where(html.autumn-mode) .front { background-image: url("../images/bg-autumn.jpg"); }

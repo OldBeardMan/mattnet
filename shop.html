@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Buy Matt Krupa CDs, vinyl and merch: Matt Delivery, Light of Spring and Zzz CDs, Light of Spring and Zzz on vinyl, a hoodie, a T-shirt and a pillow.">
+        <meta property="og:image" content="https://mattkrupa.net/images/Matt%20Delivery.jpg">
+        <meta property="og:type" content="website" />
+        <title>Shop - Matt Krupa</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/autumn.css" rel="stylesheet">
+        <script src="js/season.js"></script>
+        <link href="css/sleep.css" rel="stylesheet">
+        <script src="js/sleep.js"></script>
+    </head>
+    <body id="page-top">
+
+        <!-- Header -->
+        <header class="front masthead">
+            <div class="container text-center">
+                <h1 class="text-uppercase">Shop</h1>
+                <p class="masthead-subtitle">CDs, vinyl and merch straight from me to you.</p>
+            </div>
+        </header>
+
+        <!-- Order Form -->
+        <section class="signup-section" id="order">
+            <div class="container">
+
+                <!-- Shown after FormSubmit sends the customer back here (?sent=1) -->
+                <div id="order-success" class="form-success" hidden>
+                    Thank you! Your order has been sent. I'll get back to you by e-mail soon.
+                </div>
+
+                <p class="shop-intro">
+                    Pick what you'd like, fill in your details and send the order.
+                    This is not an automated shop - you can pay in cash or by bank transfer, and if you choose a transfer I'll reply by e-mail with the details.
+                </p>
+
+                <div class="shop-notice">
+                    <p><strong>CDs</strong> will be available from <strong>October 23</strong>.</p>
+                    <p><strong>Merch</strong> isn't made yet - production will start only once there are people who want to buy it. Order now and I'll let you know when it's on the way. Every merch item comes with one CD of your choice for free.</p>
+                    <p><strong>Stickers</strong> - I add free stickers to every order.</p>
+                </div>
+
+                <form id="order-form" class="form-signup" action="https://formsubmit.co/matt.krupa.music@gmail.com" method="POST">
+
+                    <!-- FormSubmit configuration (https://formsubmit.co) -->
+                    <input type="hidden" name="_subject" value="New shop order">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_next" value="https://mattkrupa.net/shop?sent=1">
+                    <input type="hidden" name="_autoresponse" id="autoresponse" value="">
+                    <!-- Honeypot anti-spam field -->
+                    <input type="text" name="_honey" class="shop-honey" tabindex="-1" autocomplete="off">
+
+                    <!-- Filled in by js/shop.js right before sending -->
+                    <input type="hidden" name="Order" id="order-field">
+                    <input type="hidden" name="Total" id="total-field">
+
+                    <!-- Products -->
+                    <h2 class="shop-step">1. Your order</h2>
+                    <div id="shop-items" class="shop-items">
+                        <!-- Products are loaded here from shop.json -->
+                    </div>
+
+                    <!-- Delivery -->
+                    <h2 class="shop-step">2. Delivery</h2>
+                    <div id="shop-delivery" class="shop-delivery">
+                        <!-- Delivery options are loaded here from shop.json -->
+                    </div>
+                    <div class="mb-3" id="paczkomat-wrap" hidden>
+                        <label class="form-label" for="paczkomat">Paczkomat code and address *</label>
+                        <input class="form-control" type="text" id="paczkomat" name="Paczkomat" placeholder="e.g. KRA01M, ul. Przykładowa 1, Kraków">
+                    </div>
+
+                    <!-- Payment -->
+                    <h2 class="shop-step">3. Payment</h2>
+                    <div class="shop-delivery">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="payment-transfer" name="Payment" value="Bank transfer" checked>
+                            <label class="form-check-label" for="payment-transfer">Bank transfer - I'll e-mail you the transfer details</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="payment-cash" name="Payment" value="Cash">
+                            <label class="form-check-label" for="payment-cash">Cash</label>
+                        </div>
+                    </div>
+
+                    <!-- Customer details -->
+                    <h2 class="shop-step">4. Your details</h2>
+                    <div class="mb-3">
+                        <label class="form-label" for="name">Name and surname *</label>
+                        <input class="form-control" type="text" id="name" name="Name and surname" required autocomplete="name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="email">E-mail *</label>
+                        <input class="form-control" type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="phone">Phone *</label>
+                        <input class="form-control" type="tel" id="phone" name="Phone" required autocomplete="tel">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="address">Address *</label>
+                        <textarea class="form-control" id="address" name="Address" rows="3" required autocomplete="street-address" placeholder="Street and number, postal code, city"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="message">Message (optional)</label>
+                        <textarea class="form-control" id="message" name="Message" rows="2" placeholder="Anything you'd like to add?"></textarea>
+                    </div>
+
+                    <!-- Summary -->
+                    <div id="shop-summary" class="shop-summary"></div>
+
+                    <div id="form-error" class="form-error" hidden></div>
+
+                    <button class="btn btn-form" type="submit">Send order</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Back to main page -->
+        <div class="back-home-bar">
+            <div class="container text-center">
+                <a class="btn btn-home" href="/">&#8592; Back to main page</a>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div id="social-container"></div>
+
+        <!-- Footer -->
+        <div id="footer-container"></div>
+
+        <script src="js/scripts.js"></script>
+        <script src="js/shop.js"></script>
+    </body>
+</html>

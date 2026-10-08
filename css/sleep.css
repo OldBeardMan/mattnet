@@ -829,6 +829,101 @@
   color: inherit;
 }
 
+:where(html.autumn-mode.sleep-mode) .streaming-links a.sl-shop:hover {
+  background: #b93729;
+  border-color: #d65344;
+}
+
+:where(html.autumn-mode.sleep-mode) .form-success {
+  background-color: #271611;
+  color: #eac3b5;
+  border: 1px solid #603a2c;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-item {
+  border: 1px solid var(--border-soft);
+  background-color: #17110c;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-item.is-picked {
+  border-color: #af664c;
+  background-color: #22150d;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-item-img {
+  background-color: #17110c;
+  border: 1px solid var(--border-soft);
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-item-info p {
+  color: #cabfb8;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-qty-btn {
+  color: #dfb7a9;
+  background-color: #17110c;
+  border: 1px solid var(--border-soft);
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-qty-btn:hover {
+  border-color: #af664c;
+  background-color: #271611;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-bundle {
+  border: 1px dashed #5e1911;
+  background-color: #260906;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-summary {
+  background-color: #241f16;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-summary-row.is-discount {
+  color: #e18075;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-summary-row.is-total {
+  border-top: 1px solid var(--border-soft);
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-summary-empty {
+  color: #cabfb8;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-preview-price {
+  color: #cabfb8;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-preview-bundle {
+  color: #e18075;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-notice {
+  background-color: #260906;
+  border: 1px solid #5e1911;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-group p {
+  color: #cabfb8;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-item-options {
+  border-top: 1px solid var(--border-soft);
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-option-label {
+  color: #cabfb8;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-summary-detail {
+  color: #cabfb8;
+}
+
+:where(html.autumn-mode.sleep-mode) .shop-preview-img {
+  background-color: #17110c;
+}
+
 /* Hand-made extras */
 html:where(.autumn-mode.sleep-mode) { color-scheme: dark; }
 :root:where(.autumn-mode.sleep-mode) { --cream: #1a130e; --cream-soft: #221913; }

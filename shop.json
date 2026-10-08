@@ -1,0 +1,116 @@
+{
+  "items": [
+    {
+      "id": "zzz-cd",
+      "kind": "CD",
+      "title": "Zzz",
+      "name": "Zzz CD",
+      "price": 30,
+      "added": "2026-10-23",
+      "image": "images/Zzz.jpg",
+      "url": "albums/zzz"
+    },
+    {
+      "id": "mattdelivery-cd",
+      "kind": "CD",
+      "title": "Matt Delivery",
+      "name": "Matt Delivery CD",
+      "price": 30,
+      "added": "2026-10-22",
+      "image": "images/Matt%20Delivery.jpg",
+      "url": "albums/mattdelivery"
+    },
+    {
+      "id": "lightofspring-cd",
+      "kind": "CD",
+      "title": "Light of Spring",
+      "name": "Light of Spring CD",
+      "price": 30,
+      "added": "2026-05-28",
+      "image": "images/lightofspring.jpg",
+      "url": "albums/lightofspring"
+    },
+    {
+      "id": "zzz-vinyl",
+      "kind": "Vinyl",
+      "title": "Zzz",
+      "name": "Zzz vinyl",
+      "price": 250,
+      "added": "2026-10-08",
+      "image": "images/Zzz.jpg",
+      "url": "albums/zzz",
+      "description": "Black vinyl with all the songs from the album."
+    },
+    {
+      "id": "lightofspring-vinyl",
+      "kind": "Vinyl",
+      "title": "Light of Spring",
+      "name": "Light of Spring vinyl",
+      "price": 250,
+      "added": "2026-10-08",
+      "image": "images/lightofspring.jpg",
+      "url": "albums/lightofspring",
+      "description": "Black vinyl with Spring At Last, Back from the Coldest Dream, Mist, Little Light, Light of Spring and one extra song."
+    },
+    {
+      "id": "matt-hoodie",
+      "kind": "Merch",
+      "title": "Matt hoodie",
+      "name": "Matt hoodie",
+      "price": 135,
+      "added": "2026-10-08",
+      "image": "images/bluzamatt.png",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "freeCd": true
+    },
+    {
+      "id": "littlelight-tshirt",
+      "kind": "Merch",
+      "title": "Little Light T-shirt",
+      "name": "Little Light T-shirt",
+      "price": 125,
+      "added": "2026-10-08",
+      "image": "images/littlighshirt.png",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "freeCd": true
+    },
+    {
+      "id": "zzz-pillow",
+      "kind": "Merch",
+      "title": "Zzz pillow",
+      "name": "Zzz pillow",
+      "price": 85,
+      "added": "2026-10-08",
+      "image": "images/poduszkazzz.png",
+      "freeCd": true
+    }
+  ],
+  "groups": [
+    {
+      "kind": "CD",
+      "title": "CDs",
+      "note": "CDs ship from October 23."
+    },
+    {
+      "kind": "Vinyl",
+      "title": "Vinyl"
+    },
+    {
+      "kind": "Merch",
+      "title": "Merch (pre-order)",
+      "note": "The merch isn't made yet - production starts once enough people want it. Every merch item comes with one CD of your choice for free."
+    }
+  ],
+  "bundles": [
+    {
+      "title": "All three CDs",
+      "items": ["mattdelivery-cd", "lightofspring-cd", "zzz-cd"],
+      "price": 70
+    }
+  ],
+  "delivery": [
+    { "id": "pickup", "label": "Personal pickup", "price": 0 },
+    { "id": "post", "label": "Poczta Polska", "price": 10 },
+    { "id": "paczkomat", "label": "InPost Paczkomat", "price": 20 }
+  ]
+}

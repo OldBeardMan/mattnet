@@ -27,6 +27,9 @@ window.addEventListener('DOMContentLoaded', async event => {
     // Load latest album and full album list for homepage
     loadAlbums();
 
+    // Newest shop items for homepage
+    loadShopPreview();
+
     // Hidden spring/autumn switch
     setupSeasonToggle();
 });
@@ -207,6 +210,39 @@ async function loadAlbums() {
         const message = '<p class="text-white-50 text-center">Unable to load albums at this time.</p>';
         if (latestContainer) latestContainer.innerHTML = message;
         if (listContainer) listContainer.innerHTML = message;
+    }
+}
+
+// Newest items from shop.json on the homepage
+const SHOP_PREVIEW_COUNT = 8;
+
+async function loadShopPreview() {
+    const container = document.getElementById('shop-preview-container');
+    if (!container) return; // Only run on homepage
+
+    try {
+        const response = await fetch('shop.json');
+        const shop = await response.json();
+
+        const newest = shop.items
+            .slice()
+            .sort((a, b) => new Date(b.added) - new Date(a.added))
+            .slice(0, SHOP_PREVIEW_COUNT);
+
+        container.innerHTML = newest.map(item => `
+            <div class="col-album text-center">
+                <a href="shop?item=${item.id}" class="album-link">
+                    <img class="img-fluid album-img shop-preview-img" src="${item.image}" alt="${item.title}">
+                    <h3>${item.title}</h3>
+                    <p class="shop-preview-price">${item.kind} &middot; ${item.price} zł${item.kind === 'Merch' ? ' &middot; pre-order' : ''}</p>
+                </a>
+            </div>
+        `).join('') + (shop.bundles || []).map(bundle => `
+            <p class="shop-preview-bundle">${bundle.title} for ${bundle.price} zł</p>
+        `).join('') + '<p class="shop-preview-bundle">Free stickers with every order</p>';
+    } catch (error) {
+        console.error('Error loading shop:', error);
+        container.innerHTML = '<p class="text-white-50 text-center">Unable to load the shop at this time.</p>';
     }
 }
 
