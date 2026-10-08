@@ -239,7 +239,8 @@ async function loadShopPreview() {
             </div>
         `).join('') + (shop.bundles || []).map(bundle => `
             <p class="shop-preview-bundle">${bundle.title} for ${bundle.price} zł</p>
-        `).join('') + '<p class="shop-preview-bundle">Free stickers with every order</p>';
+        `).join('') + '<p class="shop-preview-bundle">Vinyl and merch only until October 25 - then gone forever</p>' +
+            '<p class="shop-preview-bundle">Free stickers with every order</p>';
     } catch (error) {
         console.error('Error loading shop:', error);
         container.innerHTML = '<p class="text-white-50 text-center">Unable to load the shop at this time.</p>';

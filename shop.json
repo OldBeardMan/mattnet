@@ -93,12 +93,13 @@
     },
     {
       "kind": "Vinyl",
-      "title": "Vinyl"
+      "title": "Vinyl",
+      "note": "Orders open only until October 25 - after that it's gone forever."
     },
     {
       "kind": "Merch",
       "title": "Merch (pre-order)",
-      "note": "The merch isn't made yet - production starts once enough people want it. Every merch item comes with one CD of your choice for free."
+      "note": "Orders open only until October 25 - after that it's gone forever. The merch isn't made yet - production starts once enough people want it. Every merch item comes with one CD of your choice for free."
     }
   ],
   "bundles": [
