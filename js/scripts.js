@@ -32,6 +32,13 @@ window.addEventListener('DOMContentLoaded', async event => {
 
     // Hidden spring/autumn switch
     setupSeasonToggle();
+
+    // FormSubmit sends the subscriber back here with ?subscribed=1
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm && new URLSearchParams(window.location.search).get('subscribed') === '1') {
+        document.getElementById('newsletter-success').hidden = false;
+        newsletterForm.hidden = true;
+    }
 });
 
 // Line icons for the hidden footer switches (stroke follows the text colour)

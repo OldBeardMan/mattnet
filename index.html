@@ -67,6 +67,38 @@
 
         <hr class="hr-wide">
 
+        <!-- Newsletter Section -->
+        <section class="projects-section" id="newsletter">
+            <div class="container text-center">
+                <h2 class="text-cyan">Newsletter</h2>
+                <p class="text-green-light">Get an e-mail when I release new music or something new lands in the shop</p>
+                <hr class="hr-short">
+
+                <div id="newsletter-success" class="form-success newsletter-form" hidden>
+                    Thanks! You're on the list.
+                </div>
+
+                <form id="newsletter-form" class="form-signup newsletter-form" action="https://formsubmit.co/444cc6fa7fff15f66f8d9c56ac6e979d" method="POST">
+
+                    <!-- FormSubmit configuration (https://formsubmit.co) -->
+                    <input type="hidden" name="_subject" value="New newsletter signup">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_next" value="https://mattkrupa.net/?subscribed=1#newsletter">
+                    <!-- Honeypot anti-spam field -->
+                    <input type="text" name="_honey" class="shop-honey" tabindex="-1" autocomplete="off">
+
+                    <label class="form-label" for="newsletter-email">Your e-mail</label>
+                    <div class="newsletter-row">
+                        <input class="form-control" type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+                        <button class="btn btn-form" type="submit">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <hr class="hr-wide">
+
         <!-- All Albums Section -->
         <section class="projects-section" id="albums-all">
             <div class="container text-center">

@@ -2162,6 +2162,31 @@ html:not(.autumn-mode) .footer-note .sleep-toggle {
   display: none;
 }
 
+.newsletter-form {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.newsletter-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#newsletter-success {
+  text-align: center;
+}
+
+.newsletter-row .btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .newsletter-row {
+    flex-direction: column;
+  }
+}
+
 #order h2.shop-step {
   font-size: 1.3rem;
   margin: 1.75rem 0 1rem;
