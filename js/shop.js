@@ -16,7 +16,7 @@
 
     let shop = null;
     const qty = {};
-    // Per piece choices for merch: choices[id][i] = { size, cd }
+    // Per piece choices for merch: choices[id][i] = { color, size, cd }
     const choices = {};
 
     const zl = (amount) => amount + ' zł';
@@ -74,7 +74,11 @@
         const wrap = document.createElement('div');
         wrap.className = 'shop-item';
         wrap.dataset.id = item.id;
-        const image = `<img class="shop-item-img" src="${item.image}" alt="${item.title}">`;
+        const cover = `<img class="shop-item-img" src="${item.image}" alt="${item.title}">`;
+        // Vinyl gets its record peeking out from behind the cover, in the record's color
+        const image = item.disc
+            ? `<span class="shop-vinyl" style="--disc: ${item.disc}; --label: url('${item.image}')">${cover}<span class="shop-vinyl-disc"></span></span>`
+            : cover;
         wrap.innerHTML = `
             <div class="shop-item-main">
                 ${item.url ? `<a href="${item.url}">${image}</a>` : image}
@@ -123,11 +127,11 @@
         renderOptions(itemById(id), wrap.querySelector('.shop-item-options'));
     }
 
-    // A size and a free CD to pick for every piece of merch
+    // A color, a size and a free CD to pick for every piece of merch
     function renderOptions(item, box) {
-        if (!item.sizes && !item.freeCd) return;
+        if (!item.colors && !item.sizes && !item.freeCd) return;
         const list = choices[item.id];
-        while (list.length < qty[item.id]) list.push({ size: '', cd: '' });
+        while (list.length < qty[item.id]) list.push({ color: '', size: '', cd: '' });
         list.length = qty[item.id];
 
         const cds = shop.items.filter(other => other.kind === 'CD');
@@ -140,6 +144,7 @@
         box.innerHTML = list.map((choice, i) => `
             <div class="shop-option-row" data-index="${i}">
                 <span class="shop-option-label">${list.length > 1 ? '#' + (i + 1) : ''}</span>
+                ${item.colors ? select('color', 'Color', item.colors.map(color => color.name), choice.color) : ''}
                 ${item.sizes ? select('size', 'Size', item.sizes, choice.size) : ''}
                 ${item.freeCd ? select('cd', 'Free CD', cds.map(cd => cd.title), choice.cd) : ''}
             </div>
@@ -147,6 +152,9 @@
         box.querySelectorAll('.shop-option').forEach(el => {
             el.addEventListener('change', () => {
                 list[el.closest('.shop-option-row').dataset.index][el.dataset.field] = el.value;
+                // Show the color that was just picked
+                const color = el.dataset.field === 'color' && item.colors.find(c => c.name === el.value);
+                if (color) box.closest('.shop-item').querySelector('.shop-item-img').src = color.image;
                 update();
             });
         });
@@ -167,6 +175,7 @@
 
     function describeChoice(choice) {
         const parts = [];
+        if (choice.color) parts.push(choice.color.toLowerCase());
         if (choice.size) parts.push('size ' + choice.size);
         if (choice.cd) parts.push('free CD: ' + choice.cd);
         return parts.join(', ');

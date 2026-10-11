@@ -2221,6 +2221,51 @@ html:not(.autumn-mode) .footer-note .sleep-toggle {
   border-radius: 8px;
 }
 
+/* Vinyl: the record peeks out from behind its cover */
+.shop-vinyl {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  padding-right: 42px;
+}
+
+.shop-vinyl .shop-item-img {
+  position: relative;
+  z-index: 1;
+}
+
+.shop-vinyl-disc {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 20deg, transparent 0 8%, rgba(255, 255, 255, 0.35) 12%, transparent 17% 58%, rgba(255, 255, 255, 0.25) 62%, transparent 67%),
+    repeating-radial-gradient(circle, rgba(0, 0, 0, 0.1) 0 1px, transparent 1px 3px),
+    var(--disc);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Centre label with the album cover, and the spindle hole */
+.shop-vinyl-disc::before,
+.shop-vinyl-disc::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shop-vinyl-disc::before {
+  inset: 31%;
+  background: var(--label) center / cover;
+}
+
+.shop-vinyl-disc::after {
+  inset: 47%;
+  background-color: #e9e9e9;
+}
+
 .shop-item-info {
   flex: 1 1 auto;
   min-width: 0;
@@ -2347,6 +2392,9 @@ html:not(.autumn-mode) .footer-note .sleep-toggle {
   .shop-item-img {
     width: 56px;
     height: 56px;
+  }
+  .shop-vinyl {
+    padding-right: 32px;
   }
   .shop-qty {
     margin-left: auto;
