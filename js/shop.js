@@ -81,7 +81,8 @@
             : cover;
         wrap.innerHTML = `
             <div class="shop-item-main">
-                ${item.url ? `<a href="${item.url}">${image}</a>` : image}
+                ${item.url ? `<a href="${item.url}">${image}</a>`
+                           : `<button type="button" class="shop-zoom" aria-label="Enlarge ${item.title}">${image}</button>`}
                 <div class="shop-item-info">
                     <h3>${item.title}</h3>
                     <p>${item.kind} &middot; ${zl(item.price)}${item.freeCd ? ' &middot; free CD' : ''}</p>
@@ -95,6 +96,8 @@
             </div>
             <div class="shop-item-options"></div>
         `;
+        const zoom = wrap.querySelector('.shop-zoom');
+        if (zoom) zoom.addEventListener('click', () => openZoom(wrap.querySelector('.shop-item-img')));
         wrap.querySelectorAll('.shop-qty-btn').forEach(button => {
             button.addEventListener('click', () => {
                 setQty(item.id, qty[item.id] + Number(button.dataset.step));
@@ -102,6 +105,27 @@
             });
         });
         return wrap;
+    }
+
+    // Merch pictures are small in the list - click one to see it big
+    function openZoom(img) {
+        let dialog = document.getElementById('shop-zoom-dialog');
+        if (!dialog) {
+            dialog = document.createElement('dialog');
+            dialog.id = 'shop-zoom-dialog';
+            dialog.className = 'shop-zoom-dialog';
+            dialog.innerHTML = `
+                <button type="button" class="shop-zoom-close" aria-label="Close">&times;</button>
+                <img alt="">
+            `;
+            // Any click (on the picture, the backdrop or the X) closes it
+            dialog.addEventListener('click', () => dialog.close());
+            document.body.appendChild(dialog);
+        }
+        const big = dialog.querySelector('img');
+        big.src = img.src;
+        big.alt = img.alt;
+        dialog.showModal();
     }
 
     function renderBundle(bundle) {
