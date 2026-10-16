@@ -1946,6 +1946,7 @@ marquee {
 .songs-tag-streaming { background: #eaf6ec; border-color: #c8e6cd; color: #2f7d4f; }
 .songs-tag-music-video { background: #fdecec; border-color: #f4cccc; color: #a63030; }
 .songs-tag-soundcloud { background: #fff0e6; border-color: #ffd6bb; color: #b25100; }
+.songs-tag-mind-of-seasons { background: #fff6dc; border-color: #f0d78c; color: #8a6100; }
 
 /* Expandable note row */
 .songs-detail td {
@@ -2539,4 +2540,229 @@ html:not(.autumn-mode) .footer-note .sleep-toggle {
   line-height: 1;
   color: #333333;
   cursor: pointer;
+}
+
+
+/*-----------------------------*/
+/* MIND OF SEASONS - NEW PAGE  */
+/*-----------------------------*/
+
+.game-masthead {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  padding: 2rem 0;
+  background: url("../images/game/bg-mindofseasons.jpg") center / cover no-repeat;
+}
+
+@media (min-width: 992px) {
+  .game-masthead {
+    min-height: 320px;
+    padding: 5rem 0;
+  }
+}
+
+.game-download {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.game-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  image-rendering: pixelated;
+}
+
+.game-text {
+  max-width: 760px;
+}
+
+.game-features {
+  display: inline-block;
+  margin: 0;
+  text-align: left;
+}
+
+.game-features li + li {
+  margin-top: 0.4rem;
+}
+
+.game-journey {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.game-chapter {
+  margin: 0;
+  padding: 0.9rem;
+}
+
+.game-chapter .album-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.game-chapter h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.game-chapter-no {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Screenshots are buttons, so they open with the keyboard too */
+#game-gallery .screenshot-item {
+  padding: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+#game-gallery .screenshot-item img {
+  height: 158px;
+  transition: transform 0.15s ease;
+}
+
+#game-gallery .screenshot-item:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 620px) {
+  #game-gallery .screenshot-item {
+    width: 100%;
+    margin: 5px 0;
+  }
+  #game-gallery .screenshot-item img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.game-zoom-dialog {
+  max-width: min(94vw, 1280px);
+}
+
+.game-download-again {
+  margin-top: 2rem;
+}
+
+/* Homepage card */
+.game-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.game-home-img {
+  width: 100%;
+  max-width: 420px;
+}
+
+.game-home-img img {
+  display: block;
+  width: 100%;
+}
+
+.game-home-text p {
+  margin-bottom: 1rem;
+}
+
+.game-home-text .btn {
+  margin: 0 4px 8px;
+}
+
+@media (min-width: 768px) {
+  .game-home {
+    flex-direction: row;
+    text-align: left;
+  }
+  .game-home-img {
+    flex: 0 0 45%;
+  }
+  .game-home-text .btn {
+    margin: 0 8px 8px 0;
+  }
+}
+
+.game-chapter .album-link {
+  display: block;
+}
+
+/* Chapter 3 shows two overlapping covers (Norway + Iceland) in the same square as the other chapters */
+.game-chapter-pair {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 10px;
+}
+
+.game-chapter-pair .album-link {
+  position: absolute;
+  width: 72%;
+}
+
+.game-chapter-pair .album-link:first-child {
+  top: 0;
+  left: 0;
+}
+
+.game-chapter-pair .album-link:last-child {
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.game-chapter-pair .album-img {
+  display: block;
+  margin: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.game-chapter-pair .album-link:hover {
+  z-index: 2;
+}
+
+.game-chapter-albums {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+}
+
+.game-kittens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 720px;
+  margin: 1.5rem auto 0;
+}
+
+.game-kittens-img {
+  flex: 0 0 140px;
+  width: 140px;
+}
+
+.game-kittens p {
+  margin: 0.25rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .game-kittens {
+    flex-direction: row;
+    text-align: left;
+  }
 }

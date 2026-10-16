@@ -805,6 +805,12 @@
   color: #b25100;
 }
 
+:where(html.autumn-mode) .songs-tag-mind-of-seasons {
+  background: #fff6dc;
+  border-color: #f0d78c;
+  color: #8a6100;
+}
+
 :where(html.autumn-mode) .songs-detail td {
   background: #fbf8ef;
   border-bottom: 1px solid var(--border-soft);

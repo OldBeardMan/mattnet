@@ -5,7 +5,7 @@ const SONG_DB = {
       "title": "In The Autumn Forest",
       "url": "albums/autumn",
       "image": "images/Autumn.jpg",
-      "note": "album released on CD in November 2021"
+      "note": "album released on CD in November 2021. Chapter 1 of the game Mind Of Seasons (2026)"
     },
     {
       "title": "Covers, Vol. 1",
@@ -22,20 +22,20 @@ const SONG_DB = {
     {
       "title": "Winter (Presents)",
       "url": "",
-      "image": "",
-      "note": "whole album (exept Pls Come) was first released on streaming and bandcamp, now deleted, only available on CD released in December 2021"
+      "image": "images/PresentsEP.png",
+      "note": "whole album (exept Pls Come) was first released on streaming and bandcamp, now deleted, only available on CD released in December 2021. Chapter 2 of the game Mind Of Seasons (2026)"
     },
     {
       "title": "Norway",
       "url": "albums/norway",
       "image": "images/Norway.png",
-      "note": "Norway and Iceland album were released as digipack CD album called ,,Nordic Countries Vol. 1\" in November 2022"
+      "note": "Norway and Iceland album were released as digipack CD album called ,,Nordic Countries Vol. 1\" in November 2022. Together with Iceland it makes chapter 3 (Land of Ice) of the game Mind Of Seasons (2026)"
     },
     {
       "title": "Iceland",
       "url": "albums/iceland",
       "image": "images/Iceland.png",
-      "note": "Norway and Iceland album were released as digipack CD album called ,,Nordic Countries Vol. 1\" in November 2022"
+      "note": "Norway and Iceland album were released as digipack CD album called ,,Nordic Countries Vol. 1\" in November 2022. Together with Norway it makes chapter 3 (Land of Ice) of the game Mind Of Seasons (2026)"
     },
     {
       "title": "Covers, Vol. 2",
@@ -47,13 +47,19 @@ const SONG_DB = {
       "title": "Lost Kittens",
       "url": "albums/lostkittens",
       "image": "images/CAT1.jpg",
-      "note": "All of the cats got their names with the album release"
+      "note": "All of the cats got their names with the album release. The kittens you look for in every chapter of the game Mind Of Seasons (2026) have the same names as in this album"
     },
     {
       "title": "Light Of Spring",
       "url": "albums/lightofspring",
       "image": "images/lightofspring.jpg",
-      "note": "The whole album got a ,,Full Album Listening Video\" (expcept for the two CD only songs)"
+      "note": "The whole album got a ,,Full Album Listening Video\" (expcept for the two CD only songs). Chapter 4 of the game Mind Of Seasons (2026)"
+    },
+    {
+      "title": "Mind Of Seasons",
+      "url": "mind-of-seasons",
+      "image": "images/game/mind-of-seasons.png",
+      "note": "My game, free on Game Jolt. Songs from other albums that you can hear in the game have the Mind Of Seasons tag"
     },
     {
       "title": "Matt Delivery",
@@ -80,7 +86,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album and Single",
       "note": "First published song composed by me"
@@ -96,7 +103,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -144,7 +152,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album and Single",
       "note": ""
@@ -339,7 +348,8 @@ const SONG_DB = {
       "dateText": "Dec 10, 2020",
       "dateApprox": false,
       "availability": [
-        "CD"
+        "CD",
+        "Mind Of Seasons"
       ],
       "type": "Album and EP",
       "note": "First released on a small phisical EP in december 10.12.2020"
@@ -353,7 +363,8 @@ const SONG_DB = {
       "dateText": "Dec 24, 2021",
       "dateApprox": false,
       "availability": [
-        "CD"
+        "CD",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -467,7 +478,8 @@ const SONG_DB = {
       "dateText": "Dec 24, 2021",
       "dateApprox": false,
       "availability": [
-        "CD"
+        "CD",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -515,7 +527,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -531,7 +544,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -547,7 +561,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -596,7 +611,8 @@ const SONG_DB = {
         "CD",
         "Bandcamp",
         "Streaming",
-        "Music Video"
+        "Music Video",
+        "Mind Of Seasons"
       ],
       "type": "Album and Single",
       "note": "Released on Nordic Countries II single on 08.04.2022, first released as a music video"
@@ -612,7 +628,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album and EP",
       "note": "First released on a small phisical EP in december 10.12.2020 under the name \"Canon\", publicly released with the album"
@@ -1395,7 +1412,8 @@ const SONG_DB = {
         "Bandcamp",
         "Streaming",
         "Music Video",
-        "Vinyl"
+        "Vinyl",
+        "Mind Of Seasons"
       ],
       "type": "Album and Single",
       "note": ""
@@ -1427,7 +1445,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -1443,7 +1462,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -1493,7 +1513,8 @@ const SONG_DB = {
         "Bandcamp",
         "Streaming",
         "Music Video",
-        "Soundcloud"
+        "Soundcloud",
+        "Mind Of Seasons"
       ],
       "type": "Album and Single",
       "note": ""
@@ -1557,7 +1578,8 @@ const SONG_DB = {
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
@@ -1618,10 +1640,25 @@ const SONG_DB = {
       "dateText": "May 29, 2026",
       "dateApprox": false,
       "availability": [
-        "CD"
+        "CD",
+        "Mind Of Seasons"
       ],
       "type": "Album",
       "note": ""
+    },
+    {
+      "album": "Mind Of Seasons",
+      "title": "Mushroom Song",
+      "duration": "6:00",
+      "seconds": 360,
+      "date": "2026-10-15",
+      "dateText": "Oct 15, 2026",
+      "dateApprox": false,
+      "availability": [
+        "Mind Of Seasons"
+      ],
+      "type": "Game",
+      "note": "Available only in the game Mind Of Seasons"
     },
     {
       "album": "Matt Delivery",
@@ -1982,7 +2019,7 @@ const SONG_DB = {
         "Music Video"
       ],
       "type": "Album and Single",
-      "note": ""
+      "note": "First released as a music video"
     },
     {
       "album": "Zzz",
@@ -2047,7 +2084,7 @@ const SONG_DB = {
         "Music Video"
       ],
       "type": "Album and Single",
-      "note": ""
+      "note": "First released as a music video"
     },
     {
       "album": "Zzz",
@@ -2070,32 +2107,34 @@ const SONG_DB = {
       "title": "Longing",
       "duration": "2:47",
       "seconds": 167,
-      "date": "2026-10-23",
-      "dateText": "Oct 23, 2026",
+      "date": "2026-10-16",
+      "dateText": "Oct 16, 2026",
       "dateApprox": false,
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Music Video"
       ],
       "type": "Album",
-      "note": ""
+      "note": "First released as a music video"
     },
     {
       "album": "Zzz",
       "title": "Dreams Of The Old Friend",
       "duration": "3:13",
       "seconds": 193,
-      "date": "2026-10-23",
-      "dateText": "Oct 23, 2026",
+      "date": "2026-10-15",
+      "dateText": "Oct 15, 2026",
       "dateApprox": false,
       "availability": [
         "CD",
         "Bandcamp",
-        "Streaming"
+        "Streaming",
+        "Mind Of Seasons"
       ],
       "type": "Album",
-      "note": ""
+      "note": "First appeared in the game Mind Of Seasons, before the album release"
     },
     {
       "album": "Zzz",
@@ -2112,6 +2151,21 @@ const SONG_DB = {
       ],
       "type": "Album",
       "note": ""
+    },
+    {
+      "album": "Zzz",
+      "title": "Little Light Birds",
+      "duration": "9:49",
+      "seconds": 589,
+      "date": "2026-10-15",
+      "dateText": "Oct 15, 2026",
+      "dateApprox": false,
+      "availability": [
+        "CD",
+        "Mind Of Seasons"
+      ],
+      "type": "Album",
+      "note": "CD version bonus track. First appeared in the game Mind Of Seasons, before the album release"
     }
   ]
 };
